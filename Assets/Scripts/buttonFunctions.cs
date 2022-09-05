@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonFunctions : MonoBehaviour
+public class buttonFunctions : MonoBehaviour
 {
     public void resume()
     {
         if (gameManager.instance.isPaused)
         {
-            gameManager.instance.isPaused = !gameManager.instance.isPaused;
             gameManager.instance.togglePauseMenu();
         }
     }
