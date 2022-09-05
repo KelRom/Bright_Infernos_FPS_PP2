@@ -31,7 +31,7 @@ public class gameManager : MonoBehaviour
             togglePauseMenu();
     }
 
-    void togglePauseMenu()
+    public void togglePauseMenu()
     {
         isPaused = !isPaused;
         pauseMenu.SetActive(isPaused);
