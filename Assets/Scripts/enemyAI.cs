@@ -30,7 +30,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     {
         playerDirection = gameManager.instance.player.transform.position - transform.position;
 
-        agent.SetDestination(playerDirection);
+        agent.SetDestination(gameManager.instance.player.transform.position);
 
         if(agent.remainingDistance <= agent.stoppingDistance)
         {
