@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class gameManager : MonoBehaviour
 {
@@ -8,12 +9,15 @@ public class gameManager : MonoBehaviour
 
     public GameObject player;
     public playerController playerScript;
+    
 
     public GameObject pauseMenu;
     public GameObject playerDamage;
+    GameObject textObject;
 
     public bool isPaused;
     float timeScaleOriginal;
+    int numberOfEnemies;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,14 +25,19 @@ public class gameManager : MonoBehaviour
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<playerController>();
+        
         timeScaleOriginal = Time.timeScale;
+        textObject = GameObject.Find("Enemies");
     }
 
     // Update is called once per frame
     void Update()
     {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        numberOfEnemies = enemies.Length;
         if (Input.GetButtonDown("Cancel"))
             togglePauseMenu();
+        displayNumberOfEnemies();
     }
 
     public void togglePauseMenu()
@@ -38,5 +47,11 @@ public class gameManager : MonoBehaviour
         Cursor.visible = isPaused ? true : false;
         Cursor.lockState = isPaused ? CursorLockMode.Confined : CursorLockMode.Locked;
         Time.timeScale = isPaused ? 0f : timeScaleOriginal;
+    }
+
+    void displayNumberOfEnemies()
+    {
+        textObject.GetComponent<TextMeshProUGUI>().text = "Number of Enemies: " + numberOfEnemies;
+            
     }
 }
