@@ -51,9 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1155116901420898459}
   rend: {fileID: 1030234298563549296}
-  HP: 10
+  HP: 3
   playerFaceSpeed: 10
-  shootRate: 0
+  shootRate: 1
   bullet: {fileID: 6354221902422371132, guid: 2c41a6678d177d849b09d9e19c8f0aa0, type: 3}
   shootPosition: {fileID: 2318208559219130424}
 --- !u!195 &1155116901420898459
@@ -70,7 +70,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 3
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
