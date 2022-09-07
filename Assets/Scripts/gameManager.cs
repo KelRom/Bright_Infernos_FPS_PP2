@@ -29,7 +29,6 @@ public class gameManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<playerController>();
         playerSpawnPoint = GameObject.Find("Player Spawn Point");
-        playerScript.playerRespawn();
         timeScaleOriginal = Time.timeScale;
         textObject = GameObject.Find("Enemies");
     }
