@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class gameManager : MonoBehaviour
@@ -9,7 +10,9 @@ public class gameManager : MonoBehaviour
 
     public GameObject player;
     public playerController playerScript;
-    
+    public GameObject playerSpawnPoint;
+
+    public Image HPBar;
 
     public GameObject pauseMenu;
     public GameObject playerDamage;
@@ -25,7 +28,8 @@ public class gameManager : MonoBehaviour
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<playerController>();
-        
+        playerSpawnPoint = GameObject.Find("Player Spawn Point");
+        playerScript.playerRespawn();
         timeScaleOriginal = Time.timeScale;
         textObject = GameObject.Find("Enemies");
     }

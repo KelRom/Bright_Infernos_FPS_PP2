@@ -17,6 +17,7 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] int shootDamage;
     [SerializeField] int shootDistance;
 
+    int HPOriginal;
     int timesJumped;
     private Vector3 playerVelocity;
     Vector3 move;
@@ -24,7 +25,8 @@ public class playerController : MonoBehaviour, IDamageable
 
     private void Start()
     {
-
+        HPOriginal = HP;
+        playerRespawn();
     }
 
     void Update()
@@ -78,6 +80,7 @@ public class playerController : MonoBehaviour, IDamageable
     public void takeDamage(int dmg)
     {
         HP -= dmg;
+        updatePlayerHP();
         StartCoroutine(damageFlash());
     }
 
@@ -86,6 +89,19 @@ public class playerController : MonoBehaviour, IDamageable
         gameManager.instance.playerDamage.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         gameManager.instance.playerDamage.SetActive(false);
+    }
+    public void playerRespawn()
+    {
+        controller.enabled = false;
+        HP = HPOriginal;
+        updatePlayerHP();
+        transform.position = gameManager.instance.playerSpawnPoint.transform.position;
+        controller.enabled = true;
+    }
+
+    public void updatePlayerHP()
+    {
+        gameManager.instance.HPBar.fillAmount = (float)HP / (float)HPOriginal;
     }
 }
 
