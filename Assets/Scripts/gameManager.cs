@@ -11,7 +11,7 @@ public class gameManager : MonoBehaviour
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPoint;
-    public GameObject[] enemySpawnPoint = new GameObject[5];
+    public GameObject[] enemySpawnPoints = new GameObject[6];
 
     System.Random random;
 
@@ -47,9 +47,9 @@ public class gameManager : MonoBehaviour
         playerSpawnPoint = GameObject.Find("Player Spawn Point");
         timeScaleOriginal = Time.timeScale;
 
-        for(int i = 0; i < 5; i++) 
+        for(int i = 0; i < 6; i++) 
         {
-            enemySpawnPoint[i] = GameObject.Find("Enemy Spawn Point " + i);
+            enemySpawnPoints[i] = GameObject.Find("Enemy Spawn Point " + i);
         }
 
         enemyLeftText.text = (totalEnemies).ToString("F0");
@@ -146,6 +146,6 @@ public class gameManager : MonoBehaviour
 
     void spawnEnemy() 
     {
-        Instantiate(enemy, enemySpawnPoint[random.Next() % 5].transform.position, transform.rotation);
+        Instantiate(enemy, enemySpawnPoints[random.Next() % 6].transform.position, transform.rotation);
     }
 }
