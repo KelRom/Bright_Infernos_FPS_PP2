@@ -16,6 +16,7 @@ public class buttonFunctions : MonoBehaviour
 
     public void restart()
     {
+
         gameManager.instance.cursorUnlockUnpause();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -23,5 +24,12 @@ public class buttonFunctions : MonoBehaviour
     public void quit()
     {
         Application.Quit();
+    }
+
+    public void respawn()
+    {
+        gameManager.instance.isPaused = !gameManager.instance.isPaused;
+        gameManager.instance.playerScript.playerRespawn();
+        gameManager.instance.cursorUnlockUnpause();
     }
 }
