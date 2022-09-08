@@ -10,7 +10,10 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] float playerSpeed;
     [SerializeField] float jumpHeight;
     [SerializeField] float gravityValue;
-    
+
+    [SerializeField] float fallThreshold;
+    [SerializeField] int fallDamage;
+
     [SerializeField] int jumpsMax;
 
     [SerializeField] float shootRate;
@@ -38,6 +41,11 @@ public class playerController : MonoBehaviour, IDamageable
             movement();
             StartCoroutine(shoot());
         }
+        //if (playerVelocity.y < -fallThreshold)
+        //{
+        //    takeFallDamage(fallDamage);
+        //    playerVelocity.y = 0f;
+        //}
     }
 
     void movement()
@@ -121,6 +129,16 @@ public class playerController : MonoBehaviour, IDamageable
     public void updatePlayerHP()
     {
         gameManager.instance.HPBar.fillAmount = (float)HP / (float)HPOriginal;
+    }
+    public void takeFallDamage(int fallDamage)
+    {
+        HP -= fallDamage;
+        updatePlayerHP();
+        StartCoroutine(damageFlash());
+        if (HP <= 0)
+        {
+            gameManager.instance.playerIsDead();
+        }
     }
 }
 
