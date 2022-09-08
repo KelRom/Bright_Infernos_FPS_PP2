@@ -14,13 +14,17 @@ public class gameManager : MonoBehaviour
 
     public Image HPBar;
 
+    public GameObject menuCurrentlyOpen;
     public GameObject pauseMenu;
     public GameObject playerDamage;
-    GameObject textObject;
+    public TextMeshProUGUI enemyCounterText;
+    public GameObject winMenu;
+    public GameObject playerDeadMenu;
 
     public bool isPaused;
     float timeScaleOriginal;
     int numberOfEnemies;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -30,31 +34,71 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         playerSpawnPoint = GameObject.Find("Player Spawn Point");
         timeScaleOriginal = Time.timeScale;
-        textObject = GameObject.Find("Enemies");
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        numberOfEnemies = enemies.Length;
-        if (Input.GetButtonDown("Cancel"))
-            togglePauseMenu();
-        displayNumberOfEnemies();
+        if (Input.GetButtonDown("Cancel") && menuCurrentlyOpen != playerDeadMenu && menuCurrentlyOpen != winMenu)
+        {
+            isPaused = !isPaused;
+            menuCurrentlyOpen = pauseMenu;
+            menuCurrentlyOpen.SetActive(isPaused);
+
+            if (isPaused)
+                cursorLockPause();
+            else
+                cursorUnlockUnpause();
+        }
     }
 
-    public void togglePauseMenu()
+    public void cursorLockPause()
     {
-        isPaused = !isPaused;
-        pauseMenu.SetActive(isPaused);
-        Cursor.visible = isPaused ? true : false;
-        Cursor.lockState = isPaused ? CursorLockMode.Confined : CursorLockMode.Locked;
-        Time.timeScale = isPaused ? 0f : timeScaleOriginal;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        Time.timeScale = 0;
     }
 
-    void displayNumberOfEnemies()
+    public void cursorUnlockUnpause()
     {
-        textObject.GetComponent<TextMeshProUGUI>().text = "Number of Enemies: " + numberOfEnemies;
-            
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = timeScaleOriginal;
+        if (menuCurrentlyOpen != null)
+            menuCurrentlyOpen.SetActive(false);
+        menuCurrentlyOpen = null;
+    }
+
+    public void increaseEnemyCount()
+    {
+        numberOfEnemies++;
+        enemyCounterText.text = numberOfEnemies.ToString("F0");
+
+    }
+
+    public void decreaseEnemyCount()
+    {
+        numberOfEnemies--;
+        enemyCounterText.text = numberOfEnemies.ToString("F0");
+        StartCoroutine(checkIfEnemyCountIsZero());
+    }
+
+    public void playerIsDead()
+    {
+        isPaused = true;
+        menuCurrentlyOpen = playerDeadMenu;
+        menuCurrentlyOpen.SetActive(true);
+        cursorLockPause();
+    }
+
+    IEnumerator checkIfEnemyCountIsZero()
+    {
+        if(numberOfEnemies <= 0)
+        {
+            yield return new WaitForSeconds(2);
+            menuCurrentlyOpen = winMenu;
+            menuCurrentlyOpen.SetActive(true);
+            cursorLockPause();
+        }
     }
 }

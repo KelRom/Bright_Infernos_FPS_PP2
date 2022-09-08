@@ -9,13 +9,14 @@ public class buttonFunctions : MonoBehaviour
     {
         if (gameManager.instance.isPaused)
         {
-            gameManager.instance.togglePauseMenu();
+            gameManager.instance.isPaused = !gameManager.instance.isPaused;
+            gameManager.instance.cursorUnlockUnpause();
         }
     }
 
     public void restart()
     {
-        gameManager.instance.togglePauseMenu();
+        gameManager.instance.cursorUnlockUnpause();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

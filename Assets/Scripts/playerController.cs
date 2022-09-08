@@ -10,7 +10,7 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] float playerSpeed;
     [SerializeField] float jumpHeight;
     [SerializeField] float gravityValue;
-
+    
     [SerializeField] int jumpsMax;
 
     [SerializeField] float shootRate;
@@ -18,6 +18,7 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] int shootDistance;
 
     int HPOriginal;
+    float playerSpeedOriginal;
     int timesJumped;
     private Vector3 playerVelocity;
     Vector3 move;
@@ -26,14 +27,17 @@ public class playerController : MonoBehaviour, IDamageable
     private void Start()
     {
         HPOriginal = HP;
+        playerSpeedOriginal = playerSpeed;
         playerRespawn();
     }
 
     void Update()
     {
-        movement();
-
-        StartCoroutine(shoot());
+        if (!gameManager.instance.isPaused)
+        {
+            movement();
+            StartCoroutine(shoot());
+        }
     }
 
     void movement()
@@ -55,6 +59,15 @@ public class playerController : MonoBehaviour, IDamageable
 
         playerVelocity.y -= gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+
+        if (Input.GetButton("Run"))
+        {
+            controller.Move(move * Time.deltaTime * (playerSpeed * 2));
+        }
+        else
+        {
+            controller.Move(move * Time.deltaTime * playerSpeed);
+        }
     }
 
     IEnumerator shoot()
@@ -81,7 +94,13 @@ public class playerController : MonoBehaviour, IDamageable
     {
         HP -= dmg;
         updatePlayerHP();
+
         StartCoroutine(damageFlash());
+        if(HP <= 0)
+        {
+            gameManager.instance.playerIsDead();
+        }
+
     }
 
     IEnumerator damageFlash()
