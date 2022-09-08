@@ -11,6 +11,9 @@ public class gameManager : MonoBehaviour
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPoint;
+    public GameObject[] enemySpawnPoint = new GameObject[5];
+
+    System.Random random;
 
     public Image HPBar;
 
@@ -18,12 +21,21 @@ public class gameManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject playerDamage;
     public TextMeshProUGUI enemyCounterText;
+    public TextMeshProUGUI enemyLeftText;
     public GameObject winMenu;
     public GameObject playerDeadMenu;
 
     public bool isPaused;
     float timeScaleOriginal;
     int numberOfEnemies;
+    int enemyCount;
+    int enemiesKilled;
+    bool isSpawnDelay;
+
+    [SerializeField] int maxEnemiesSpawned;
+    [SerializeField] int totalEnemies;
+    [SerializeField] int spawnDelay;
+    [SerializeField] GameObject enemy;
 
 
     // Start is called before the first frame update
@@ -34,6 +46,15 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         playerSpawnPoint = GameObject.Find("Player Spawn Point");
         timeScaleOriginal = Time.timeScale;
+
+        for(int i = 0; i < 5; i++) 
+        {
+            enemySpawnPoint[i] = GameObject.Find("Enemy Spawn Point " + i);
+        }
+
+        enemyLeftText.text = (totalEnemies).ToString("F0");
+
+        random = new System.Random();
     }
 
     // Update is called once per frame
@@ -49,6 +70,24 @@ public class gameManager : MonoBehaviour
                 cursorLockPause();
             else
                 cursorUnlockUnpause();
+        }
+
+        StartCoroutine(spawnEnemies());
+
+    }
+
+    IEnumerator spawnEnemies() 
+    {
+        if (numberOfEnemies < maxEnemiesSpawned && enemyCount < totalEnemies)
+        {
+            if (isSpawnDelay == false)
+            {
+                isSpawnDelay = true;
+                spawnEnemy();
+
+                yield return new WaitForSeconds(spawnDelay);
+                isSpawnDelay = false;
+            }
         }
     }
 
@@ -72,6 +111,7 @@ public class gameManager : MonoBehaviour
     public void increaseEnemyCount()
     {
         numberOfEnemies++;
+        enemyCount++;
         enemyCounterText.text = numberOfEnemies.ToString("F0");
 
     }
@@ -79,7 +119,9 @@ public class gameManager : MonoBehaviour
     public void decreaseEnemyCount()
     {
         numberOfEnemies--;
+        enemiesKilled++;
         enemyCounterText.text = numberOfEnemies.ToString("F0");
+        enemyLeftText.text = (totalEnemies - enemiesKilled).ToString("F0");
         StartCoroutine(checkIfEnemyCountIsZero());
     }
 
@@ -100,5 +142,10 @@ public class gameManager : MonoBehaviour
             menuCurrentlyOpen.SetActive(true);
             cursorLockPause();
         }
+    }
+
+    void spawnEnemy() 
+    {
+        Instantiate(enemy, enemySpawnPoint[random.Next() % 5].transform.position, transform.rotation);
     }
 }
