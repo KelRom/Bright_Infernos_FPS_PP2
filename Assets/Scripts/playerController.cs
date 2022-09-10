@@ -19,6 +19,7 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] float shootRate;
     [SerializeField] int shootDamage;
     [SerializeField] int shootDistance;
+    [SerializeField] List<weaponStats> weaponInventory = new();
 
     int HPOriginal;
     float playerSpeedOriginal;
@@ -70,11 +71,11 @@ public class playerController : MonoBehaviour, IDamageable
 
         if (Input.GetButton("Run"))
         {
-            controller.Move(move * Time.deltaTime * (playerSpeed * 2));
+            controller.Move((playerSpeed * 2) * Time.deltaTime * move);
         }
         else
         {
-            controller.Move(move * Time.deltaTime * playerSpeed);
+            controller.Move(playerSpeed * Time.deltaTime * move);
         }
     }
 
@@ -132,13 +133,16 @@ public class playerController : MonoBehaviour, IDamageable
     }
     public void takeFallDamage(int fallDamage)
     {
-        HP -= fallDamage;
-        updatePlayerHP();
-        StartCoroutine(damageFlash());
-        if (HP <= 0)
-        {
-            gameManager.instance.playerIsDead();
-        }
+        takeDamage(fallDamage);
+    }
+
+    public void pickup(weaponStats weapon)
+    {
+        shootDamage = weapon.damage;
+        shootDistance = weapon.range;
+        shootRate = weapon.fireRate;
+
+        weaponInventory.Add(weapon);
     }
 }
 
