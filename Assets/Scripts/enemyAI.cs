@@ -18,25 +18,45 @@ public class enemyAI : MonoBehaviour, IDamageable
 
     Vector3 playerDirection;
     bool isShooting;
+    private bool isPlayerInRange;
+    Vector3 playerLastKnownPosition;
+    private float originalStoppingDistance;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager.instance.increaseEnemyCount();
+        playerLastKnownPosition = transform.position;
+        originalStoppingDistance = agent.stoppingDistance;
     }
 
     // Update is called once per frame
     void Update()
     {
         playerDirection = gameManager.instance.player.transform.position - transform.position;
-
-        agent.SetDestination(gameManager.instance.player.transform.position);
-
-        if(agent.remainingDistance <= agent.stoppingDistance)
+        if(isPlayerInRange)
+            canEnemySeePlayer();
+        else
         {
-            if (!isShooting)
-                StartCoroutine(shoot());
-            facePlayer();
+            agent.SetDestination(playerLastKnownPosition);
+            agent.stoppingDistance = 0;
+        }
+            
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            isPlayerInRange = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInRange = false;
+            playerLastKnownPosition = gameManager.instance.player.transform.position;
+            agent.stoppingDistance = 0;
         }
     }
 
@@ -51,6 +71,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     {
         HP -= damage;
 
+        playerLastKnownPosition = gameManager.instance.player.transform.position;
         StartCoroutine(flashDamage());
 
         if(HP <= 0)
@@ -73,5 +94,25 @@ public class enemyAI : MonoBehaviour, IDamageable
         Instantiate(bullet, shootPosition.transform.position, transform.rotation);
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
+    }
+
+    private void canEnemySeePlayer()
+    {
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, playerDirection, out hit))
+        {
+            Debug.DrawRay(transform.position, playerDirection);
+            if (hit.collider.CompareTag("Player"))
+            {
+                agent.SetDestination(gameManager.instance.player.transform.position);
+                agent.stoppingDistance = originalStoppingDistance;
+
+                if (agent.stoppingDistance <= agent.remainingDistance)
+                    facePlayer();
+
+                if (!isShooting)
+                    StartCoroutine(shoot());
+            }
+        }
     }
 }
