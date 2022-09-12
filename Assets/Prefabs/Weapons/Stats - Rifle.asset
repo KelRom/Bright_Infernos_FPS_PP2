@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395900ac697af5a48a28cccdf4c94aa0, type: 3}
   m_Name: Stats - Rifle
   m_EditorClassIdentifier: 
-  damage: 0
-  range: 0
-  fireRate: 0
-  model: {fileID: 0}
+  damage: 5
+  range: 50
+  fireRate: 1
+  model: {fileID: 484514053456698182, guid: 909f227d89f32d74eb6fe35d4a92bac9, type: 3}

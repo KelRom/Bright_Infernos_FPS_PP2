@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395900ac697af5a48a28cccdf4c94aa0, type: 3}
   m_Name: Stats - Shotgun
   m_EditorClassIdentifier: 
-  damage: 0
-  range: 0
-  fireRate: 0
-  model: {fileID: 0}
+  damage: 10
+  range: 5
+  fireRate: 2
+  model: {fileID: 1729408919075011151, guid: 5c13a31f5fcd34c4680269d1f3ddfc5f, type: 3}

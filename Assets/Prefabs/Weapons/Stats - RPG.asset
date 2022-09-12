@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395900ac697af5a48a28cccdf4c94aa0, type: 3}
   m_Name: Stats - RPG
   m_EditorClassIdentifier: 
-  damage: 0
-  range: 0
-  fireRate: 0
+  damage: 100
+  range: 50
+  fireRate: 3
   model: {fileID: 0}

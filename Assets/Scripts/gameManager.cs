@@ -11,7 +11,7 @@ public class gameManager : MonoBehaviour
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPoint;
-    public GameObject[] enemySpawnPoints = new GameObject[6];
+    public List<GameObject> enemySpawnPoints = new();
 
     System.Random random;
 
@@ -47,9 +47,10 @@ public class gameManager : MonoBehaviour
         playerSpawnPoint = GameObject.Find("Player Spawn Point");
         timeScaleOriginal = Time.timeScale;
 
-        for(int i = 0; i < 6; i++) 
+        GameObject[] spawns = GameObject.FindGameObjectsWithTag("EnemySpawner");
+        foreach (GameObject spawn in spawns)
         {
-            enemySpawnPoints[i] = GameObject.Find("Enemy Spawn Point " + i);
+            enemySpawnPoints.Add(spawn);
         }
 
         enemyLeftText.text = (totalEnemies).ToString("F0");
@@ -76,7 +77,7 @@ public class gameManager : MonoBehaviour
 
     }
 
-    IEnumerator spawnEnemies() 
+    IEnumerator spawnEnemies()
     {
         if (numberOfEnemies < maxEnemiesSpawned && enemyCount < totalEnemies)
         {
@@ -135,7 +136,7 @@ public class gameManager : MonoBehaviour
 
     IEnumerator checkIfEnemyCountIsZero()
     {
-        if(numberOfEnemies <= 0)
+        if (numberOfEnemies <= 0)
         {
             yield return new WaitForSeconds(2);
             menuCurrentlyOpen = winMenu;
@@ -144,8 +145,8 @@ public class gameManager : MonoBehaviour
         }
     }
 
-    void spawnEnemy() 
+    void spawnEnemy()
     {
-        Instantiate(enemy, enemySpawnPoints[random.Next() % 6].transform.position, transform.rotation);
+        Instantiate(enemy, enemySpawnPoints[random.Next() % enemySpawnPoints.Count].transform.position, transform.rotation);
     }
 }
