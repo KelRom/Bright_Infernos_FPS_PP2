@@ -77,7 +77,7 @@ public class gameManager : MonoBehaviour
 
     }
 
-    IEnumerator spawnEnemies() 
+    IEnumerator spawnEnemies()
     {
         if (numberOfEnemies < maxEnemiesSpawned && enemyCount < totalEnemies)
         {
@@ -136,7 +136,7 @@ public class gameManager : MonoBehaviour
 
     IEnumerator checkIfEnemyCountIsZero()
     {
-        if(numberOfEnemies <= 0)
+        if (numberOfEnemies <= 0)
         {
             yield return new WaitForSeconds(2);
             menuCurrentlyOpen = winMenu;
@@ -145,7 +145,7 @@ public class gameManager : MonoBehaviour
         }
     }
 
-    void spawnEnemy() 
+    void spawnEnemy()
     {
         Instantiate(enemy, enemySpawnPoints[random.Next() % enemySpawnPoints.Count].transform.position, transform.rotation);
     }

@@ -105,7 +105,7 @@ public class playerController : MonoBehaviour, IDamageable
         updatePlayerHP();
 
         StartCoroutine(damageFlash());
-        if(HP <= 0)
+        if (HP <= 0)
         {
             gameManager.instance.playerIsDead();
         }
@@ -145,4 +145,3 @@ public class playerController : MonoBehaviour, IDamageable
         weaponInventory.Add(weapon);
     }
 }
-
