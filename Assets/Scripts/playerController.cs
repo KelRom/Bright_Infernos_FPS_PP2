@@ -11,6 +11,7 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] float playerSpeed;
     [SerializeField] float jumpHeight;
     [SerializeField] float gravityValue;
+    [SerializeField] float sprintMultiplier;
 
     [SerializeField] float fallThreshold;
     [SerializeField] int fallDamage;
@@ -21,19 +22,19 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] int shootDamage;
     [SerializeField] int shootDistance;
     [SerializeField] GameObject gunPos;
-    
+
     [SerializeField] List<weaponStats> weaponInventory = new List<weaponStats>();
 
-    int HPOriginal;
-    float playerSpeedOriginal;
-    int timesJumped;
+    private int HPOriginal;
+    private float playerSpeedOriginal;
+    private int timesJumped;
     private Vector3 playerVelocity;
-    Vector3 move;
-    bool isShooting;
-    float weaponZoomSpeed;
-    float weaponFOV;
-    float originalFOV;
-
+    private Vector3 move;
+    private bool isShooting;
+    private float weaponZoomSpeed;
+    private float weaponFOV;
+    private float originalFOV;
+    private bool isSprinting;
 
     private void Start()
     {
@@ -48,6 +49,7 @@ public class playerController : MonoBehaviour, IDamageable
         if (!gameManager.instance.isPaused)
         {
             movement();
+            sprint();
             StartCoroutine(shoot());
         }
         //if (playerVelocity.y < -fallThreshold)
@@ -76,14 +78,19 @@ public class playerController : MonoBehaviour, IDamageable
 
         playerVelocity.y -= gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+    }
 
-        if (Input.GetButton("Run"))
+    private void sprint()
+    {
+        if (Input.GetButtonDown("Sprint"))
         {
-            controller.Move((playerSpeed * 2) * Time.deltaTime * move);
+            isSprinting = true;
+            playerSpeed *= sprintMultiplier;
         }
-        else
+        else if (Input.GetButtonUp("Sprint"))
         {
-            controller.Move(playerSpeed * Time.deltaTime * move);
+            isSprinting = false;
+            playerSpeed = playerSpeedOriginal;
         }
     }
 

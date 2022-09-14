@@ -239,6 +239,7 @@ MonoBehaviour:
   playerSpeed: 5
   jumpHeight: 10
   gravityValue: 25
+  sprintMultiplier: 2
   fallThreshold: 15
   fallDamage: 2
   jumpsMax: 2
