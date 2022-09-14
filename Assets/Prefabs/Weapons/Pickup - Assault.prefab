@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7412466105320972745}
   - component: {fileID: 7412466105320972746}
   - component: {fileID: 7412466105320972747}
-  - component: {fileID: 7412466105320972744}
+  - component: {fileID: -1621036754838314937}
+  - component: {fileID: -9173499638769202110}
   m_Layer: 0
   m_Name: Pickup - Assault
   m_TagString: Untagged
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb853d44136abd4429c85aef4c87087b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: fed2d52dee42f6543bcf5d9c5f058ad6, type: 2}
+  stats: {fileID: 11400000, guid: 4c60f6230f80cda4e8e512a6146ddbad, type: 2}
 --- !u!33 &7412466105320972746
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -98,8 +99,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7412466105320972744
-BoxCollider:
+--- !u!135 &-1621036754838314937
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,5 +110,25 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2
+  m_Center: {x: -0.005947288, y: 0.20827577, z: 0.031448126}
+--- !u!95 &-9173499638769202110
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7412466105320972790}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eacd6da0729389346a1b869675dc29a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

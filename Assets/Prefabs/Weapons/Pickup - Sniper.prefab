@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1909343852519749226}
   - component: {fileID: 8173152450708019530}
   - component: {fileID: 6235279383309872512}
-  - component: {fileID: 1621431120143349659}
+  - component: {fileID: -7809663522244557579}
+  - component: {fileID: 433403569489071866}
   m_Layer: 0
   m_Name: Pickup - Sniper
   m_TagString: Untagged
@@ -98,8 +99,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1621431120143349659
-BoxCollider:
+--- !u!135 &-7809663522244557579
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,5 +110,25 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.239038, y: 2.4764497, z: 8.831747}
+  m_Radius: 2
   m_Center: {x: 0, y: 0.03784418, z: 0.034071922}
+--- !u!95 &433403569489071866
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5586950496258608213}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eacd6da0729389346a1b869675dc29a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

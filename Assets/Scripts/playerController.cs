@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class playerController : MonoBehaviour, IDamageable
@@ -19,7 +20,9 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] float shootRate;
     [SerializeField] int shootDamage;
     [SerializeField] int shootDistance;
-    [SerializeField] List<weaponStats> weaponInventory = new();
+    [SerializeField] GameObject gunPos;
+    
+    [SerializeField] List<weaponStats> weaponInventory = new List<weaponStats>();
 
     int HPOriginal;
     float playerSpeedOriginal;
@@ -27,11 +30,16 @@ public class playerController : MonoBehaviour, IDamageable
     private Vector3 playerVelocity;
     Vector3 move;
     bool isShooting;
+    float weaponZoomSpeed;
+    float weaponFOV;
+    float originalFOV;
+
 
     private void Start()
     {
         HPOriginal = HP;
         playerSpeedOriginal = playerSpeed;
+        originalFOV = Camera.main.fieldOfView;
         playerRespawn();
     }
 
@@ -97,6 +105,11 @@ public class playerController : MonoBehaviour, IDamageable
             yield return new WaitForSeconds(shootRate);
             isShooting = false;
         }
+
+        if (Input.GetButton("Zoom"))
+            zoomWeapon();
+        else
+            unZoomWeapon();
     }
 
     public void takeDamage(int dmg)
@@ -141,7 +154,21 @@ public class playerController : MonoBehaviour, IDamageable
         shootDamage = weapon.damage;
         shootDistance = weapon.range;
         shootRate = weapon.fireRate;
+        weaponFOV = weapon.weaponFOV;
+        weaponZoomSpeed = weapon.weaponZoomSpeed;
+        gunPos.GetComponent<MeshFilter>().sharedMesh = weapon.model.GetComponent<MeshFilter>().sharedMesh;
+        gunPos.GetComponent<MeshRenderer>().sharedMaterial = weapon.model.GetComponent<MeshRenderer>().sharedMaterial;
 
         weaponInventory.Add(weapon);
+    }
+
+    private void zoomWeapon()
+    {
+        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, weaponFOV, weaponZoomSpeed * Time.deltaTime); 
+    }
+
+    private void unZoomWeapon()
+    {
+        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, originalFOV, weaponZoomSpeed * Time.deltaTime);
     }
 }
