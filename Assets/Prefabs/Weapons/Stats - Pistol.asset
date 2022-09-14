@@ -16,3 +16,5 @@ MonoBehaviour:
   range: 10
   fireRate: 0.5
   model: {fileID: 3955748612574979652, guid: c51eadbdbe2e32b44a708c901853ddc0, type: 3}
+  weaponFOV: 40
+  weaponZoomSpeed: 6.7
