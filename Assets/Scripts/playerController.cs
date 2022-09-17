@@ -13,8 +13,10 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] float gravityValue;
     [SerializeField] float sprintMultiplier;
 
-    [SerializeField] float fallThreshold;
+    [SerializeField] float fallTimeThreshold;
     [SerializeField] int fallDamage;
+    float airTime;
+    bool isJumping;
 
     [SerializeField] int jumpsMax;
 
@@ -52,11 +54,6 @@ public class playerController : MonoBehaviour, IDamageable
             sprint();
             StartCoroutine(shoot());
         }
-        //if (playerVelocity.y < -fallThreshold)
-        //{
-        //    takeFallDamage(fallDamage);
-        //    playerVelocity.y = 0f;
-        //}
     }
 
     void movement()
@@ -65,6 +62,7 @@ public class playerController : MonoBehaviour, IDamageable
         {
             playerVelocity.y = 0f;
             timesJumped = 0;
+            isJumping = false;
         }
 
         move = (transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical"));
@@ -72,12 +70,25 @@ public class playerController : MonoBehaviour, IDamageable
 
         if (Input.GetButtonDown("Jump") && timesJumped < jumpsMax)
         {
+            isJumping = true;
             playerVelocity.y = jumpHeight;
             timesJumped++;
         }
 
         playerVelocity.y -= gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+        if (!controller.isGrounded && !isJumping)
+        {
+            airTime += Time.deltaTime;
+        }
+        if (controller.isGrounded)
+        {
+            if (airTime > fallTimeThreshold)
+            {
+                takeFallDamage(fallDamage);
+                airTime = 0;
+            }
+        }
     }
 
     private void sprint()
