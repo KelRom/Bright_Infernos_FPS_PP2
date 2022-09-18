@@ -3244,7 +3244,6 @@ MonoBehaviour:
   player: {fileID: 0}
   playerScript: {fileID: 0}
   playerSpawnPoint: {fileID: 0}
-  enemySpawnPoints: []
   HPBar: {fileID: 8828772131920429136}
   menuCurrentlyOpen: {fileID: 0}
   pauseMenu: {fileID: 7419403839248502234}
@@ -3254,10 +3253,6 @@ MonoBehaviour:
   winMenu: {fileID: 7613267364189130241}
   playerDeadMenu: {fileID: 7464029546493750485}
   isPaused: 0
-  maxEnemiesSpawned: 0
-  totalEnemies: 0
-  spawnDelay: 0
-  enemy: {fileID: 7440292181228615278, guid: e8f0b6deeebbb304ebf889e1d9044af4, type: 3}
 --- !u!1 &7419403839248502234
 GameObject:
   m_ObjectHideFlags: 0

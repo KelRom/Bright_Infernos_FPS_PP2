@@ -16,3 +16,6 @@ MonoBehaviour:
   range: 50
   fireRate: 0.2
   model: {fileID: 8459981197658762568, guid: d279e58300a20cb47b66eea6ebfd8225, type: 3}
+  weaponFOV: 0
+  weaponZoomSpeed: 0
+  sound: {fileID: 8300000, guid: abddb56875dee7543b3139b5e8051002, type: 3}
