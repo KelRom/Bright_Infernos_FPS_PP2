@@ -11,9 +11,6 @@ public class gameManager : MonoBehaviour
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPoint;
-    public List<GameObject> enemySpawnPoints = new();
-
-    System.Random random;
 
     public Image HPBar;
 
@@ -27,15 +24,7 @@ public class gameManager : MonoBehaviour
 
     public bool isPaused;
     float timeScaleOriginal;
-    int numberOfEnemies;
     int enemyCount;
-    int enemiesKilled;
-    bool isSpawnDelay;
-
-    [SerializeField] int maxEnemiesSpawned;
-    [SerializeField] int totalEnemies;
-    [SerializeField] int spawnDelay;
-    [SerializeField] GameObject enemy;
 
 
     // Start is called before the first frame update
@@ -46,16 +35,6 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         playerSpawnPoint = GameObject.Find("Player Spawn Point");
         timeScaleOriginal = Time.timeScale;
-
-        GameObject[] spawns = GameObject.FindGameObjectsWithTag("EnemySpawner");
-        foreach (GameObject spawn in spawns)
-        {
-            enemySpawnPoints.Add(spawn);
-        }
-
-        enemyLeftText.text = (totalEnemies).ToString("F0");
-
-        random = new System.Random();
     }
 
     // Update is called once per frame
@@ -72,25 +51,8 @@ public class gameManager : MonoBehaviour
             else
                 cursorUnlockUnpause();
         }
-
-        StartCoroutine(spawnEnemies());
-
     }
 
-    IEnumerator spawnEnemies()
-    {
-        if (numberOfEnemies < maxEnemiesSpawned && enemyCount < totalEnemies)
-        {
-            if (isSpawnDelay == false)
-            {
-                isSpawnDelay = true;
-                spawnEnemy();
-
-                yield return new WaitForSeconds(spawnDelay);
-                isSpawnDelay = false;
-            }
-        }
-    }
 
     public void cursorLockPause()
     {
@@ -109,20 +71,17 @@ public class gameManager : MonoBehaviour
         menuCurrentlyOpen = null;
     }
 
-    public void increaseEnemyCount()
+    public void increaseEnemyCount(int amount)
     {
-        numberOfEnemies++;
-        enemyCount++;
-        enemyCounterText.text = numberOfEnemies.ToString("F0");
+        enemyCount += amount;
+        enemyCounterText.text = enemyCount.ToString("F0");
 
     }
 
     public void decreaseEnemyCount()
     {
-        numberOfEnemies--;
-        enemiesKilled++;
-        enemyCounterText.text = numberOfEnemies.ToString("F0");
-        enemyLeftText.text = (totalEnemies - enemiesKilled).ToString("F0");
+        enemyCount--;
+        enemyCounterText.text = enemyCount.ToString("F0");
         StartCoroutine(checkIfEnemyCountIsZero());
     }
 
@@ -136,17 +95,12 @@ public class gameManager : MonoBehaviour
 
     IEnumerator checkIfEnemyCountIsZero()
     {
-        if (numberOfEnemies <= 0)
+        if (enemyCount <= 0)
         {
             yield return new WaitForSeconds(2);
             menuCurrentlyOpen = winMenu;
             menuCurrentlyOpen.SetActive(true);
             cursorLockPause();
         }
-    }
-
-    void spawnEnemy()
-    {
-        Instantiate(enemy, enemySpawnPoints[random.Next() % enemySpawnPoints.Count].transform.position, transform.rotation);
     }
 }
