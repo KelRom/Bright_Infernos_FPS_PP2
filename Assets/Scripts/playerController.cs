@@ -94,18 +94,18 @@ public class playerController : MonoBehaviour, IDamageable
 
         playerVelocity.y -= gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
-        if (!controller.isGrounded && !isJumping)
-        {
-            airTime += Time.deltaTime;
-        }
-        if (controller.isGrounded)
-        {
-            if (airTime > fallTimeThreshold)
-            {
-                takeFallDamage(fallDamage);
-                airTime = 0;
-            }
-        }
+        //if (!controller.isGrounded && !isJumping)
+        //{
+        //    airTime += Time.deltaTime;
+        //}
+        //if (controller.isGrounded)
+        //{
+        //    if (airTime > fallTimeThreshold)
+        //    {
+        //        takeFallDamage(fallDamage);
+        //        airTime = 0;
+        //    }
+        //}
     }
 
     private void sprint()
