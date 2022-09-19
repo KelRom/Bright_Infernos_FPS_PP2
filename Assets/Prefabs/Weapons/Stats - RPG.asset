@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Stats - RPG
   m_EditorClassIdentifier: 
   damage: 100
-  range: 50
+  range: 100
   fireRate: 3
-  model: {fileID: 0}
+  model: {fileID: 8355756509171543201, guid: 3cdf37ae65691b44699cf5edaf4d91df, type: 3}
   weaponFOV: 0
   weaponZoomSpeed: 0
   sound: {fileID: 8300000, guid: abddb56875dee7543b3139b5e8051002, type: 3}

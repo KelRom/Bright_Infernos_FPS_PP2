@@ -196,6 +196,7 @@ public class playerController : MonoBehaviour, IDamageable
         gunPos.GetComponent<MeshFilter>().sharedMesh = weapon.model.GetComponent<MeshFilter>().sharedMesh;
         gunPos.GetComponent<MeshRenderer>().sharedMaterial = weapon.model.GetComponent<MeshRenderer>().sharedMaterial;
 
+        Debug.Log(gunPos.GetComponent<MeshRenderer>().sharedMaterial);
         weaponInventory.Add(weapon);
     }
 
