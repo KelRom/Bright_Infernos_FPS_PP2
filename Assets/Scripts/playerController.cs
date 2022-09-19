@@ -18,6 +18,8 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] int fallDamage;
     float airTime;
     bool isJumping;
+    bool isGrounded;
+    int distToGround = 1;
 
     [SerializeField] int jumpsMax;
 
@@ -69,6 +71,19 @@ public class playerController : MonoBehaviour, IDamageable
             sprint();
             StartCoroutine(footSteps());
             StartCoroutine(shoot());
+           // Debug.Log(controller.isGrounded);
+            Debug.Log(isGrounded);
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, distToGround + 0.1f))
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
         }
     }
 
@@ -94,18 +109,18 @@ public class playerController : MonoBehaviour, IDamageable
 
         playerVelocity.y -= gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
-        //if (!controller.isGrounded && !isJumping)
-        //{
-        //    airTime += Time.deltaTime;
-        //}
-        //if (controller.isGrounded)
-        //{
-        //    if (airTime > fallTimeThreshold)
-        //    {
-        //        takeFallDamage(fallDamage);
-        //        airTime = 0;
-        //    }
-        //}
+        if (!isGrounded && !isJumping)
+        {
+            airTime += Time.deltaTime;
+        }
+        if (isGrounded)
+        {
+            if (airTime > fallTimeThreshold)
+            {
+                takeFallDamage(fallDamage);
+                airTime = 0;
+            }
+        }
     }
 
     private void sprint()
@@ -183,6 +198,8 @@ public class playerController : MonoBehaviour, IDamageable
     }
     public void takeFallDamage(int fallDamage)
     {
+        Debug.Log("fall damage");
+
         takeDamage(fallDamage);
     }
 
