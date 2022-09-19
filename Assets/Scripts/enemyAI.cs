@@ -11,6 +11,8 @@ public class enemyAI : MonoBehaviour, IDamageable
 
     [SerializeField] int HP;
     [SerializeField] int playerFaceSpeed;
+    [SerializeField] float knockbackStrength;
+    [SerializeField] float knockbackResistance;
 
     [SerializeField] float shootRate;
     [SerializeField] GameObject bullet;
@@ -33,14 +35,14 @@ public class enemyAI : MonoBehaviour, IDamageable
     void Update()
     {
         playerDirection = gameManager.instance.player.transform.position - transform.position;
-        if(isPlayerInRange)
+        if (isPlayerInRange)
             canEnemySeePlayer();
         else
         {
             agent.SetDestination(playerLastKnownPosition);
             agent.stoppingDistance = 0;
         }
-            
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -73,7 +75,7 @@ public class enemyAI : MonoBehaviour, IDamageable
         playerLastKnownPosition = gameManager.instance.player.transform.position;
         StartCoroutine(flashDamage());
 
-        if(HP <= 0)
+        if (HP <= 0)
         {
             gameManager.instance.decreaseEnemyCount();
             Destroy(gameObject);
@@ -98,7 +100,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     private void canEnemySeePlayer()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, playerDirection, out hit))
+        if (Physics.Raycast(transform.position, playerDirection, out hit))
         {
             Debug.DrawRay(transform.position, playerDirection);
             if (hit.collider.CompareTag("Player"))

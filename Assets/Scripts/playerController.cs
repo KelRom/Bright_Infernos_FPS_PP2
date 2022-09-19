@@ -13,6 +13,8 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] float jumpHeight;
     [SerializeField] float gravityValue;
     [SerializeField] float sprintMultiplier;
+    [SerializeField] float knockbackResistance;
+    float enemyKnockbackStrength = 10;
 
     [SerializeField] float fallTimeThreshold;
     [SerializeField] int fallDamage;
@@ -28,6 +30,9 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] int shootDamage;
     [SerializeField] int shootDistance;
     [SerializeField] GameObject gunPos;
+    //[SerializeField] GameObject gunModel;
+    int selectedGun;
+
 
     [SerializeField] List<weaponStats> weaponInventory = new List<weaponStats>();
 
@@ -68,11 +73,12 @@ public class playerController : MonoBehaviour, IDamageable
         if (!gameManager.instance.isPaused)
         {
             movement();
+            switchWeapon();
             sprint();
             StartCoroutine(footSteps());
             StartCoroutine(shoot());
            // Debug.Log(controller.isGrounded);
-            Debug.Log(isGrounded);
+           // Debug.Log(isGrounded);
         }
     }
     private void FixedUpdate()
@@ -170,6 +176,11 @@ public class playerController : MonoBehaviour, IDamageable
         aud.PlayOneShot(playerDamageSound[Random.Range(0, playerDamageSound.Length)], playerDamageVol);
 
         StartCoroutine(damageFlash());
+        if (enemyKnockbackStrength > knockbackResistance)
+        {
+            transform.position = gameManager.instance.playerKnockbackPoint.transform.position;
+            Debug.Log("knockback");
+        }
         if (HP <= 0)
         {
             gameManager.instance.playerIsDead();
@@ -215,6 +226,33 @@ public class playerController : MonoBehaviour, IDamageable
 
         Debug.Log(gunPos.GetComponent<MeshRenderer>().sharedMaterial);
         weaponInventory.Add(weapon);
+        selectedGun = weaponInventory.Count - 1;
+    }
+    public void switchWeapon()
+    {
+        if (weaponInventory.Count > 1)
+        {
+            if (Input.GetAxis("Mouse ScrollWheel") > 0 && selectedGun < weaponInventory.Count - 1)
+            {
+                selectedGun++;
+                shootRate = weaponInventory[selectedGun].fireRate;
+                shootDistance = weaponInventory[selectedGun].range;
+                shootDamage = weaponInventory[selectedGun].damage;
+
+                gunPos.GetComponent<MeshFilter>().sharedMesh = weaponInventory[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
+                gunPos.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
+            }
+            else if (Input.GetAxis("Mouse ScrollWheel") < 0 && selectedGun > 0)
+            {
+                selectedGun--;
+                shootRate = weaponInventory[selectedGun].fireRate;
+                shootDistance = weaponInventory[selectedGun].range;
+                shootDamage = weaponInventory[selectedGun].damage;
+
+                gunPos.GetComponent<MeshFilter>().sharedMesh = weaponInventory[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
+                gunPos.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
+            }
+        }
     }
 
     private void zoomWeapon()
@@ -245,4 +283,5 @@ public class playerController : MonoBehaviour, IDamageable
 
         }
     }
+
 }

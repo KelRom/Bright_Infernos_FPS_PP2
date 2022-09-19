@@ -54,6 +54,8 @@ MonoBehaviour:
   rend: {fileID: 1030234298563549296}
   HP: 3
   playerFaceSpeed: 10
+  knockbackStrength: 10
+  knockbackResistance: 5
   shootRate: 1
   bullet: {fileID: 6354221902422371132, guid: 2c41a6678d177d849b09d9e19c8f0aa0, type: 3}
   shootPosition: {fileID: 2318208559219130424}
