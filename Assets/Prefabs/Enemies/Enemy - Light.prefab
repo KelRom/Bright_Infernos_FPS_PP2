@@ -993,6 +993,8 @@ MonoBehaviour:
   anim: {fileID: 3123169858216254229}
   HP: 5
   playerFaceSpeed: 5
+  roamRadius: 10
+  chaseSpeed: 5
   knockbackStrength: 5
   knockbackResistance: 5
   shootRate: 0.4

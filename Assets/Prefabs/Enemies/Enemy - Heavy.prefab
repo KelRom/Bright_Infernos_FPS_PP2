@@ -261,8 +261,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 55225907381912625}
   rend: {fileID: 55225908880425629}
+  anim: {fileID: 0}
   HP: 5
   playerFaceSpeed: 5
+  roamRadius: 5
+  chaseSpeed: 5
   knockbackStrength: 10
   knockbackResistance: 5
   shootRate: 0.4

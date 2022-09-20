@@ -5,16 +5,20 @@ using UnityEngine.AI;
 
 public class enemyAI : MonoBehaviour, IDamageable
 {
-
+    [Header("----- Components -----")]
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Renderer rend;
     [SerializeField] Animator anim;
 
-    [SerializeField] int HP;
-    [SerializeField] int playerFaceSpeed;
+    [Header("----- Enemy Stats -----")]
+    [Range(0,10)] [SerializeField] int HP;
+    [Range(1, 10)] [SerializeField] int playerFaceSpeed;
+    [Range(1, 50)] [SerializeField] int roamRadius;
+    [Range(1, 10)] [SerializeField] float chaseSpeed;
     [SerializeField] float knockbackStrength;
     [SerializeField] float knockbackResistance;
 
+    [Header("----- Weapon Stats -----")]
     [SerializeField] float shootRate;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform shootPosition;
@@ -24,12 +28,16 @@ public class enemyAI : MonoBehaviour, IDamageable
     private bool isPlayerInRange;
     Vector3 playerLastKnownPosition;
     private float originalStoppingDistance;
+    float origSpeed;
+    Vector3 startingPos;
 
     // Start is called before the first frame update
     void Start()
     {
         playerLastKnownPosition = transform.position;
         originalStoppingDistance = agent.stoppingDistance;
+        origSpeed = agent.speed;
+        startingPos = transform.position;
     }
 
     // Update is called once per frame
@@ -39,12 +47,32 @@ public class enemyAI : MonoBehaviour, IDamageable
         anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"),agent.velocity.normalized.magnitude, Time.deltaTime * 4));
         if (isPlayerInRange)
             canEnemySeePlayer();
-        else
+        else if (agent.remainingDistance < 0.1f) 
         {
-            agent.SetDestination(playerLastKnownPosition);
-            agent.stoppingDistance = 0;
+            roam();
         }
 
+
+    }
+
+    void roam() 
+    {
+        agent.stoppingDistance = 0;
+        agent.speed = origSpeed;
+
+        Vector3 randomDir = Random.insideUnitSphere * roamRadius;
+        randomDir += startingPos;
+
+        NavMeshHit hit;
+
+        NavMesh.SamplePosition(randomDir, out hit, 1, 1);
+        NavMeshPath path = new NavMeshPath();
+
+        if (hit.hit)
+        {
+            agent.CalculatePath(hit.position, path);
+            agent.SetPath(path);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
