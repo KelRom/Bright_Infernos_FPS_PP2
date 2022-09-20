@@ -161,5 +161,11 @@ public class enemyAI : MonoBehaviour, IDamageable
                     StartCoroutine(shoot());
             }
         }
+
+        if (gameManager.instance.playerDeadMenu.activeSelf) 
+        {
+            isPlayerInRange = false;
+            agent.stoppingDistance = 0;
+        }
     }
 }
