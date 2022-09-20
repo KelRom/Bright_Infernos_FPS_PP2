@@ -8,6 +8,7 @@ public class enemyAI : MonoBehaviour, IDamageable
 
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Renderer rend;
+    [SerializeField] Animator anim;
 
     [SerializeField] int HP;
     [SerializeField] int playerFaceSpeed;
@@ -35,6 +36,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     void Update()
     {
         playerDirection = gameManager.instance.player.transform.position - transform.position;
+        anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"),agent.velocity.normalized.magnitude, Time.deltaTime * 4));
         if (isPlayerInRange)
             canEnemySeePlayer();
         else
@@ -77,8 +79,18 @@ public class enemyAI : MonoBehaviour, IDamageable
 
         if (HP <= 0)
         {
-            gameManager.instance.decreaseEnemyCount();
-            Destroy(gameObject);
+            enemyDead();
+        }
+    }
+
+    void enemyDead()
+    {
+        gameManager.instance.decreaseEnemyCount();
+        anim.SetBool("Dead", true);
+        //agent.enabled = false;
+        foreach (Collider col in GetComponents<Collider>())
+        {
+            col.enabled = false;
         }
     }
 

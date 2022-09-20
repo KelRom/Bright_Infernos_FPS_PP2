@@ -30,7 +30,6 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] int shootDamage;
     [SerializeField] int shootDistance;
     [SerializeField] GameObject gunPos;
-    //[SerializeField] GameObject gunModel;
     int selectedGun;
 
 
@@ -179,7 +178,7 @@ public class playerController : MonoBehaviour, IDamageable
         if (enemyKnockbackStrength > knockbackResistance)
         {
             //transform.position = gameManager.instance.playerKnockbackPoint.transform.position;
-            Debug.Log("knockback");
+           // Debug.Log("knockback");
         }
         if (HP <= 0)
         {
@@ -209,9 +208,9 @@ public class playerController : MonoBehaviour, IDamageable
     }
     public void takeFallDamage(int fallDamage)
     {
-        Debug.Log("fall damage");
+        //Debug.Log("fall damage");
 
-        takeDamage(fallDamage);
+        //takeDamage(fallDamage);
     }
 
     public void pickup(weaponStats weapon)

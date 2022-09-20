@@ -952,9 +952,9 @@ GameObject:
   - component: {fileID: 3123169858225613102}
   - component: {fileID: 3123169858225613101}
   - component: {fileID: 3123169858225613100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy - Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -990,6 +990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3123169858225613102}
   rend: {fileID: 3123169858220335657}
+  anim: {fileID: 3123169858216254229}
   HP: 5
   playerFaceSpeed: 5
   knockbackStrength: 5
@@ -1007,7 +1008,7 @@ Animator:
   m_GameObject: {fileID: 3123169858225613107}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ad5d1d9945f9944c8caa6cb9ace3840, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
