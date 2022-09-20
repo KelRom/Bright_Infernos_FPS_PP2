@@ -5,6 +5,8 @@ using UnityEngine;
 public class spawner : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
+    [SerializeField] GameObject enemy2;
+    [SerializeField] GameObject enemy3;
     [SerializeField] int maxEnemies;
     [SerializeField] int timer;
 
