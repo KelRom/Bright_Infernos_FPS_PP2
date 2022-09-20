@@ -14,6 +14,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     [Range(0,10)] [SerializeField] int HP;
     [Range(1, 10)] [SerializeField] int playerFaceSpeed;
     [Range(1, 50)] [SerializeField] int roamRadius;
+    [Range(1, 180)] [SerializeField] int viewAngle;
     [Range(1, 10)] [SerializeField] float chaseSpeed;
     [SerializeField] float knockbackStrength;
     [SerializeField] float knockbackResistance;
@@ -30,6 +31,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     private float originalStoppingDistance;
     float origSpeed;
     Vector3 startingPos;
+    bool alive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -45,14 +47,16 @@ public class enemyAI : MonoBehaviour, IDamageable
     {
         playerDirection = gameManager.instance.player.transform.position - transform.position;
         anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"),agent.velocity.normalized.magnitude, Time.deltaTime * 4));
-        if (isPlayerInRange)
-            canEnemySeePlayer();
-        else if (agent.remainingDistance < 0.1f) 
-        {
-            roam();
-        }
 
-
+  
+            if (isPlayerInRange)
+            {
+                canEnemySeePlayer();
+            }
+            if (agent.remainingDistance < 0.1f && agent.destination != gameManager.instance.player.transform.position)
+            {
+                roam();
+            }
     }
 
     void roam() 
@@ -115,11 +119,12 @@ public class enemyAI : MonoBehaviour, IDamageable
     {
         gameManager.instance.decreaseEnemyCount();
         anim.SetBool("Dead", true);
-        //agent.enabled = false;
         foreach (Collider col in GetComponents<Collider>())
         {
             col.enabled = false;
         }
+        agent.isStopped = true;
+        this.enabled = false;
     }
 
     IEnumerator flashDamage()
@@ -139,17 +144,18 @@ public class enemyAI : MonoBehaviour, IDamageable
 
     private void canEnemySeePlayer()
     {
+        float angle = Vector3.Angle(playerDirection, transform.forward);
+
         RaycastHit hit;
         if (Physics.Raycast(transform.position, playerDirection, out hit))
         {
             Debug.DrawRay(transform.position, playerDirection);
-            if (hit.collider.CompareTag("Player"))
+            if (hit.collider.CompareTag("Player") && angle <= viewAngle)
             {
                 agent.SetDestination(gameManager.instance.player.transform.position);
                 agent.stoppingDistance = originalStoppingDistance;
-
-                if (agent.stoppingDistance <= agent.remainingDistance)
-                    facePlayer();
+                
+                facePlayer();
 
                 if (!isShooting)
                     StartCoroutine(shoot());

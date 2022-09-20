@@ -120,7 +120,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   HP: 10
   playerFaceSpeed: 5
-  roamRadius: 5
+  roamRadius: 15
+  viewAngle: 45
   chaseSpeed: 5
   knockbackStrength: 0
   knockbackResistance: 10
@@ -181,7 +182,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 15
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!136 &2689750775529784410
 CapsuleCollider:
   m_ObjectHideFlags: 0
