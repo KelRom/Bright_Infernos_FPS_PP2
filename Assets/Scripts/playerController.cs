@@ -145,7 +145,7 @@ public class playerController : MonoBehaviour, IDamageable
 
     IEnumerator shoot()
     {
-        if (!isShooting && Input.GetButton("Shoot"))
+        if (weaponInventory.Count > 0 && !isShooting && Input.GetButton("Shoot"))
         {
             isShooting = true;
             //aud.PlayOneShot(weaponInventory[selectedGun].sound, gunShootVol); //undo comment when weapon scroll is implemented
@@ -154,9 +154,9 @@ public class playerController : MonoBehaviour, IDamageable
             if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(.5f, .5f)), out hit, shootDistance))
             {
                 if (hit.collider.GetComponent<IDamageable>() != null)
-                {
                     hit.collider.GetComponent<IDamageable>().takeDamage(shootDamage);
-                }
+                
+                Instantiate(weaponInventory[selectedGun].hitEffect, hit.point, transform.rotation);
             }
 
             yield return new WaitForSeconds(shootRate);
@@ -178,7 +178,7 @@ public class playerController : MonoBehaviour, IDamageable
         StartCoroutine(damageFlash());
         if (enemyKnockbackStrength > knockbackResistance)
         {
-            transform.position = gameManager.instance.playerKnockbackPoint.transform.position;
+            //transform.position = gameManager.instance.playerKnockbackPoint.transform.position;
             Debug.Log("knockback");
         }
         if (HP <= 0)
@@ -224,7 +224,6 @@ public class playerController : MonoBehaviour, IDamageable
         gunPos.GetComponent<MeshFilter>().sharedMesh = weapon.model.GetComponent<MeshFilter>().sharedMesh;
         gunPos.GetComponent<MeshRenderer>().sharedMaterial = weapon.model.GetComponent<MeshRenderer>().sharedMaterial;
 
-        Debug.Log(gunPos.GetComponent<MeshRenderer>().sharedMaterial);
         weaponInventory.Add(weapon);
         selectedGun = weaponInventory.Count - 1;
     }

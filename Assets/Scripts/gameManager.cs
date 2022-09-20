@@ -11,7 +11,7 @@ public class gameManager : MonoBehaviour
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPoint;
-    public GameObject playerKnockbackPoint;
+    //public GameObject playerKnockbackPoint;
 
 
     public Image HPBar;

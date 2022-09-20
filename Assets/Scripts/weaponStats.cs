@@ -16,5 +16,6 @@ public class weaponStats : ScriptableObject
     [Range(10f,0f)]
     public float weaponZoomSpeed;
 
+    public GameObject hitEffect;
     public AudioClip sound;
 }

@@ -18,4 +18,5 @@ MonoBehaviour:
   model: {fileID: 3955748612574979652, guid: c51eadbdbe2e32b44a708c901853ddc0, type: 3}
   weaponFOV: 40
   weaponZoomSpeed: 6.7
+  hitEffect: {fileID: 824118229831149077, guid: 111d7579c5724614990852f112512246, type: 3}
   sound: {fileID: 8300000, guid: abddb56875dee7543b3139b5e8051002, type: 3}
