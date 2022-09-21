@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class spawner : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
-    [SerializeField] GameObject enemy2;
-    [SerializeField] GameObject enemy3;
+    [SerializeField] GameObject[] enemies;
     [SerializeField] int maxEnemies;
     [SerializeField] int timer;
 
@@ -40,6 +38,7 @@ public class spawner : MonoBehaviour
         {
             isSpawning = true;
             enemiesSpawned++;
+            GameObject enemy = enemies[Random.Range(0, enemies.Length)];
             Instantiate(enemy, transform.position, enemy.transform.rotation);
             yield return new WaitForSeconds(timer);
             isSpawning = false;
