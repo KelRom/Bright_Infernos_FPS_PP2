@@ -227,6 +227,22 @@ public class playerController : MonoBehaviour, IDamageable
         weaponInventory.Add(weapon);
         selectedGun = weaponInventory.Count - 1;
     }
+
+    public void pickupHealth(int healAmount) 
+    {
+       if( (HP += healAmount) > HPOriginal) 
+        {
+            HP = HPOriginal;
+        }
+
+        updatePlayerHP();
+    }
+
+    public bool checkPlayerHealth() 
+    {
+        return HP < HPOriginal;
+    }
+
     public void switchWeapon()
     {
         if (weaponInventory.Count > 1)
