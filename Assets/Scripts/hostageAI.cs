@@ -34,14 +34,18 @@ public class hostageAI : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             gameManager.instance.hostageInRange = true;
+            gameManager.instance.hostageRescued.faceColor = Color.green;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            gameManager.instance.hostageInRange = false;     
+            gameManager.instance.hostageInRange = false;
+            gameManager.instance.hostageRescued.faceColor = Color.white;
         }
     }
 }

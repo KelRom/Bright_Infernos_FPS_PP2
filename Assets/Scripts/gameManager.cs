@@ -23,6 +23,8 @@ public class gameManager : MonoBehaviour
     public GameObject playerDamage;
     public TextMeshProUGUI enemyCounterText;
     public TextMeshProUGUI enemyLeftText;
+    public TextMeshProUGUI enemiesDead;
+    public TextMeshProUGUI hostageRescued;
     public GameObject winMenu;
     public GameObject playerDeadMenu;
 
@@ -101,6 +103,7 @@ public class gameManager : MonoBehaviour
     {
         if (enemyCount <= 0) // and player in range of hostage
         {
+            enemiesDead.faceColor = Color.green;
             yield return new WaitForSeconds(2);
             menuCurrentlyOpen = winMenu;
             menuCurrentlyOpen.SetActive(true);

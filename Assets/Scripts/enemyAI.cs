@@ -137,9 +137,11 @@ public class enemyAI : MonoBehaviour, IDamageable
     IEnumerator shoot()
     {
         isShooting = true;
+        anim.SetBool("isShooting", true);
         Instantiate(bullet, shootPosition.transform.position, transform.rotation);
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
+        anim.SetBool("isShooting", false);
     }
 
     private void canEnemySeePlayer()
