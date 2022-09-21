@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class hostageAI : MonoBehaviour
 {
-    [SerializeField] int HP;
+    [SerializeField] int hostageHP;
+    private int hostageHPOriginal;
 
+    private void Start()
+    {
+        hostageHPOriginal = hostageHP;
+    }
 
     void Update()
     {
@@ -14,11 +19,29 @@ public class hostageAI : MonoBehaviour
 
     IEnumerator hostageDamage()
     {
-        HP -= 1;
+        hostageHP -= 1;
+        updateHostageHP();
         yield return new WaitForSeconds(30);
-        if (HP <= 0)
+        if (hostageHP <= 0)
         {
             gameManager.instance.playerIsDead(); //make mission failed menu??
+        }
+    }
+    public void updateHostageHP()
+    {
+        gameManager.instance.HPBar.fillAmount = (float)hostageHP / (float)hostageHPOriginal;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            gameManager.instance.hostageInRange = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            gameManager.instance.hostageInRange = false;     
         }
     }
 }

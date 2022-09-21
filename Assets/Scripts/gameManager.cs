@@ -13,8 +13,10 @@ public class gameManager : MonoBehaviour
     public GameObject playerSpawnPoint;
     //public GameObject playerKnockbackPoint;
 
+    public bool hostageInRange;
 
     public Image HPBar;
+    public Image hostageHPBar;
 
     public GameObject menuCurrentlyOpen;
     public GameObject pauseMenu;
@@ -97,7 +99,7 @@ public class gameManager : MonoBehaviour
 
     IEnumerator checkIfEnemyCountIsZero()
     {
-        if (enemyCount <= 0)
+        if (enemyCount <= 0) // and player in range of hostage
         {
             yield return new WaitForSeconds(2);
             menuCurrentlyOpen = winMenu;
