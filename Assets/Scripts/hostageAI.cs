@@ -24,6 +24,7 @@ public class hostageAI : MonoBehaviour
         yield return new WaitForSeconds(30);
         if (hostageHP <= 0)
         {
+            gameManager.instance.hostageRescued.faceColor = Color.red;
             gameManager.instance.playerIsDead(); //make mission failed menu??
         }
     }
