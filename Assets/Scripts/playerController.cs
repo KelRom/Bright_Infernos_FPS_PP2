@@ -147,7 +147,7 @@ public class playerController : MonoBehaviour, IDamageable
         if (weaponInventory.Count > 0 && !isShooting && Input.GetButton("Shoot"))
         {
             isShooting = true;
-            //aud.PlayOneShot(weaponInventory[selectedGun].sound, gunShootVol); //undo comment when weapon scroll is implemented
+            aud.PlayOneShot(weaponInventory[selectedGun].sound, gunShootVol); //undo comment when weapon scroll is implemented
 
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(.5f, .5f)), out hit, shootDistance))
@@ -172,6 +172,7 @@ public class playerController : MonoBehaviour, IDamageable
     {
         HP -= dmg;
         updatePlayerHP();
+      
         aud.PlayOneShot(playerDamageSound[Random.Range(0, playerDamageSound.Length)], playerDamageVol);
 
         StartCoroutine(damageFlash());

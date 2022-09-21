@@ -9,12 +9,14 @@ public class bullet : MonoBehaviour
     public int damage;
     public int speed;
     public int destroyTime;
+    ParticleCollisionEvent ParticleCollision;
 
     void Start()
     {
         rb.velocity = transform.forward * speed;
         Destroy(gameObject, destroyTime);
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,5 +25,16 @@ public class bullet : MonoBehaviour
             other.GetComponent<IDamageable>().takeDamage(damage);
         }
         Destroy(gameObject);
+    }
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (other.GetComponent<IDamageable>() != null)
+            {
+                other.GetComponent<IDamageable>().takeDamage(damage);
+            }
+            Destroy(gameObject);
+        }
     }
 }
