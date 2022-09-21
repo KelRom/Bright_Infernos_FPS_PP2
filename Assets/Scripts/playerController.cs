@@ -44,6 +44,9 @@ public class playerController : MonoBehaviour, IDamageable
     [Range(0, 1)] [SerializeField] float playerJumpVol;
     [SerializeField] AudioClip[] playerFootstepsSound;
     [Range(0, 1)] [SerializeField] float playerFootstepsVol;
+    [SerializeField] AudioClip healthPickup;
+    [Range(0, 1)] [SerializeField] float healthPickupVol;
+
     bool playingFootsteps;
 
     private int HPOriginal;
@@ -234,7 +237,7 @@ public class playerController : MonoBehaviour, IDamageable
         {
             HP = HPOriginal;
         }
-
+        aud.PlayOneShot(healthPickup, healthPickupVol);
         updatePlayerHP();
     }
 
