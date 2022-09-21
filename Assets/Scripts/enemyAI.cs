@@ -147,9 +147,9 @@ public class enemyAI : MonoBehaviour, IDamageable
         float angle = Vector3.Angle(playerDirection, transform.forward);
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, playerDirection, out hit))
+        if (Physics.Raycast(transform.position +  Vector3.up, playerDirection, out hit))
         {
-            Debug.DrawRay(transform.position, playerDirection);
+            Debug.DrawRay(transform.position + Vector3.up, playerDirection);
             if (hit.collider.CompareTag("Player") && angle <= viewAngle)
             {
                 agent.SetDestination(gameManager.instance.player.transform.position);
