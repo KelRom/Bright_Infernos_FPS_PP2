@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4499690931150408287}
   - component: {fileID: 4177511553966630757}
   m_Layer: 7
-  m_Name: Particle System
+  m_Name: FlameThrower particle sysetm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
