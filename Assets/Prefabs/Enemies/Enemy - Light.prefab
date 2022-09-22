@@ -991,7 +991,7 @@ MonoBehaviour:
   agent: {fileID: 3123169858225613102}
   rend: {fileID: 3123169858220335657}
   anim: {fileID: 3123169858216254229}
-  HP: 5
+  HP: 10
   playerFaceSpeed: 5
   roamRadius: 15
   viewAngle: 45
@@ -1014,7 +1014,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 1ad5d1d9945f9944c8caa6cb9ace3840, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1056,7 +1056,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &3123169858225613100
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1069,7 +1069,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 15
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &3123169858225613111
 GameObject:
   m_ObjectHideFlags: 0
