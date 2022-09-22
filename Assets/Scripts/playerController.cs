@@ -76,11 +76,31 @@ public class playerController : MonoBehaviour, IDamageable
         playerSpeedOriginal = playerSpeed;
         originalFOV = Camera.main.fieldOfView;
         playerRespawn();
+        DontDestroyOnLoad(this);
+
     }
 
-    public void DDOL() 
+    public void Reset()
     {
-        DontDestroyOnLoad(this);
+        selectedGun = 0;
+
+        HP = HPOriginal;
+
+        weaponInventory.Clear();
+
+        shootDamage = 0;
+        shootDistance =0;
+        shootRate = 0;
+        weaponFOV = 0;
+        weaponZoomSpeed = 0;
+        currentGunCapacity = 0;
+        maxGunCapacity = 0;
+        currentAmmoCount = 0;
+        maxAmmoCount = 0;
+        reloadRate = 0;
+
+        gunPos.GetComponent<MeshFilter>().sharedMesh = null;
+        gunPos.GetComponent<MeshRenderer>().sharedMaterial = null;
     }
 
     void Update()

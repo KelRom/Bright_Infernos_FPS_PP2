@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395900ac697af5a48a28cccdf4c94aa0, type: 3}
   m_Name: Stats - SMG
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 40
   range: 50
   fireRate: 0.2
   model: {fileID: 8459981197658762568, guid: d279e58300a20cb47b66eea6ebfd8225, type: 3}
   weaponFOV: 0
   weaponZoomSpeed: 0
-  currentGunCapacity: 0
+  currentGunCapacity: 12
   maxGunCapacity: 30
-  currentAmmoCount: 90
+  currentAmmoCount: 30
   maxAmmoCount: 90
   reloadRate: 3
   hitEffect: {fileID: 824118229831149077, guid: 111d7579c5724614990852f112512246, type: 3}

@@ -16,7 +16,14 @@ public class buttonFunctions : MonoBehaviour
 
     public void restart()
     {
+        gameManager.instance.playerScript.Reset();
+        SceneManager.LoadScene(1);
+        gameManager.instance.cursorUnlockUnpause();
 
+    }
+
+    public void restartLevel() 
+    {
         gameManager.instance.cursorUnlockUnpause();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

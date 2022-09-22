@@ -22,10 +22,14 @@ public class gameManager : MonoBehaviour
     public GameObject menuCurrentlyOpen;
     public GameObject pauseMenu;
     public GameObject playerDamage;
+    public TextMeshProUGUI totalEnemiesAlive;
     public TextMeshProUGUI enemyCounterText;
     public TextMeshProUGUI enemyLeftText;
+    public TextMeshProUGUI mission;
     public TextMeshProUGUI enemiesDead;
     public TextMeshProUGUI hostageRescued;
+    public TextMeshProUGUI sceneMessage;
+    public GameObject hostageBar;
     public GameObject winMenu;
     public GameObject playerDeadMenu;
     public GameObject gameOverMenu;
@@ -56,6 +60,8 @@ public class gameManager : MonoBehaviour
         // Add the listener to be called when a scene is loaded
         SceneManager.sceneLoaded += OnSceneLoaded;
 
+        increaseEnemyCount(GameObject.FindGameObjectsWithTag("Enemy").Length);
+
         DontDestroyOnLoad(gameObject);
 
         // Store the creating scene as the scene to trigger start
@@ -76,6 +82,11 @@ public class gameManager : MonoBehaviour
             else
                 cursorUnlockUnpause();
         }
+
+        if (hostageInRange) 
+        {
+            StartCoroutine(checkIfEnemyCountIsZero());
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -84,9 +95,21 @@ public class gameManager : MonoBehaviour
         if (!string.Equals(scene.path, this.scene.path) )
             return;
 
-        if (scene.buildIndex == 1)
-            playerScript.DDOL();
-        else if(scene.buildIndex > 1)
+        if (scene.buildIndex == 1) 
+        {
+            playerScript.Reset();
+            totalEnemiesAlive.gameObject.SetActive(true);
+            mission.gameObject.SetActive(true);
+        }
+        else if(scene.buildIndex == 2) 
+        {
+            totalEnemiesAlive.gameObject.SetActive(true);
+            mission.gameObject.SetActive(true);
+            hostageRescued.gameObject.SetActive(true);
+            hostageBar.SetActive(true);
+        }
+
+        if(scene.buildIndex > 0)
             playerScript.playerRespawn();
     }
 
@@ -138,7 +161,7 @@ public class gameManager : MonoBehaviour
 
     IEnumerator checkIfEnemyCountIsZero()
     {
-        if (enemyCount <= 0) // and player in range of hostage
+        if (enemyCount <= 0 && hostageInRange) // and player in range of hostage
         {
             enemiesDead.faceColor = Color.green;
             yield return new WaitForSeconds(2);
@@ -146,5 +169,18 @@ public class gameManager : MonoBehaviour
             menuCurrentlyOpen.SetActive(true);
             cursorLockPause();
         }
+        else if(enemyCount <= 0) 
+        {
+            enemiesDead.faceColor = Color.green;
+
+            if (scene.buildIndex == 2)
+                sceneMessage.text = "Find the Hostage!";
+
+            sceneMessage.gameObject.SetActive(true);
+            yield return new WaitForSeconds(2);
+            sceneMessage.gameObject.SetActive(false);
+
+        }
     }
+
 }
