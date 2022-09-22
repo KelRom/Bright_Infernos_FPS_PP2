@@ -10,7 +10,7 @@ public class hostageAI : MonoBehaviour
     private void Start()
     {
         hostageHPOriginal = hostageHP;
-        InvokeRepeating("hostageDamage",1, 5);
+        InvokeRepeating("hostageDamage",1, 30);
     }
 
     void Update()
@@ -25,6 +25,7 @@ public class hostageAI : MonoBehaviour
         if (hostageHP <= 0)
         {
             gameManager.instance.hostageRescued.faceColor = Color.red;
+            gameManager.instance.gameOver();
         }
     }
     public void updateHostageHP()

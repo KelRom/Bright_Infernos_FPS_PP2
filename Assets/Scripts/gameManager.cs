@@ -98,6 +98,13 @@ public class gameManager : MonoBehaviour
         menuCurrentlyOpen = playerDeadMenu;
         menuCurrentlyOpen.SetActive(true);
         cursorLockPause();
+    } 
+    public void gameOver()
+    {
+        isPaused = true;
+        menuCurrentlyOpen = gameOverMenu;
+        menuCurrentlyOpen.SetActive(true);
+        cursorLockPause();
     }
 
     IEnumerator checkIfEnemyCountIsZero()
