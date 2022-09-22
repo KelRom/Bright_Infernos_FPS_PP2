@@ -138,7 +138,7 @@ public class gameManager : MonoBehaviour
 
     IEnumerator checkIfEnemyCountIsZero()
     {
-        if (enemyCount <= 0) // and player in range of hostage
+        if (enemyCount <= 0 && hostageInRange) // and player in range of hostage
         {
             enemiesDead.faceColor = Color.green;
             yield return new WaitForSeconds(2);

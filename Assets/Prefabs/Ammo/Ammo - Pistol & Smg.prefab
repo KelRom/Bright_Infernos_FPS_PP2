@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb2485d22f8d154fb064b5222675d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useButtonToPickUp: 0
+  useButtonToPickUp: 1
 --- !u!65 &2082909213
 BoxCollider:
   m_ObjectHideFlags: 0
