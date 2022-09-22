@@ -36,6 +36,8 @@ public class gameManager : MonoBehaviour
     float timeScaleOriginal;
     int enemyCount;
 
+    private Scene scene;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -45,6 +47,19 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         playerSpawnPoint = GameObject.Find("Player Spawn Point");
         timeScaleOriginal = Time.timeScale;
+
+        // It is save to remove listeners even if they
+        // didn't exist so far.
+        // This makes sure it is added only once
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+        // Add the listener to be called when a scene is loaded
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+        DontDestroyOnLoad(gameObject);
+
+        // Store the creating scene as the scene to trigger start
+        scene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -63,6 +78,17 @@ public class gameManager : MonoBehaviour
         }
     }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // return if not the start calling scene
+        if (!string.Equals(scene.path, this.scene.path) )
+            return;
+
+        if (scene.buildIndex == 1)
+            playerScript.DDOL();
+        else if(scene.buildIndex > 1)
+            playerScript.playerRespawn();
+    }
 
     public void cursorLockPause()
     {
