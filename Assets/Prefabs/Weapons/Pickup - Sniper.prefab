@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8173152450708019530}
   - component: {fileID: 6235279383309872512}
   - component: {fileID: -7809663522244557579}
-  - component: {fileID: 433403569489071866}
   m_Layer: 0
   m_Name: Pickup - Sniper
   m_TagString: Untagged
@@ -28,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5586950496258608213}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20.483095, y: 0.60019034, z: -10.982281}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -49,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 3c543067264e7204e9e368af3ccf9b78, type: 2}
+  useButtonToPickUp: 1
 --- !u!33 &8173152450708019530
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -112,23 +112,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2
   m_Center: {x: 0, y: 0.03784418, z: 0.034071922}
---- !u!95 &433403569489071866
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5586950496258608213}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eacd6da0729389346a1b869675dc29a2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

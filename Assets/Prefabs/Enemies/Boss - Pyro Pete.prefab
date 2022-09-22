@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2689750775522798111}
-  - component: {fileID: 2689750775529784413}
+  - component: {fileID: 450990191924540348}
   - component: {fileID: 2689750775529784411}
   - component: {fileID: 2689750775529784409}
   - component: {fileID: 2689750775529784412}
@@ -134,7 +134,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2689750775529784413
+--- !u!114 &450990191924540348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,26 +143,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2689750775522506367}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ec06aac6841664c8814ca9d7544a88, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b3c08a823ba85a47be8f64e69c98e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2689750775529784411}
   rend: {fileID: 2689750775525621081}
   anim: {fileID: 2689750775529784409}
-  HP: 10
-  playerFaceSpeed: 5
-  roamRadius: 15
-  viewAngle: 45
-  chaseSpeed: 5
-  knockbackStrength: 10
-  knockbackResistance: 10
-  shootRate: 0.01
-  bullet: {fileID: 9030332992825720807, guid: 63937e96a1cc49a43b30e11afd1ac674, type: 3}
-  shootPosition: {fileID: 4095632333269833377}
-  drops:
-  - {fileID: 6799947806235636130, guid: 08857a52caa9f454aa1b0e0d3561c131, type: 3}
-  - {fileID: 3047209299867753518, guid: 2d29bd6cb1f2b984fb62bab9e7357cd8, type: 3}
-  dropRadius: 3
+  HP: 0
+  playerFaceSpeed: 0
+  roamRadius: 0
+  viewAngle: 0
+  chaseSpeed: 0
+  knockbackStrength: 0
+  knockbackResistance: 0
+  shootRate: 0
+  bullet: {fileID: 0}
+  shootPosition: {fileID: 0}
+  drops: []
+  dropRadius: 0
 --- !u!195 &2689750775529784411
 NavMeshAgent:
   m_ObjectHideFlags: 0

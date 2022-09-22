@@ -18,6 +18,7 @@ public class gameManager : MonoBehaviour
 
     public Image HPBar;
     public Image hostageHPBar;
+    public Image enemyHPBar;
 
     public GameObject menuCurrentlyOpen;
     public GameObject pauseMenu;
