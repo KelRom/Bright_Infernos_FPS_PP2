@@ -2192,7 +2192,7 @@ RectTransform:
   m_Children:
   - {fileID: 191004705098169911}
   m_Father: {fileID: 7419403838450263526}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4412,7 +4412,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7419403838450263526}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5364,9 +5364,9 @@ RectTransform:
   - {fileID: 7419403839092978543}
   - {fileID: 7419403838055287716}
   - {fileID: 7419403838248490265}
+  - {fileID: 588472822158818414}
   - {fileID: 1904589638}
   - {fileID: 7419403839248502235}
-  - {fileID: 588472822158818414}
   - {fileID: 7489075296574488056}
   - {fileID: 5675422019910546639}
   - {fileID: 4617203458655630163}
@@ -5514,6 +5514,7 @@ MonoBehaviour:
   hostageRescued: {fileID: 1263271056}
   sceneMessage: {fileID: 7919956900268685553}
   hostageBar: {fileID: 718987449}
+  bossHPBar: {fileID: 1233150402}
   winMenu: {fileID: 7613267364189130241}
   playerDeadMenu: {fileID: 7464029546493750485}
   gameOverMenu: {fileID: 1889648947}
@@ -5555,7 +5556,7 @@ RectTransform:
   - {fileID: 3204635470572422159}
   - {fileID: 5089941699456896195}
   m_Father: {fileID: 7419403838450263526}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

@@ -32,6 +32,7 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI hostageRescued;
     public TextMeshProUGUI sceneMessage;
     public GameObject hostageBar;
+    public GameObject bossHPBar;
     public GameObject winMenu;
     public GameObject playerDeadMenu;
     public GameObject gameOverMenu;

@@ -44,6 +44,7 @@ public class bossAI : MonoBehaviour, IDamageable
     // Start is called before the first frame update
     void Start()
     {
+        HPOriginal = HP;
         playerLastKnownPosition = transform.position;
         originalStoppingDistance = agent.stoppingDistance;
         origSpeed = agent.speed;
@@ -154,7 +155,7 @@ public class bossAI : MonoBehaviour, IDamageable
         randomDir += transform.position;
         randomDir.y = .5f;
 
-        Instantiate(drops[Random.Range(0, drops.Length)], randomDir, transform.rotation);
+        Instantiate(drops[Random.Range(0, drops.Length - 1)], randomDir, transform.rotation);
     }
 
     IEnumerator flashDamage()
