@@ -45,7 +45,6 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         playerSpawnPoint = GameObject.Find("Player Spawn Point");
         timeScaleOriginal = Time.timeScale;
-        DontDestroyOnLoad(player);
     }
 
     // Update is called once per frame

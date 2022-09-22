@@ -77,6 +77,7 @@ public class playerController : MonoBehaviour, IDamageable
         originalFOV = Camera.main.fieldOfView;
         playerRespawn();
         DontDestroyOnLoad(this);
+
     }
 
     void Update()
