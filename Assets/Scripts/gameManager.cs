@@ -28,6 +28,8 @@ public class gameManager : MonoBehaviour
     public GameObject winMenu;
     public GameObject playerDeadMenu;
     public GameObject gameOverMenu;
+    public TextMeshProUGUI reloadingText;
+    public TextMeshProUGUI reloadingTime;
 
     public bool isPaused;
     float timeScaleOriginal;

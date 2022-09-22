@@ -15,6 +15,12 @@ public class weaponStats : ScriptableObject
     public float weaponFOV;
     [Range(10f,0f)]
     public float weaponZoomSpeed;
+    public int currentGunCapacity;
+    public int maxGunCapacity;
+    public int currentAmmoCount;
+    public int maxAmmoCount;
+    public float reloadRate;
+
 
     public GameObject hitEffect;
     public AudioClip sound;

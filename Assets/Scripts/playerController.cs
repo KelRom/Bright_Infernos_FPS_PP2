@@ -30,8 +30,12 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] int shootDamage;
     [SerializeField] int shootDistance;
     [SerializeField] GameObject gunPos;
+    public int maxAmmoCount;
+    public int currentAmmoCount;
+    public int maxGunCapacity;
+    public int currentGunCapacity;
+    float reloadRate;
     int selectedGun;
-
 
     [SerializeField] List<weaponStats> weaponInventory = new List<weaponStats>();
 
@@ -61,6 +65,10 @@ public class playerController : MonoBehaviour, IDamageable
     private float originalFOV;
 
     private bool isSprinting;
+    private bool isReloading;
+    private bool changeReloadText;
+    private float displayRate = 0.1f;
+    private float reloadTimer;
 
     private void Start()
     {
@@ -78,9 +86,20 @@ public class playerController : MonoBehaviour, IDamageable
             switchWeapon();
             sprint();
             StartCoroutine(footSteps());
-            StartCoroutine(shoot());
-           // Debug.Log(controller.isGrounded);
-           // Debug.Log(isGrounded);
+            if(currentGunCapacity > 0 && !isReloading) 
+            {
+                StartCoroutine(shoot());
+            }
+            else if(!isReloading && weaponInventory.Count > 0) 
+            {
+                StartCoroutine(reload());
+            }
+            else if(weaponInventory.Count > 0 && !changeReloadText)
+            {
+                    StartCoroutine(displayReloadText());   
+            }
+            // Debug.Log(controller.isGrounded);
+            // Debug.Log(isGrounded);
         }
     }
     private void FixedUpdate()
@@ -149,6 +168,7 @@ public class playerController : MonoBehaviour, IDamageable
     {
         if (weaponInventory.Count > 0 && !isShooting && Input.GetButton("Shoot"))
         {
+            currentGunCapacity--;
             isShooting = true;
             aud.PlayOneShot(weaponInventory[selectedGun].sound, gunShootVol); //undo comment when weapon scroll is implemented
 
@@ -169,6 +189,32 @@ public class playerController : MonoBehaviour, IDamageable
             zoomWeapon();
         else
             unZoomWeapon();
+    }
+
+    IEnumerator reload() 
+    {
+
+        isReloading = true;
+        gameManager.instance.reloadingTime.text = reloadRate.ToString("F1") + "...";
+        gameManager.instance.reloadingText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(reloadRate);
+        gameManager.instance.reloadingText.gameObject.SetActive(false);
+        reloadTimer = 0;
+        currentGunCapacity = maxGunCapacity;
+        currentAmmoCount -= maxGunCapacity;
+        isReloading = false;
+
+    }
+
+    IEnumerator displayReloadText()
+    {
+        changeReloadText = true;
+        reloadTimer += displayRate;
+        yield return new WaitForSeconds(displayRate);
+        gameManager.instance.reloadingTime.text = (reloadRate - reloadTimer).ToString("F1") + "...";
+        changeReloadText = false;
+
+
     }
 
     public void takeDamage(int dmg)
@@ -224,6 +270,12 @@ public class playerController : MonoBehaviour, IDamageable
         shootRate = weapon.fireRate;
         weaponFOV = weapon.weaponFOV;
         weaponZoomSpeed = weapon.weaponZoomSpeed;
+        currentGunCapacity = weapon.currentGunCapacity;
+        maxGunCapacity = weapon.maxGunCapacity;
+        currentAmmoCount = weapon.currentAmmoCount;
+        maxAmmoCount = weapon.maxAmmoCount;
+        reloadRate = weapon.reloadRate;
+
         gunPos.GetComponent<MeshFilter>().sharedMesh = weapon.model.GetComponent<MeshFilter>().sharedMesh;
         gunPos.GetComponent<MeshRenderer>().sharedMaterial = weapon.model.GetComponent<MeshRenderer>().sharedMaterial;
 
@@ -250,12 +302,20 @@ public class playerController : MonoBehaviour, IDamageable
     {
         if (weaponInventory.Count > 1)
         {
+            weaponInventory[selectedGun].currentGunCapacity = currentGunCapacity;
+            weaponInventory[selectedGun].currentAmmoCount = currentAmmoCount;
+
             if (Input.GetAxis("Mouse ScrollWheel") > 0 && selectedGun < weaponInventory.Count - 1)
             {
                 selectedGun++;
                 shootRate = weaponInventory[selectedGun].fireRate;
                 shootDistance = weaponInventory[selectedGun].range;
                 shootDamage = weaponInventory[selectedGun].damage;
+                currentGunCapacity = weaponInventory[selectedGun].currentGunCapacity;
+                currentAmmoCount = weaponInventory[selectedGun].currentAmmoCount;
+                maxGunCapacity = weaponInventory[selectedGun].maxGunCapacity;
+                maxAmmoCount = weaponInventory[selectedGun].maxAmmoCount;
+                reloadRate = weaponInventory[selectedGun].reloadRate;
 
                 gunPos.GetComponent<MeshFilter>().sharedMesh = weaponInventory[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
                 gunPos.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
@@ -266,6 +326,11 @@ public class playerController : MonoBehaviour, IDamageable
                 shootRate = weaponInventory[selectedGun].fireRate;
                 shootDistance = weaponInventory[selectedGun].range;
                 shootDamage = weaponInventory[selectedGun].damage;
+                currentGunCapacity = weaponInventory[selectedGun].currentGunCapacity;
+                currentAmmoCount = weaponInventory[selectedGun].currentAmmoCount;
+                maxGunCapacity = weaponInventory[selectedGun].maxGunCapacity;
+                maxAmmoCount = weaponInventory[selectedGun].maxAmmoCount;
+                reloadRate = weaponInventory[selectedGun].reloadRate;
 
                 gunPos.GetComponent<MeshFilter>().sharedMesh = weaponInventory[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
                 gunPos.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
