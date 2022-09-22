@@ -24,4 +24,5 @@ public class weaponStats : ScriptableObject
 
     public GameObject hitEffect;
     public AudioClip sound;
+    public AudioClip reload;
 }

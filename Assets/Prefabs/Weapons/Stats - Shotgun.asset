@@ -16,7 +16,13 @@ MonoBehaviour:
   range: 5
   fireRate: 2
   model: {fileID: 1729408919075011151, guid: 5c13a31f5fcd34c4680269d1f3ddfc5f, type: 3}
-  weaponFOV: 0
-  weaponZoomSpeed: 0
+  weaponFOV: 45
+  weaponZoomSpeed: 5
+  currentGunCapacity: 4
+  maxGunCapacity: 4
+  currentAmmoCount: 12
+  maxAmmoCount: 12
+  reloadRate: 6
   hitEffect: {fileID: 824118229831149077, guid: 111d7579c5724614990852f112512246, type: 3}
-  sound: {fileID: 8300000, guid: abddb56875dee7543b3139b5e8051002, type: 3}
+  sound: {fileID: 8300000, guid: 3b06581addf16754d9f7906e82ff0a04, type: 3}
+  reload: {fileID: 8300000, guid: b7b83c9925af3ee41b41367b270f098c, type: 3}

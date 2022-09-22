@@ -313,8 +313,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 92b85716d11138d4eb2b6f408326dc7e, type: 3}
   - {fileID: 8300000, guid: 361aa8cbb7e6fb04ba410bc00d491538, type: 3}
   playerFootstepsVol: 0.09
-  healthPickup: {fileID: 0}
+  healthPickup: {fileID: 8300000, guid: aaf41e5443ff944419289bf347437bc0, type: 3}
   healthPickupVol: 0
+  HPOriginal: 100
+  playerSpeedOriginal: 5
+  originalFOV: 60
 --- !u!95 &6878601293230105777
 Animator:
   serializedVersion: 4

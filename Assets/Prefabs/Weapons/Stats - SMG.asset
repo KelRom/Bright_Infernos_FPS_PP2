@@ -18,10 +18,11 @@ MonoBehaviour:
   model: {fileID: 8459981197658762568, guid: d279e58300a20cb47b66eea6ebfd8225, type: 3}
   weaponFOV: 30
   weaponZoomSpeed: 5
-  currentGunCapacity: 20
+  currentGunCapacity: 30
   maxGunCapacity: 30
-  currentAmmoCount: 54
+  currentAmmoCount: 60
   maxAmmoCount: 90
   reloadRate: 3
   hitEffect: {fileID: 824118229831149077, guid: 111d7579c5724614990852f112512246, type: 3}
   sound: {fileID: 8300000, guid: abddb56875dee7543b3139b5e8051002, type: 3}
+  reload: {fileID: 8300000, guid: 91fa26f9421c4a74c8bff1108841f15f, type: 3}

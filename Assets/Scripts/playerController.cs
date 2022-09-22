@@ -53,8 +53,8 @@ public class playerController : MonoBehaviour, IDamageable
 
     bool playingFootsteps;
 
-    private int HPOriginal;
-    private float playerSpeedOriginal;
+    [SerializeField] int HPOriginal;
+    [SerializeField] float playerSpeedOriginal;
     private int timesJumped;
     private Vector3 playerVelocity;
     private Vector3 move;
@@ -62,7 +62,7 @@ public class playerController : MonoBehaviour, IDamageable
     private bool isShooting;
     private float weaponZoomSpeed;
     private float weaponFOV;
-    private float originalFOV;
+    [SerializeField] float originalFOV;
 
     private bool isSprinting;
     private bool isReloading;
@@ -72,12 +72,8 @@ public class playerController : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        HPOriginal = HP;
-        playerSpeedOriginal = playerSpeed;
-        originalFOV = Camera.main.fieldOfView;
         playerRespawn();
         DontDestroyOnLoad(this);
-
     }
 
     public void Reset()
@@ -101,6 +97,8 @@ public class playerController : MonoBehaviour, IDamageable
 
         gunPos.GetComponent<MeshFilter>().sharedMesh = null;
         gunPos.GetComponent<MeshRenderer>().sharedMaterial = null;
+
+        selectedGun = 0;
     }
 
     void Update()
@@ -115,14 +113,11 @@ public class playerController : MonoBehaviour, IDamageable
             {
                 StartCoroutine(shoot());
             }
-            else if(!isReloading && weaponInventory.Count > 0) 
+            else if(!isReloading && weaponInventory.Count > 0 && currentAmmoCount != 0) 
             {
                 StartCoroutine(reload());
             }
-            else if(weaponInventory.Count > 0 && !changeReloadText)
-            {
-                    StartCoroutine(displayReloadText());   
-            }
+
             // Debug.Log(controller.isGrounded);
             // Debug.Log(isGrounded);
         }
@@ -219,27 +214,23 @@ public class playerController : MonoBehaviour, IDamageable
     IEnumerator reload() 
     {
 
-        isReloading = true;
-        gameManager.instance.reloadingTime.text = reloadRate.ToString("F1") + "...";
-        gameManager.instance.reloadingText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(reloadRate);
-        gameManager.instance.reloadingText.gameObject.SetActive(false);
-        reloadTimer = 0;
-        currentGunCapacity = maxGunCapacity;
-        currentAmmoCount -= maxGunCapacity;
-        isReloading = false;
+            isReloading = true;
+            aud.PlayOneShot(weaponInventory[selectedGun].reload, gunShootVol);
+            yield return new WaitForSeconds(weaponInventory[selectedGun].reload.length);
+            reloadTimer = 0;
+            if(currentAmmoCount < maxGunCapacity) 
+            {
+                currentGunCapacity = currentAmmoCount;
+                currentAmmoCount -= currentAmmoCount;
+            }
+            else
+            {
+            currentGunCapacity = maxGunCapacity;
+            currentAmmoCount -= maxGunCapacity; 
+            }
 
-    }
-
-    IEnumerator displayReloadText()
-    {
-        changeReloadText = true;
-        reloadTimer += displayRate;
-        yield return new WaitForSeconds(displayRate);
-        gameManager.instance.reloadingTime.text = (reloadRate - reloadTimer).ToString("F1") + "...";
-        changeReloadText = false;
-
-
+            isReloading = false;
+        
     }
 
     public void takeDamage(int dmg)
