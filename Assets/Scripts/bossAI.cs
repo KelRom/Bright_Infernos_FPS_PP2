@@ -94,7 +94,7 @@ public class bossAI : MonoBehaviour, IDamageable
     {
         if (other.CompareTag("Player"))
             isPlayerInRange = true;
-        gameManager.instance.enemyHPBar.IsActive();
+        gameManager.instance.bossHealthMenu.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
@@ -104,6 +104,7 @@ public class bossAI : MonoBehaviour, IDamageable
             isPlayerInRange = false;
             playerLastKnownPosition = gameManager.instance.player.transform.position;
             agent.stoppingDistance = 0;
+            gameManager.instance.bossHealthMenu.SetActive(false);
         }
     }
 
