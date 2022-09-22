@@ -24,6 +24,10 @@ public class enemyAI : MonoBehaviour, IDamageable
     [SerializeField] GameObject bullet;
     [SerializeField] Transform shootPosition;
 
+    [Header("----- Drops -----")]
+    [SerializeField] GameObject[] drops;
+    [Range(1,5)] [SerializeField] int dropRadius;
+
     Vector3 playerDirection;
     bool isShooting;
     private bool isPlayerInRange;
@@ -125,6 +129,8 @@ public class enemyAI : MonoBehaviour, IDamageable
 
     void enemyDead()
     {
+        dropItem();
+
         gameManager.instance.decreaseEnemyCount();
         anim.SetBool("Dead", true);
         foreach (Collider col in GetComponents<Collider>())
@@ -133,6 +139,16 @@ public class enemyAI : MonoBehaviour, IDamageable
         }
         agent.isStopped = true;
         this.enabled = false;
+
+    }
+
+    void dropItem() 
+    {
+        Vector3 randomDir = Random.insideUnitSphere * dropRadius;
+        randomDir += transform.position;
+        randomDir.y = .5f;
+
+        Instantiate(drops[Random.Range(0, drops.Length)], randomDir, transform.rotation);
     }
 
     IEnumerator flashDamage()

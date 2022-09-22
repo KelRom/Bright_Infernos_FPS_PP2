@@ -4,15 +4,41 @@ using UnityEngine;
 
 public class ammoPickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] bool useButtonToPickUp;
+    private bool playerInRange;
+
+
+    private void Update()
     {
-        
+        pickUp();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+            playerInRange = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            playerInRange = false;
+    }
+
+
+
+
+    public void pickUp()
+    {
+        if (!useButtonToPickUp && playerInRange && gameManager.instance.playerScript.checkPlayerAmmo())
+        {
+            gameManager.instance.playerScript.pickupAmmo();
+            Destroy(gameObject);
+        }
+        else if (playerInRange && useButtonToPickUp && gameManager.instance.playerScript.checkPlayerAmmo())
+        {
+            gameManager.instance.playerScript.pickupAmmo();
+            Destroy(gameObject);
+        }
     }
 }

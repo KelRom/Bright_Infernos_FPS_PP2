@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         playerSpawnPoint = GameObject.Find("Player Spawn Point");
         timeScaleOriginal = Time.timeScale;
+        DontDestroyOnLoad(player);
     }
 
     // Update is called once per frame

@@ -272,6 +272,9 @@ MonoBehaviour:
   shootRate: 0.4
   bullet: {fileID: 312225427389558509, guid: d4e4fb52d3d061e4fbd366e475612b83, type: 3}
   shootPosition: {fileID: 55225907991080249}
+  drops:
+  - {fileID: 6799947806235636130, guid: 08857a52caa9f454aa1b0e0d3561c131, type: 3}
+  dropRadius: 3
 --- !u!95 &55225907381912624
 Animator:
   serializedVersion: 4

@@ -159,6 +159,10 @@ MonoBehaviour:
   shootRate: 0.01
   bullet: {fileID: 9030332992825720807, guid: 63937e96a1cc49a43b30e11afd1ac674, type: 3}
   shootPosition: {fileID: 4095632333269833377}
+  drops:
+  - {fileID: 6799947806235636130, guid: 08857a52caa9f454aa1b0e0d3561c131, type: 3}
+  - {fileID: 3047209299867753518, guid: 2d29bd6cb1f2b984fb62bab9e7357cd8, type: 3}
+  dropRadius: 3
 --- !u!195 &2689750775529784411
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -76,6 +76,7 @@ public class playerController : MonoBehaviour, IDamageable
         playerSpeedOriginal = playerSpeed;
         originalFOV = Camera.main.fieldOfView;
         playerRespawn();
+        DontDestroyOnLoad(this);
     }
 
     void Update()
@@ -291,6 +292,19 @@ public class playerController : MonoBehaviour, IDamageable
         }
         aud.PlayOneShot(healthPickup, healthPickupVol);
         updatePlayerHP();
+    }
+    
+    public void pickupAmmo() 
+    {
+        if((currentAmmoCount += (int)(maxAmmoCount * .2)) > maxAmmoCount)
+        {
+            currentAmmoCount = maxAmmoCount;
+        }
+    }
+
+    public bool checkPlayerAmmo() 
+    {
+        return currentAmmoCount < maxAmmoCount;
     }
 
     public bool checkPlayerHealth() 
