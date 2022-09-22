@@ -35,7 +35,6 @@ public class enemyAI : MonoBehaviour, IDamageable
     private float originalStoppingDistance;
     float origSpeed;
     Vector3 startingPos;
-    bool alive = true;
     bool isTakingDamage;
 
     private float angle; 
@@ -52,20 +51,23 @@ public class enemyAI : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
-        playerDirection = gameManager.instance.player.transform.position - transform.position;
-        angle = Vector3.Angle(playerDirection, transform.forward);
-        anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"),agent.velocity.normalized.magnitude, Time.deltaTime * 4));
-
-        if (!isTakingDamage)
+        if (agent.enabled)
         {
-            if (isPlayerInRange)
+            playerDirection = gameManager.instance.player.transform.position - transform.position;
+            angle = Vector3.Angle(playerDirection, transform.forward);
+            anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"),agent.velocity.normalized.magnitude, Time.deltaTime * 4));
+
+            if (!isTakingDamage)
             {
-                canEnemySeePlayer();
+                if (isPlayerInRange)
+                {
+                    canEnemySeePlayer();
+                }
+                if (agent.remainingDistance < 0.1f && agent.destination != gameManager.instance.player.transform.position)
+                {
+                    roam();
+                } 
             }
-            if (agent.remainingDistance < 0.1f && agent.destination != gameManager.instance.player.transform.position)
-            {
-                roam();
-            } 
         }
     }
 
@@ -116,12 +118,11 @@ public class enemyAI : MonoBehaviour, IDamageable
     {
         HP -= damage;
         anim.SetTrigger("Damage");
-
         playerLastKnownPosition = gameManager.instance.player.transform.position;
         agent.SetDestination(playerLastKnownPosition);
         StartCoroutine(flashDamage());
 
-        if (HP <= 0)
+        if (HP <= 0 && agent.enabled)
         {
             enemyDead();
         }
@@ -133,12 +134,11 @@ public class enemyAI : MonoBehaviour, IDamageable
 
         gameManager.instance.decreaseEnemyCount();
         anim.SetBool("Dead", true);
+        agent.enabled = false;
         foreach (Collider col in GetComponents<Collider>())
         {
             col.enabled = false;
         }
-        agent.isStopped = true;
-        this.enabled = false;
 
     }
 
@@ -156,20 +156,19 @@ public class enemyAI : MonoBehaviour, IDamageable
         isTakingDamage = true;
         agent.speed = 0;
         rend.material.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(.8f);
         rend.material.color = Color.white;
         agent.speed = origSpeed;
         isTakingDamage = false;
+            
     }
 
     IEnumerator shoot()
     {
         isShooting = true;
-        anim.SetBool("isShooting", true);
         Instantiate(bullet, shootPosition.transform.position, transform.rotation);
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
-        anim.SetBool("isShooting", false);
     }
 
     private void canEnemySeePlayer()

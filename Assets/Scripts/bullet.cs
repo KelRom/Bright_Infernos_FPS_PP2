@@ -13,7 +13,10 @@ public class bullet : MonoBehaviour
 
     void Start()
     {
-        rb.velocity = transform.forward * speed;
+        if(rb != null)
+        {
+            rb.velocity = transform.forward * speed;
+        }
         Destroy(gameObject, destroyTime);
     }
 
