@@ -76,8 +76,11 @@ public class playerController : MonoBehaviour, IDamageable
         playerSpeedOriginal = playerSpeed;
         originalFOV = Camera.main.fieldOfView;
         playerRespawn();
-        DontDestroyOnLoad(this);
+    }
 
+    public void DDOL() 
+    {
+        DontDestroyOnLoad(this);
     }
 
     void Update()
