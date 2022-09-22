@@ -27,6 +27,7 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI hostageRescued;
     public GameObject winMenu;
     public GameObject playerDeadMenu;
+    public GameObject gameOverMenu;
 
     public bool isPaused;
     float timeScaleOriginal;

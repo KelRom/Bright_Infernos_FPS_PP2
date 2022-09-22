@@ -10,27 +10,26 @@ public class hostageAI : MonoBehaviour
     private void Start()
     {
         hostageHPOriginal = hostageHP;
+        InvokeRepeating("hostageDamage",1, 5);
     }
 
     void Update()
     {
-        StartCoroutine(hostageDamage());
+
     }
 
-    IEnumerator hostageDamage()
+    void hostageDamage()
     {
         hostageHP -= 1;
         updateHostageHP();
-        yield return new WaitForSeconds(30);
         if (hostageHP <= 0)
         {
             gameManager.instance.hostageRescued.faceColor = Color.red;
-            gameManager.instance.playerIsDead(); //make mission failed menu??
         }
     }
     public void updateHostageHP()
     {
-        gameManager.instance.HPBar.fillAmount = (float)hostageHP / (float)hostageHPOriginal;
+        gameManager.instance.hostageHPBar.fillAmount = (float)hostageHP / (float)hostageHPOriginal;
     }
     private void OnTriggerEnter(Collider other)
     {
