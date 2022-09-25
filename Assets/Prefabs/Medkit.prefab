@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724286921f21c954c88281797dc30b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 2
+  healAmount: 50
   useButtonToPickUp: 0
 --- !u!33 &7010279230189310987
 MeshFilter:
