@@ -38,6 +38,7 @@ public class gameManager : MonoBehaviour
     public GameObject gameOverMenu;
     public TextMeshProUGUI reloadingText;
     public TextMeshProUGUI reloadingTime;
+    public GameObject interactPopUpWindow;
 
     public bool isPaused;
     float timeScaleOriginal;

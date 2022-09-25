@@ -20,14 +20,21 @@ public class door : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
+        {
+            gameManager.instance.interactPopUpWindow.SetActive(true);
             playerInRange = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
+        {
+            gameManager.instance.interactPopUpWindow.SetActive(false);
             playerInRange = false;
+        }
+
     }
 
     IEnumerator openCloseDoor()

@@ -99,7 +99,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0dbfb235356688b41b24f269d76fe687, type: 2}
+  - {fileID: 2100000, guid: 78ff61f0ec6065343b3f38e28cdcbf2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -576,6 +576,22 @@ PrefabInstance:
     - target: {fileID: 5394406082005322969, guid: 44bf5c3230e385144947214bef197db1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8205515688096930668, guid: 44bf5c3230e385144947214bef197db1, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289088427304955417, guid: 44bf5c3230e385144947214bef197db1, type: 3}
+      propertyPath: m_Name
+      value: Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910943614646387447, guid: 44bf5c3230e385144947214bef197db1, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910943614646387447, guid: 44bf5c3230e385144947214bef197db1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44bf5c3230e385144947214bef197db1, type: 3}

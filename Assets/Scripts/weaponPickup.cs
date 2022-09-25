@@ -16,14 +16,22 @@ public class weaponPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && useButtonToPickUp)
+        {
+            gameManager.instance.interactPopUpWindow.SetActive(true);
+            playerInRange = true;
+        }
+        else if (other.CompareTag("Player"))
             playerInRange = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
+            gameManager.instance.interactPopUpWindow.SetActive(false);
             playerInRange = false;
+        }
     }
 
 
