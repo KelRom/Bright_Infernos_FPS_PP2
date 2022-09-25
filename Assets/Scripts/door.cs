@@ -39,7 +39,7 @@ public class door : MonoBehaviour
 
     IEnumerator openCloseDoor()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && (gameManager.instance.getEnemycount() <=0))
         {
             openDoor = !openDoor;
             animator.SetBool("openDoor", openDoor);

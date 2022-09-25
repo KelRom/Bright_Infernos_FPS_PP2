@@ -187,4 +187,8 @@ public class gameManager : MonoBehaviour
         }
     }
 
+    public int getEnemycount()
+    {
+        return enemyCount;
+    }
 }
