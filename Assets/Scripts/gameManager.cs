@@ -59,17 +59,8 @@ public class gameManager : MonoBehaviour
         // It is save to remove listeners even if they
         // didn't exist so far.
         // This makes sure it is added only once
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-
-        // Add the listener to be called when a scene is loaded
-        SceneManager.sceneLoaded += OnSceneLoaded;
-
-        increaseEnemyCount(GameObject.FindGameObjectsWithTag("Enemy").Length);
-
-        DontDestroyOnLoad(gameObject);
 
         // Store the creating scene as the scene to trigger start
-        scene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -91,30 +82,6 @@ public class gameManager : MonoBehaviour
         {
             StartCoroutine(checkIfEnemyCountIsZero());
         }
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // return if not the start calling scene
-        if (!string.Equals(scene.path, this.scene.path) )
-            return;
-
-        if (scene.buildIndex == 1) 
-        {
-            playerScript.Reset();
-            totalEnemiesAlive.gameObject.SetActive(true);
-            mission.gameObject.SetActive(true);
-        }
-        else if(scene.buildIndex == 2) 
-        {
-            totalEnemiesAlive.gameObject.SetActive(true);
-            mission.gameObject.SetActive(true);
-            hostageRescued.gameObject.SetActive(true);
-            hostageBar.SetActive(true);
-        }
-
-        if(scene.buildIndex > 0)
-            playerScript.playerRespawn();
     }
 
     public void cursorLockPause()
@@ -185,10 +152,5 @@ public class gameManager : MonoBehaviour
             sceneMessage.gameObject.SetActive(false);
 
         }
-    }
-
-    public int getEnemycount()
-    {
-        return enemyCount;
     }
 }
