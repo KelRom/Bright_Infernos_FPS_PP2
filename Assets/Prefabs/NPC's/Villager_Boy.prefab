@@ -1597,7 +1597,7 @@ GameObject:
   - component: {fileID: 5597165717518582958}
   m_Layer: 0
   m_Name: Villager_Boy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1634,7 +1634,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ab4e82197f44b9148af2327eaaa38b64, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1655,7 +1655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 5597165717518582958}
   anim: {fileID: 3195902601908059269}
-  roamRadius: 32
+  roamRadius: 37
 --- !u!195 &5597165717518582958
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1672,7 +1672,7 @@ NavMeshAgent:
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
