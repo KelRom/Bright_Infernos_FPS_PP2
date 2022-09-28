@@ -36,7 +36,6 @@ public class enemyAI : MonoBehaviour, IDamageable
     private float originalStoppingDistance;
     float origSpeed;
     Vector3 startingPos;
-    bool alive = true;
     bool isTakingDamage;
 
     private float angle; 
