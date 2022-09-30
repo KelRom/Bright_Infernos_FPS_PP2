@@ -127,6 +127,7 @@ public class playerController : MonoBehaviour, IDamageable
             timesJumped++;
             aud.PlayOneShot(playerJumpSound[Random.Range(0, playerJumpSound.Length)], playerJumpVol);
         }
+        animator.SetInteger("TimesJumped", timesJumped);
 
         playerVelocity.y -= gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
