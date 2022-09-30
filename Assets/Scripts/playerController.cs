@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -54,6 +55,7 @@ public class playerController : MonoBehaviour, IDamageable
 
     [SerializeField] int HPOriginal;
     [SerializeField] float playerSpeedOriginal;
+    [SerializeField] Animator animator;
     private int timesJumped;
     private Vector3 playerVelocity;
     private Vector3 move;
@@ -79,16 +81,15 @@ public class playerController : MonoBehaviour, IDamageable
         {
             movement();
             switchWeapon();
-            sprint();
             StartCoroutine(footSteps());
-            if(currentGunCapacity > 0 && !isReloading) 
+            if(!isShooting) 
             {
-                StartCoroutine(shoot());
+                StartCoroutine(swing());
             }
-            else if(!isReloading && weaponInventory.Count > 0 && currentAmmoCount != 0) 
-            {
-                StartCoroutine(reload());
-            }
+            //else if(!isReloading && weaponInventory.Count > 0 && currentAmmoCount != 0) 
+            //{
+            //    StartCoroutine(reload());
+            //}
 
             // Debug.Log(controller.isGrounded);
             // Debug.Log(isGrounded);
@@ -117,7 +118,6 @@ public class playerController : MonoBehaviour, IDamageable
 
         move = (transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical"));
         controller.Move(move * Time.deltaTime * playerSpeed);
-
         if (Input.GetButtonDown("Jump") && timesJumped < jumpsMax)
         {
             isJumping = true;
@@ -125,6 +125,12 @@ public class playerController : MonoBehaviour, IDamageable
             timesJumped++;
             aud.PlayOneShot(playerJumpSound[Random.Range(0, playerJumpSound.Length)], playerJumpVol);
         }
+        animator.SetInteger("TimesJumped", timesJumped);
+        sprint();
+        if (!isSprinting)
+            animator.SetFloat("Speed", Mathf.Lerp(animator.GetFloat("Speed"), Mathf.Clamp(controller.velocity.normalized.magnitude,0, .5f), Time.deltaTime * 5));
+        else
+            animator.SetFloat("Speed", Mathf.Lerp(animator.GetFloat("Speed"), Mathf.Clamp(controller.velocity.normalized.magnitude, .5f, 1), Time.deltaTime * 2));
 
         playerVelocity.y -= gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
@@ -148,6 +154,7 @@ public class playerController : MonoBehaviour, IDamageable
         {
             isSprinting = true;
             playerSpeed *= sprintMultiplier;
+            
         }
         else if (Input.GetButtonUp("Sprint"))
         {
@@ -156,31 +163,32 @@ public class playerController : MonoBehaviour, IDamageable
         }
     }
 
-    IEnumerator shoot()
+    IEnumerator swing()
     {
-        if (weaponInventory.Count > 0 && !isShooting && Input.GetButton("Shoot"))
+        if (/*weaponInventory.Count > 0 && */!isShooting && Input.GetButton("Shoot"))
         {
-            currentGunCapacity--;
             isShooting = true;
-            aud.PlayOneShot(weaponInventory[selectedGun].sound, gunShootVol); //undo comment when weapon scroll is implemented
+            animator.SetInteger("SwordAttack", Random.Range(1, 4));
+          
+            //aud.PlayOneShot(weaponInventory[selectedGun].sound, gunShootVol); //undo comment when weapon scroll is implemented
 
-            RaycastHit hit;
-            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(.5f, .5f)), out hit, shootDistance))
-            {
-                if (hit.collider.GetComponent<IDamageable>() != null)
-                    hit.collider.GetComponent<IDamageable>().takeDamage(shootDamage);
-                
-                Instantiate(weaponInventory[selectedGun].hitEffect, hit.point, transform.rotation);
-            }
+            //RaycastHit hit;
+            //if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(.5f, .5f)), out hit, shootDistance))
+            //{
+            //    if (hit.collider.GetComponent<IDamageable>() != null)
+            //        hit.collider.GetComponent<IDamageable>().takeDamage(shootDamage);
 
+            //    Instantiate(weaponInventory[selectedGun].hitEffect, hit.point, transform.rotation);
+            //}
             yield return new WaitForSeconds(shootRate);
+            animator.SetInteger("SwordAttack", 0);
             isShooting = false;
         }
 
-        if (Input.GetButton("Zoom"))
-            zoomWeapon();
-        else
-            unZoomWeapon();
+        //if (Input.GetButton("Zoom"))
+        //    zoomWeapon();
+        //else
+        //    unZoomWeapon();
     }
 
     IEnumerator reload() 
@@ -335,15 +343,15 @@ public class playerController : MonoBehaviour, IDamageable
         }
     }
 
-    private void zoomWeapon()
-    {
-        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, weaponFOV, weaponZoomSpeed * Time.deltaTime); 
-    }
+    //private void zoomWeapon()
+    //{
+    //    Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, weaponFOV, weaponZoomSpeed * Time.deltaTime); 
+    //}
 
-    private void unZoomWeapon()
-    {
-        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, originalFOV, weaponZoomSpeed * Time.deltaTime);
-    }
+    //private void unZoomWeapon()
+    //{
+    //    Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, originalFOV, weaponZoomSpeed * Time.deltaTime);
+    // }
     IEnumerator footSteps()
     {
         if (!playingFootsteps && controller.isGrounded && move.normalized.magnitude > 0.3f)
