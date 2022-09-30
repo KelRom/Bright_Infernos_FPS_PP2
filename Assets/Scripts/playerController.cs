@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour, IDamageable
 {
-    [SerializeField] CharacterController controller;
+    [SerializeField] public CharacterController controller;
 
     [Header("-----Player Attributes-----")]
     [SerializeField] int HP;
