@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,20 +14,31 @@ namespace Saving
             return uniqueIdentifier;
         }
 
-        public object CaptureState() 
+        public object CaptureState()
         {
-            return new SerializableVector3( transform.position);
+            Dictionary<string, object> state = new Dictionary<string, object>();
+
+            foreach (ISaveable saveable in GetComponents<ISaveable>()) 
+            {
+                state[saveable.GetType().ToString()] = saveable.CaptureState();
+            }
+
+            return state;
         }
 
         public void RestoreState(object state) 
         {
-            SerializableVector3 position = (SerializableVector3)state;
+            Dictionary<string, object> stateDict = (Dictionary<string, object>)state;
 
-            gameManager.instance.playerScript.controller.enabled = false;
-            //GetComponent<NavMeshAgent>().enabled = false;
-            transform.position = position.toVector();
-            gameManager.instance.playerScript.controller.enabled = true;
-            //GetComponent<NavMeshAgent>().enabled = true;
+            foreach (ISaveable saveable in GetComponents<ISaveable>())
+            {
+                string typeString = saveable.GetType().ToString();
+
+                if (stateDict.ContainsKey(typeString)) 
+                {
+                    saveable.RestoreState(stateDict[typeString]);
+                }
+            }
 
         }
 
