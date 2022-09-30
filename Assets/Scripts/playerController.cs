@@ -81,7 +81,6 @@ public class playerController : MonoBehaviour, IDamageable
         {
             movement();
             switchWeapon();
-            sprint();
             StartCoroutine(footSteps());
             if(!isShooting) 
             {
@@ -119,7 +118,6 @@ public class playerController : MonoBehaviour, IDamageable
 
         move = (transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical"));
         controller.Move(move * Time.deltaTime * playerSpeed);
-
         if (Input.GetButtonDown("Jump") && timesJumped < jumpsMax)
         {
             isJumping = true;
@@ -128,6 +126,11 @@ public class playerController : MonoBehaviour, IDamageable
             aud.PlayOneShot(playerJumpSound[Random.Range(0, playerJumpSound.Length)], playerJumpVol);
         }
         animator.SetInteger("TimesJumped", timesJumped);
+        sprint();
+        if (!isSprinting)
+            animator.SetFloat("Speed", Mathf.Lerp(animator.GetFloat("Speed"), Mathf.Clamp(controller.velocity.normalized.magnitude,0, .5f), Time.deltaTime * 5));
+        else
+            animator.SetFloat("Speed", Mathf.Lerp(animator.GetFloat("Speed"), Mathf.Clamp(controller.velocity.normalized.magnitude, .5f, 1), Time.deltaTime * 2));
 
         playerVelocity.y -= gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
@@ -151,6 +154,7 @@ public class playerController : MonoBehaviour, IDamageable
         {
             isSprinting = true;
             playerSpeed *= sprintMultiplier;
+            
         }
         else if (Input.GetButtonUp("Sprint"))
         {
