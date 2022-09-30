@@ -2689,7 +2689,7 @@ MonoBehaviour:
   fallTimeThreshold: 1
   fallDamage: 2
   jumpsMax: 2
-  shootRate: 0
+  shootRate: 0.25
   shootDamage: 0
   shootDistance: 0
   gunPos: {fileID: 1113975830051470739}
@@ -2728,6 +2728,7 @@ MonoBehaviour:
   healthPickupVol: 0
   HPOriginal: 100
   playerSpeedOriginal: 5
+  animator: {fileID: 9071769918684460997}
   originalFOV: 60
 --- !u!95 &9071769918684460997
 Animator:

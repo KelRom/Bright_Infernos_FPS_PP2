@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -54,6 +55,7 @@ public class playerController : MonoBehaviour, IDamageable
 
     [SerializeField] int HPOriginal;
     [SerializeField] float playerSpeedOriginal;
+    [SerializeField] Animator animator;
     private int timesJumped;
     private Vector3 playerVelocity;
     private Vector3 move;
@@ -81,14 +83,14 @@ public class playerController : MonoBehaviour, IDamageable
             switchWeapon();
             sprint();
             StartCoroutine(footSteps());
-            if(currentGunCapacity > 0 && !isReloading) 
+            if(!isShooting) 
             {
-                StartCoroutine(shoot());
+                StartCoroutine(swing());
             }
-            else if(!isReloading && weaponInventory.Count > 0 && currentAmmoCount != 0) 
-            {
-                StartCoroutine(reload());
-            }
+            //else if(!isReloading && weaponInventory.Count > 0 && currentAmmoCount != 0) 
+            //{
+            //    StartCoroutine(reload());
+            //}
 
             // Debug.Log(controller.isGrounded);
             // Debug.Log(isGrounded);
@@ -156,31 +158,32 @@ public class playerController : MonoBehaviour, IDamageable
         }
     }
 
-    IEnumerator shoot()
+    IEnumerator swing()
     {
-        if (weaponInventory.Count > 0 && !isShooting && Input.GetButton("Shoot"))
+        if (/*weaponInventory.Count > 0 && */!isShooting && Input.GetButton("Shoot"))
         {
-            currentGunCapacity--;
             isShooting = true;
-            aud.PlayOneShot(weaponInventory[selectedGun].sound, gunShootVol); //undo comment when weapon scroll is implemented
+            animator.SetInteger("SwordAttack", Random.Range(1, 4));
+          
+            //aud.PlayOneShot(weaponInventory[selectedGun].sound, gunShootVol); //undo comment when weapon scroll is implemented
 
-            RaycastHit hit;
-            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(.5f, .5f)), out hit, shootDistance))
-            {
-                if (hit.collider.GetComponent<IDamageable>() != null)
-                    hit.collider.GetComponent<IDamageable>().takeDamage(shootDamage);
-                
-                Instantiate(weaponInventory[selectedGun].hitEffect, hit.point, transform.rotation);
-            }
+            //RaycastHit hit;
+            //if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(.5f, .5f)), out hit, shootDistance))
+            //{
+            //    if (hit.collider.GetComponent<IDamageable>() != null)
+            //        hit.collider.GetComponent<IDamageable>().takeDamage(shootDamage);
 
+            //    Instantiate(weaponInventory[selectedGun].hitEffect, hit.point, transform.rotation);
+            //}
             yield return new WaitForSeconds(shootRate);
+            animator.SetInteger("SwordAttack", 0);
             isShooting = false;
         }
 
-        if (Input.GetButton("Zoom"))
-            zoomWeapon();
-        else
-            unZoomWeapon();
+        //if (Input.GetButton("Zoom"))
+        //    zoomWeapon();
+        //else
+        //    unZoomWeapon();
     }
 
     IEnumerator reload() 
@@ -335,15 +338,15 @@ public class playerController : MonoBehaviour, IDamageable
         }
     }
 
-    private void zoomWeapon()
-    {
-        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, weaponFOV, weaponZoomSpeed * Time.deltaTime); 
-    }
+    //private void zoomWeapon()
+    //{
+    //    Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, weaponFOV, weaponZoomSpeed * Time.deltaTime); 
+    //}
 
-    private void unZoomWeapon()
-    {
-        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, originalFOV, weaponZoomSpeed * Time.deltaTime);
-    }
+    //private void unZoomWeapon()
+    //{
+    //    Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, originalFOV, weaponZoomSpeed * Time.deltaTime);
+    // }
     IEnumerator footSteps()
     {
         if (!playingFootsteps && controller.isGrounded && move.normalized.magnitude > 0.3f)
