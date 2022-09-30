@@ -775,6 +775,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2187201445555229468, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
+      propertyPath: uniqueIdentifier
+      value: b709723b-359c-4290-9dd3-df2216103ec6
+      objectReference: {fileID: 0}
     - target: {fileID: 8152658252915316773, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: m_Name
       value: Silas

@@ -12,13 +12,23 @@ namespace Saving
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                GetComponent<SavingSystem>().Save(defaultSaveFile);
+                Save();
             }
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                GetComponent<SavingSystem>().Load(defaultSaveFile);
+                Load();
             }
+        }
+
+        public void Load()
+        {
+            GetComponent<SavingSystem>().Load(defaultSaveFile);
+        }
+
+        public void Save()
+        {
+            GetComponent<SavingSystem>().Save(defaultSaveFile);
         }
     }
 
