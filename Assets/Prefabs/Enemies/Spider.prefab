@@ -173,11 +173,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4163429338047670135}
   - component: {fileID: 4163429338040207603}
-  - component: {fileID: 4163429338047511188}
   - component: {fileID: 4163429338047511186}
+  - component: {fileID: 2195321789764990814}
   m_Layer: 0
   m_Name: Spider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,9 +189,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4163429338047511191}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.039855, y: 0.0000009536743, z: -2.062603}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4163429338047670051}
@@ -219,33 +219,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4163429338047511188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4163429338047511191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ec06aac6841664c8814ca9d7544a88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 4163429338047511186}
-  rend: {fileID: 4163429338035942963}
-  anim: {fileID: 4163429338040207603}
-  HP: 10
-  playerFaceSpeed: 3
-  roamRadius: 10
-  viewAngle: 20
-  chaseSpeed: 5
-  knockbackStrength: 1
-  knockbackResistance: 1
-  shootRate: 1
-  bullet: {fileID: 0}
-  shootPosition: {fileID: 0}
-  drops: []
-  dropRadius: 0
 --- !u!195 &4163429338047511186
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -268,6 +241,40 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2195321789764990814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163429338047511191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8acaf95ec6a594b9c58598f5c4fb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 4163429338047511186}
+  rend: {fileID: 4163429338035942963}
+  anim: {fileID: 4163429338040207603}
+  HP: 5
+  speedRoam: 3
+  speedChase: 5
+  playerFaceSpeed: 3
+  roamRadius: 10
+  viewAngle: 20
+  headPosition: {fileID: 4163429338047511199}
+  attackRange: 0
+  attackRate: 1
+  meleeCube: {fileID: 0}
+  hitPos: {fileID: 0}
+  enemyDrop: {fileID: 0}
+  aud: {fileID: 0}
+  enemyDamageSound: []
+  enemyDamageSoundVol: 0
+  enemyDeathSound: []
+  enemyDeathSoundVol: 0
+  enemyAttackSound: []
+  enemyAttackSoundVol: 0
 --- !u!1 &4163429338047511193
 GameObject:
   m_ObjectHideFlags: 0

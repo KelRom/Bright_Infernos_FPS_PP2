@@ -989,11 +989,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2743216042006435249}
   - component: {fileID: 2743216041997153213}
-  - component: {fileID: 2743216041997153214}
   - component: {fileID: 2743216041997153215}
+  - component: {fileID: 1725357518187679201}
   m_Layer: 0
   m_Name: Wolf
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1005,9 +1005,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2743216042006786843}
-  m_LocalRotation: {x: -0, y: -0.0132206855, z: -0, w: 0.9999126}
+  m_LocalRotation: {x: 0, y: -0.013220461, z: 0, w: 0.9999126}
   m_LocalPosition: {x: -12.032996, y: 0, z: -2.678254}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2743216042006448143}
@@ -1040,33 +1040,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2743216041997153214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2743216042006786843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ec06aac6841664c8814ca9d7544a88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 2743216041997153215}
-  rend: {fileID: 2743216041993123773}
-  anim: {fileID: 2743216041997153213}
-  HP: 10
-  playerFaceSpeed: 3
-  roamRadius: 10
-  viewAngle: 20
-  chaseSpeed: 5
-  knockbackStrength: 1
-  knockbackResistance: 1
-  shootRate: 1
-  bullet: {fileID: 0}
-  shootPosition: {fileID: 0}
-  drops: []
-  dropRadius: 0
 --- !u!195 &2743216041997153215
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1089,6 +1062,40 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1725357518187679201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743216042006786843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8acaf95ec6a594b9c58598f5c4fb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 2743216041997153215}
+  rend: {fileID: 2743216041993123773}
+  anim: {fileID: 2743216041997153213}
+  HP: 0
+  speedRoam: 0
+  speedChase: 0
+  playerFaceSpeed: 0
+  roamRadius: 0
+  viewAngle: 0
+  headPosition: {fileID: 0}
+  attackRange: 0
+  attackRate: 0
+  meleeCube: {fileID: 0}
+  hitPos: {fileID: 0}
+  enemyDrop: {fileID: 0}
+  aud: {fileID: 0}
+  enemyDamageSound: []
+  enemyDamageSoundVol: 0
+  enemyDeathSound: []
+  enemyDeathSoundVol: 0
+  enemyAttackSound: []
+  enemyAttackSoundVol: 0
 --- !u!1 &2743216042006789573
 GameObject:
   m_ObjectHideFlags: 0
