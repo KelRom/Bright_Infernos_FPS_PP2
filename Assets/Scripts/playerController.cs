@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class playerController : MonoBehaviour, IDamageable, ISaveable
+public class playerController : MonoBehaviour, IDamageable
 {
     [SerializeField] CharacterController controller;
 
@@ -371,32 +371,5 @@ public class playerController : MonoBehaviour, IDamageable, ISaveable
             playingFootsteps = false;
 
         }
-    }
-
-    public object CaptureState()
-    {
-        Dictionary<string, object> playerStats = new Dictionary<string, object>();
-
-        playerStats.Add("health", HP);
-        playerStats.Add("position", new SerializableVector3(transform.position));
-        playerStats.Add("rotation", new SerializableVector3(transform.eulerAngles));
-
-        return playerStats;
-    }
-
-    public void RestoreState(object state)
-    {
-        Dictionary<string, object> stateDict = (Dictionary<string, object>)state;
-
-        SerializableVector3 position = (SerializableVector3)stateDict["position"];
-        SerializableVector3 rotation = (SerializableVector3)stateDict["rotation"];
-
-        HP = (int)stateDict["health"];
-
-        controller.enabled = false;
-        transform.position = position.toVector();
-        transform.eulerAngles = rotation.toVector();
-        controller.enabled = true;
-
     }
 }

@@ -12,12 +12,14 @@ namespace Saving
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                Save();
+                print("Save needs to be configured");
+                //Save();
             }
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Load();
+                print("Load needs to be configured");
+                //Load();
             }
         }
 
