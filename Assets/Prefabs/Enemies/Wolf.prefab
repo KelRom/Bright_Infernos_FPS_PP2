@@ -988,9 +988,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2743216042006435249}
-  - component: {fileID: 2743216041997153213}
-  - component: {fileID: 2743216041997153215}
   - component: {fileID: 1725357518187679201}
+  - component: {fileID: 2743216041997153215}
+  - component: {fileID: 1807285323}
+  - component: {fileID: 2743216041997153213}
+  - component: {fileID: 1807285324}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Enemy
@@ -1020,6 +1022,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -1.515, z: 0}
+--- !u!114 &1725357518187679201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743216042006786843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8acaf95ec6a594b9c58598f5c4fb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 2743216041997153215}
+  rend: {fileID: 2743216041993123773}
+  anim: {fileID: 2743216041997153213}
+  HP: 5
+  speedRoam: 3
+  speedChase: 5
+  playerFaceSpeed: 3
+  roamRadius: 10
+  viewAngle: 45
+  headPosition: {fileID: 2743216042006781617}
+  attackRange: 3.5
+  attackRate: 1
+  attackDamage: 1
+  enemyDrop: {fileID: 0}
+  aud: {fileID: 0}
+  enemyDamageSound: []
+  enemyDamageSoundVol: 0
+  enemyDeathSound: []
+  enemyDeathSoundVol: 0
+  enemyAttackSound: []
+  enemyAttackSoundVol: 0
+--- !u!195 &2743216041997153215
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743216042006786843}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!135 &1807285323
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743216042006786843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &2743216041997153213
 Animator:
   serializedVersion: 4
@@ -1040,62 +1110,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &2743216041997153215
-NavMeshAgent:
+--- !u!65 &1807285324
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2743216042006786843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 10
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &1725357518187679201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2743216042006786843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b8acaf95ec6a594b9c58598f5c4fb67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 2743216041997153215}
-  rend: {fileID: 2743216041993123773}
-  anim: {fileID: 2743216041997153213}
-  HP: 0
-  speedRoam: 0
-  speedChase: 0
-  playerFaceSpeed: 0
-  roamRadius: 0
-  viewAngle: 0
-  headPosition: {fileID: 2743216042006781617}
-  attackRange: 0
-  attackRate: 0
-  meleeCube: {fileID: 0}
-  hitPos: {fileID: 0}
-  enemyDrop: {fileID: 0}
-  aud: {fileID: 0}
-  enemyDamageSound: []
-  enemyDamageSoundVol: 0
-  enemyDeathSound: []
-  enemyDeathSoundVol: 0
-  enemyAttackSound: []
-  enemyAttackSoundVol: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.5, z: 3.09}
+  m_Center: {x: 0, y: 1.25, z: -0.25}
 --- !u!1 &2743216042006789573
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class meleeEnemyAI : MonoBehaviour, IDamageable
 {
-
     [Header("----- Components -----")]
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Renderer rend;
@@ -20,12 +19,11 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     [Range(1, 180)] [SerializeField] int viewAngle;
     [SerializeField] GameObject headPosition;
 
-    [Header("----- Weapon Stats -----")]
-    [SerializeField] int attackRange;
-    [SerializeField] float attackRate; //0.8 works best for the animation
-    [SerializeField] GameObject meleeCube;
-    [SerializeField] Transform hitPos;
 
+    [Header("----- Attack Stats -----")]
+    [SerializeField] float attackRange; //How far the enemy can attack from, keep in mind the distance between colliders
+    [SerializeField] float attackRate;
+    [SerializeField] int attackDamage;
     [Header("----- Enemy Drops -----")]
     [Header("optional")]
     [SerializeField] GameObject enemyDrop;
@@ -51,15 +49,15 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     float stoppingDistOrig;
     bool hasSeen;
     Vector3 startingPos;
+    float animSpeedOrig;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         lastPlayerPos = transform.position;
         stoppingDistOrig = agent.stoppingDistance;
-        speedRoam = agent.speed;
+        agent.speed = speedRoam;
         startingPos = transform.position;
+        animSpeedOrig = anim.speed;
     }
 
     // Update is called once per frame
@@ -67,6 +65,7 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     {
         if (agent.enabled)
         {
+            
             playerDir = gameManager.instance.player.transform.position - headPosition.transform.position;
             anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), agent.velocity.normalized.magnitude, Time.deltaTime * 4));
 
@@ -104,12 +103,14 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
 
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("On Trigger Enter : From " + gameObject.name.ToString());
         if (other.CompareTag("Player"))
             playerIsSeen = true;
     }
 
     void OnTriggerExit(Collider other)
     {
+        //Debug.Log("On Trigger Exit : From " + gameObject.name.ToString());
         if (other.CompareTag("Player"))
         {
             playerIsSeen = false;
@@ -161,24 +162,33 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
 
     IEnumerator melee()
     {
+        //If range < attack range && player in site 
         isMeleeing = true;
+        anim.speed = attackRate;
         anim.SetTrigger("Attack");
-        aud.PlayOneShot(enemyAttackSound[Random.Range(0, enemyAttackSound.Length)], enemyAttackSoundVol);
-        Instantiate(meleeCube, hitPos.position, transform.rotation);
+        //aud.PlayOneShot(enemyAttackSound[Random.Range(0, enemyAttackSound.Length)], enemyAttackSoundVol);
+        
         yield return new WaitForSeconds(attackRate);
-
+        anim.speed = animSpeedOrig;
         isMeleeing = false;
+    }
+
+    public void DealDamageToPlayer() //This is an animation event, called on the enemy attack animations
+    {
+        //Debug.Log("Damage " + attackDamage + " : From " + gameObject.name);
+        gameManager.instance.playerScript.takeDamage(attackDamage);
     }
 
     void rayToPlayer()
     {
+        //Debug.Log("Player In Range : From " + gameObject.name.ToString());
         float angle = Vector3.Angle(playerDir, transform.forward);
 
         RaycastHit hit;
-        if (Physics.Raycast(headPosition.transform.position, playerDir, out hit))
+        if (Physics.Raycast(headPosition.transform.position, playerDir + (transform.up / 2), out hit))
         {
 #if UNITY_EDITOR
-            Debug.DrawRay(headPosition.transform.position, playerDir);
+            Debug.DrawRay(headPosition.transform.position, playerDir + (transform.up / 2));
 #endif
             agent.speed = speedChase;
             if (hit.collider.CompareTag("Player") && angle <= viewAngle)
@@ -190,14 +200,15 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
                 agent.stoppingDistance = stoppingDistOrig;
 
                 facePlayer();
-
+                //Debug.Log("Enemy Approach : From " + gameObject.name.ToString());
                 //if not already shooting and the remaing distance from the player is less than or equal to the shoot 
                 //Distance of the enemy then open fire.
-
+                agent.stoppingDistance = attackRange;
                 if (!isMeleeing && agent.remainingDistance <= attackRange)
                 {
+                    
                     StartCoroutine(melee());
-                    //Debug.Log("Enemy shooting");
+                    //Debug.Log("Enemy Attack : From " + gameObject.name.ToString());
                 }
             }
             else if (hasSeen == true)
