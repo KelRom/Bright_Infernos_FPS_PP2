@@ -50,7 +50,7 @@ namespace Saving
             }
         }
 
-        private void  CaptureState(Dictionary<string, object> state)
+        private void CaptureState(Dictionary<string, object> state)
         {
             foreach(SaveableEntity saveable in FindObjectsOfType<SaveableEntity>()) 
             {
