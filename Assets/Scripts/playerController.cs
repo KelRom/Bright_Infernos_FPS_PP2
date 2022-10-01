@@ -9,6 +9,8 @@ public class playerController : MonoBehaviour, IDamageable
 {
     [SerializeField] CharacterController controller;
 
+    [SerializeField] Transform cam;
+
     [Header("-----Player Attributes-----")]
     [SerializeField] int HP;
     [SerializeField] float playerSpeed;
@@ -16,6 +18,7 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] float gravityValue;
     [SerializeField] float sprintMultiplier;
     [SerializeField] float knockbackResistance;
+    [SerializeField] float turnSmoothTime;
     float enemyKnockbackStrength = 10;
 
     [SerializeField] float fallTimeThreshold;
@@ -67,8 +70,7 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] float originalFOV;
 
     private bool isSprinting;
-    private bool isReloading;
-
+    private float turnSmoothVelocity;
     private void Start()
     {
         HPOriginal = HP;
@@ -116,9 +118,18 @@ public class playerController : MonoBehaviour, IDamageable
             timesJumped = 0;
             isJumping = false;
         }
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        move = new Vector3(horizontal, 0f, vertical).normalized;
+        
+        if(move.magnitude >= 0.1f) { 
+            float targetAngle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0, angle, 0);
+            Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            controller.Move(moveDirection.normalized * Time.deltaTime * playerSpeed);
+        }
 
-        move = (transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical"));
-        controller.Move(move * Time.deltaTime * playerSpeed);
         if (Input.GetButtonDown("Jump") && timesJumped < jumpsMax)
         {
             isJumping = true;
@@ -190,27 +201,7 @@ public class playerController : MonoBehaviour, IDamageable
         //    zoomWeapon();
         //else
         //    unZoomWeapon();
-    }
-
-    IEnumerator reload() 
-    {
-
-            isReloading = true;
-            aud.PlayOneShot(weaponInventory[selectedGun].reload, gunShootVol);
-            yield return new WaitForSeconds(weaponInventory[selectedGun].reload.length);
-            if(currentAmmoCount < maxGunCapacity) 
-            {
-                currentGunCapacity = currentAmmoCount;
-                currentAmmoCount -= currentAmmoCount;
-            }
-            else
-            {
-            currentGunCapacity = maxGunCapacity;
-            currentAmmoCount -= maxGunCapacity; 
-            }
-
-            isReloading = false;
-        
+    
     }
 
     public void takeDamage(int dmg)
