@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Range.unity
     guid: d3b78c4fa924324468b89cb0374a1cdd
   - enabled: 1
-    path: Assets/Scenes/Castle.unity
+    path: Assets/Prefabs/Scenes/Castle.unity
     guid: 521bc863711d19e4ca4b17202badd129
   - enabled: 0
     path: Assets/Scenes/Bunker.unity

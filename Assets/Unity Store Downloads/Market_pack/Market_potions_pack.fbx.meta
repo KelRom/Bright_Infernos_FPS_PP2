@@ -1,0 +1,130 @@
+fileFormatVersion: 2
+guid: e56f4ede3334402449ac6b5444a9b72a
+timeCreated: 1432717707
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Blue_potion
+    100002: Book
+    100004: Closet
+    100006: Closet_door
+    100008: Closet_wood
+    100010: Magic_staff
+    100012: //RootNode
+    100014: Potion
+    100016: Purple
+    100018: Purple_potion
+    100020: Red
+    100022: Red_potion
+    100024: Spell
+    100026: Yellow
+    400000: Blue_potion
+    400002: Book
+    400004: Closet
+    400006: Closet_door
+    400008: Closet_wood
+    400010: Magic_staff
+    400012: //RootNode
+    400014: Potion
+    400016: Purple
+    400018: Purple_potion
+    400020: Red
+    400022: Red_potion
+    400024: Spell
+    400026: Yellow
+    2300000: Blue_potion
+    2300002: Book
+    2300004: Closet
+    2300006: Closet_door
+    2300008: Magic_staff
+    2300010: Potion
+    2300012: Purple
+    2300014: Purple_potion
+    2300016: Red
+    2300018: Red_potion
+    2300020: Spell
+    2300022: Yellow
+    3300000: Blue_potion
+    3300002: Book
+    3300004: Closet
+    3300006: Closet_door
+    3300008: Magic_staff
+    3300010: Potion
+    3300012: Purple
+    3300014: Purple_potion
+    3300016: Red
+    3300018: Red_potion
+    3300020: Spell
+    3300022: Yellow
+    4300000: Magic_staff
+    4300002: Potion
+    4300004: Red
+    4300006: Yellow
+    4300008: Purple
+    4300010: Book
+    4300012: Spell
+    4300014: Purple_potion
+    4300016: Blue_potion
+    4300018: Red_potion
+    4300020: Closet_door
+    4300022: Closet
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.70000005
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
