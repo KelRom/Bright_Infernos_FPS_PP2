@@ -1083,7 +1083,7 @@ MonoBehaviour:
   playerFaceSpeed: 0
   roamRadius: 0
   viewAngle: 0
-  headPosition: {fileID: 0}
+  headPosition: {fileID: 2743216042006781617}
   attackRange: 0
   attackRate: 0
   meleeCube: {fileID: 0}
