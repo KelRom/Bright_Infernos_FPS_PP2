@@ -10,6 +10,7 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] CharacterController controller;
 
     [SerializeField] Transform cam;
+    [SerializeField] Collider swordCollider;
 
     [Header("-----Player Attributes-----")]
     [SerializeField] int HP;
@@ -64,7 +65,7 @@ public class playerController : MonoBehaviour, IDamageable
     private Vector3 playerVelocity;
     private Vector3 move;
 
-    private bool isShooting;
+    private bool isSwinging;
     private float weaponZoomSpeed;
     private float weaponFOV;
     [SerializeField] float originalFOV;
@@ -85,7 +86,7 @@ public class playerController : MonoBehaviour, IDamageable
             movement();
             switchWeapon();
             StartCoroutine(footSteps());
-            if(!isShooting) 
+            if(!isSwinging) 
             {
                 StartCoroutine(swing());
             }
@@ -177,11 +178,11 @@ public class playerController : MonoBehaviour, IDamageable
 
     IEnumerator swing()
     {
-        if (/*weaponInventory.Count > 0 && */!isShooting && Input.GetButton("Shoot"))
+        if (/*weaponInventory.Count > 0 && */!isSwinging && Input.GetButtonDown("Shoot"))
         {
-            isShooting = true;
+            isSwinging = true;
+            swordCollider.enabled = true;
             animator.SetInteger("SwordAttack", Random.Range(1, 4));
-          
             //aud.PlayOneShot(weaponInventory[selectedGun].sound, gunShootVol); //undo comment when weapon scroll is implemented
 
             //RaycastHit hit;
@@ -193,8 +194,8 @@ public class playerController : MonoBehaviour, IDamageable
             //    Instantiate(weaponInventory[selectedGun].hitEffect, hit.point, transform.rotation);
             //}
             yield return new WaitForSeconds(shootRate);
+            isSwinging = false;
             animator.SetInteger("SwordAttack", 0);
-            isShooting = false;
         }
 
         //if (Input.GetButton("Zoom"))
@@ -363,4 +364,6 @@ public class playerController : MonoBehaviour, IDamageable
 
         }
     }
+
+    public bool playerSwinging() { return isSwinging; }
 }

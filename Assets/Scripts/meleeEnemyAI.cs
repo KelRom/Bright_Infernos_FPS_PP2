@@ -130,7 +130,7 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     public void takeDamage(int dmg)
     {
         HP -= dmg;
-        aud.PlayOneShot(enemyDamageSound[Random.Range(0, enemyDamageSound.Length)], enemyDamageSoundVol);
+        //aud.PlayOneShot(enemyDamageSound[Random.Range(0, enemyDamageSound.Length)], enemyDamageSoundVol);
         anim.SetTrigger("Damage");
         agent.speed = 0;
 
@@ -235,7 +235,7 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
 
     void enemyDead()
     {
-        aud.PlayOneShot(enemyDeathSound[Random.Range(0, enemyDeathSound.Length)], enemyDeathSoundVol);
+        //aud.PlayOneShot(enemyDeathSound[Random.Range(0, enemyDeathSound.Length)], enemyDeathSoundVol);
         gameManager.instance.decreaseEnemyCount();
 
         anim.SetBool("Dead", true);
