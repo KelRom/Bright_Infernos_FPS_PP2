@@ -21,6 +21,7 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] float knockbackResistance;
     [SerializeField] float turnSmoothTime;
     float enemyKnockbackStrength = 10;
+    public int maxMana;
 
     [SerializeField] float fallTimeThreshold;
     [SerializeField] int fallDamage;
@@ -31,7 +32,7 @@ public class playerController : MonoBehaviour, IDamageable
 
     [SerializeField] int jumpsMax;
 
-    [Header("-----Gun Stats-----")]
+    [Header("-----Weapon Stats-----")]
     [SerializeField] float shootRate;
     [SerializeField] int shootDamage;
     [SerializeField] int shootDistance;
@@ -41,8 +42,10 @@ public class playerController : MonoBehaviour, IDamageable
     public int maxGunCapacity;
     public int currentGunCapacity;
     int selectedGun;
+    int selectedspell;
 
     [SerializeField] List<weaponStats> weaponInventory = new List<weaponStats>();
+    //[SerializeField] List<spellStats> spellInventory = new List<spellStats>();
 
     [Header("-----Audio-----")]
     [SerializeField] AudioSource aud;
@@ -66,6 +69,7 @@ public class playerController : MonoBehaviour, IDamageable
     private Vector3 move;
 
     private bool isSwinging;
+    private bool isCasting;
     private float weaponZoomSpeed;
     private float weaponFOV;
     [SerializeField] float originalFOV;
@@ -204,6 +208,12 @@ public class playerController : MonoBehaviour, IDamageable
         //    unZoomWeapon();
     
     }
+    IEnumerator cast()
+    {
+        isCasting = true;
+
+        yield return new WaitForSeconds(spellSelect.instance.spellInventory[selectedspell].castRate);
+    }
 
     public void takeDamage(int dmg)
     {
@@ -253,6 +263,7 @@ public class playerController : MonoBehaviour, IDamageable
 
     public void pickup(weaponStats weapon)
     {
+        //Spawn the player with 2 weapons (Staff and Sword/Shield)
         shootDamage = weapon.damage;
         shootDistance = weapon.range;
         shootRate = weapon.fireRate;
