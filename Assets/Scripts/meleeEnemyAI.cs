@@ -200,15 +200,13 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
                 agent.stoppingDistance = stoppingDistOrig;
 
                 facePlayer();
-                //Debug.Log("Enemy Approach : From " + gameObject.name.ToString());
                 //if not already shooting and the remaing distance from the player is less than or equal to the shoot 
                 //Distance of the enemy then open fire.
                 agent.stoppingDistance = attackRange;
                 if (!isMeleeing && agent.remainingDistance <= attackRange)
                 {
-                    
                     StartCoroutine(melee());
-                    //Debug.Log("Enemy Attack : From " + gameObject.name.ToString());
+                    //Debug.Log("Remaining Dist 2 : " + agent.remainingDistance);
                 }
             }
             else if (hasSeen == true)
