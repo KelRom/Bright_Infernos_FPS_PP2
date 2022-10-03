@@ -2632,6 +2632,7 @@ MonoBehaviour:
   sprintMultiplier: 2
   knockbackResistance: 5
   turnSmoothTime: 0.1
+  maxMana: 0
   fallTimeThreshold: 1
   fallDamage: 2
   isMeleeActive: 0
