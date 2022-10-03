@@ -9,6 +9,7 @@ public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
 
+    public Animator fadeScreen;
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPoint;
@@ -55,7 +56,7 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         playerSpawnPoint = GameObject.Find("Player Spawn Point");
         timeScaleOriginal = Time.timeScale;
-
+        StartCoroutine(turnFadeScreenOff());
         // It is save to remove listeners even if they
         // didn't exist so far.
         // This makes sure it is added only once
@@ -151,6 +152,15 @@ public class gameManager : MonoBehaviour
             yield return new WaitForSeconds(2);
             sceneMessage.gameObject.SetActive(false);
 
+        }
+    }
+
+    IEnumerator turnFadeScreenOff()
+    {
+        if (GameObject.Find("FadeScreen").activeSelf == true)
+        {
+            yield return new WaitForSeconds(1);
+            GameObject.Find("FadeScreen").SetActive(false);
         }
     }
 }

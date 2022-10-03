@@ -31,4 +31,27 @@ public class buttonFunctions : MonoBehaviour
         gameManager.instance.playerScript.playerRespawn();
         gameManager.instance.cursorUnlockUnpause();
     }
+
+    #region title menu button functions
+    public void newGame()
+    {
+        StartCoroutine(titleScreen.instance.transitionScene());
+
+    }
+
+    public void continueGame()
+    {
+
+    }
+
+    public void settings()
+    {
+
+    }
+
+    public void credits()
+    {
+
+    }
+    #endregion
 }
