@@ -21,16 +21,22 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] float knockbackResistance;
     [SerializeField] float turnSmoothTime;
     float enemyKnockbackStrength = 10;
-    public int maxMana;
-
+    
     [SerializeField] float fallTimeThreshold;
     [SerializeField] int fallDamage;
     float airTime;
     bool isJumping;
     bool isGrounded;
     int distToGround = 1;
+    [SerializeField] bool isMeleeActive;
 
     [SerializeField] int jumpsMax;
+
+    [Header("-----Magic Stats-----")]
+    [SerializeField] float maxMana;
+    [SerializeField] float currentMana;
+    [SerializeField] Transform castingPos;
+
 
     [Header("-----Weapon Stats-----")]
     [SerializeField] float shootRate;
@@ -42,10 +48,10 @@ public class playerController : MonoBehaviour, IDamageable
     public int maxGunCapacity;
     public int currentGunCapacity;
     int selectedGun;
-    int selectedspell;
+    [SerializeField] int selectedSpell;
 
     [SerializeField] List<weaponStats> weaponInventory = new List<weaponStats>();
-    //[SerializeField] List<spellStats> spellInventory = new List<spellStats>();
+    [SerializeField] List<spellStats> spellInventory = new List<spellStats>();
 
     [Header("-----Audio-----")]
     [SerializeField] AudioSource aud;
@@ -81,6 +87,7 @@ public class playerController : MonoBehaviour, IDamageable
         HPOriginal = HP;
         playerSpeedOriginal = playerSpeed;
         playerRespawn();
+        currentMana = maxMana;
     }
 
     void Update()
@@ -89,11 +96,29 @@ public class playerController : MonoBehaviour, IDamageable
         {
             movement();
             switchWeapon();
+            switchingSpells();
             StartCoroutine(footSteps());
-            if(!isSwinging) 
+            if(Input.GetButtonDown("Activate Melee"))
+            {
+                isMeleeActive = true;
+                swordCollider.enabled = true;
+            }
+            else if(Input.GetButtonDown("Activate Spells"))
+            {
+                isMeleeActive = false;
+                swordCollider.enabled = false;
+            }
+
+            if(!isSwinging && isMeleeActive) 
             {
                 StartCoroutine(swing());
             }
+            else if(!isCasting && !isMeleeActive && currentMana > 0 && currentMana >= spellInventory[selectedSpell].manaCost)
+            {
+                StartCoroutine(cast());
+            }
+
+
             //else if(!isReloading && weaponInventory.Count > 0 && currentAmmoCount != 0) 
             //{
             //    StartCoroutine(reload());
@@ -186,6 +211,7 @@ public class playerController : MonoBehaviour, IDamageable
         {
             isSwinging = true;
             swordCollider.enabled = true;
+            //Debug.Log("Swinging Sword");
             animator.SetInteger("SwordAttack", Random.Range(1, 4));
             //aud.PlayOneShot(weaponInventory[selectedGun].sound, gunShootVol); //undo comment when weapon scroll is implemented
 
@@ -208,11 +234,28 @@ public class playerController : MonoBehaviour, IDamageable
         //    unZoomWeapon();
     
     }
+
     IEnumerator cast()
     {
-        isCasting = true;
+        if (Input.GetButtonDown("Shoot"))
+        {
+            isCasting = true;
+            //Debug.Log("Casting Magic");
+            currentMana = currentMana - spellInventory[selectedSpell].manaCost;
+            Instantiate(spellInventory[selectedSpell].spellDisplay, castingPos.position, castingPos.rotation);
+            yield return new WaitForSeconds(spellInventory[selectedSpell].Cooldown);
+            isCasting = false;
+        }
+    }
 
-        yield return new WaitForSeconds(spellSelect.instance.spellInventory[selectedspell].castRate);
+    public void switchingSpells()
+    {
+        if (Input.GetButtonDown("Next Spell") && selectedSpell < spellInventory.Count - 1)
+        {
+            selectedSpell++;
+        }
+        else if (Input.GetButtonDown("Previous Spell") && selectedSpell >= 0)
+            selectedSpell--;
     }
 
     public void takeDamage(int dmg)

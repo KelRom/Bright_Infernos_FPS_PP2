@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class spellStats : ScriptableObject
 {
-    public int damage;
-    public int castRate;
-    public int manaCost;
-    public int spellDistance;
-    public GameObject spellPos;
+    public float manaCost;
+    public float damage;
+    public float speed;
+    public GameObject spellDisplay;
+    public float Cooldown;
 }
