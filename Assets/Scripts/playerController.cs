@@ -254,7 +254,7 @@ public class playerController : MonoBehaviour, IDamageable
         {
             selectedSpell++;
         }
-        else if (Input.GetButtonDown("Previous Spell") && selectedSpell >= 0)
+        else if (Input.GetButtonDown("Previous Spell") && selectedSpell > 0)
             selectedSpell--;
     }
 
