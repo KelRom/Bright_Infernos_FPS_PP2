@@ -50,16 +50,13 @@ namespace Saving
             if (PrefabUtility.GetPrefabAssetType(gameObject) != PrefabAssetType.NotAPrefab)
                 return;
 
-            SerializedObject serializedObject = new SerializedObject(this);
-            SerializedProperty property = serializedObject.FindProperty("uniqueIdentifier");
 
-            if (string.IsNullOrEmpty(property.stringValue) || !isUnique(property.stringValue))
+            if (string.IsNullOrEmpty(uniqueIdentifier) || !isUnique(uniqueIdentifier))
             {
-                property.stringValue = System.Guid.NewGuid().ToString();
-                serializedObject.ApplyModifiedProperties();
+                uniqueIdentifier = System.Guid.NewGuid().ToString();
             }
 
-            globalLookup[property.stringValue] = this;
+            globalLookup[uniqueIdentifier] = this;
         }
 
         private bool isUnique(string candidate)
