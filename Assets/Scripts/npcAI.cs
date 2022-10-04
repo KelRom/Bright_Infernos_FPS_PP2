@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class npcAI : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
+    [SerializeField] Renderer rend;
     [SerializeField] Animator anim;
 
     Vector3 startingPos;

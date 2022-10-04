@@ -59,8 +59,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 3195902601915305797, guid: 484a8d65f7d30e84c92030d36ba974fe, type: 3}
-  - {fileID: 172950186006221358, guid: 3c7798163d8e06942baed6c826b73e66, type: 3}
-  - {fileID: 8529616530135696699, guid: 62f4ca49efbe5294ba25f2739a309c9a, type: 3}
+  - {fileID: 7001921530757747347, guid: 28e89ff8fc3d62745a8127df9eabf9db, type: 3}
+  - {fileID: 6606855329544103010, guid: 766578037b2c4f846ac10ad45f9a6c6f, type: 3}
+  - {fileID: 8519695319816732239, guid: 2411904f012b84e46a2885fa6c3ffa62, type: 3}
+  - {fileID: 7179558742367044019, guid: 63dc3add57b0c6749a16bd87f1eea4f2, type: 3}
   maxEnemies: 8
   timer: 1
