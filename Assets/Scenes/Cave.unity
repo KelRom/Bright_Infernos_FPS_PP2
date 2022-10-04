@@ -341,7 +341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419403838450263526, guid: bed8fa64647334547a91a393729d0226, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7419403838450263526, guid: bed8fa64647334547a91a393729d0226, type: 3}
       propertyPath: m_AnchorMax.x
@@ -538,11 +538,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7987639486532736931, guid: 377883a2e0b86374c94e08bb7f56cc6a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000018988336
+      value: 0.000000018988336
       objectReference: {fileID: 0}
     - target: {fileID: 7987639486532736931, guid: 377883a2e0b86374c94e08bb7f56cc6a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000030850345
+      value: -0.0000000030850345
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 377883a2e0b86374c94e08bb7f56cc6a, type: 3}
@@ -675,7 +675,7 @@ MonoBehaviour:
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   maxEnemies: 3
-  timer: 1
+  timer: 5
 --- !u!135 &389426468
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   maxEnemies: 3
-  timer: 1
+  timer: 5
 --- !u!135 &989842870
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2060,7 +2060,7 @@ MonoBehaviour:
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   maxEnemies: 5
-  timer: 1
+  timer: 5
 --- !u!135 &1958771231
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4928,7 +4928,7 @@ MonoBehaviour:
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   maxEnemies: 5
-  timer: 1
+  timer: 5
 --- !u!4 &7566337942612255629
 Transform:
   m_ObjectHideFlags: 0
