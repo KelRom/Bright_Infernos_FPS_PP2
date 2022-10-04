@@ -994,7 +994,7 @@ GameObject:
   - component: {fileID: 2743216041997153213}
   - component: {fileID: 1807285324}
   - component: {fileID: 6117181177156432663}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wolf
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1038,7 +1038,7 @@ MonoBehaviour:
   agent: {fileID: 2743216041997153215}
   rend: {fileID: 2743216041993123773}
   anim: {fileID: 2743216041997153213}
-  HP: 100
+  HP: 25
   speedRoam: 3
   speedChase: 5
   playerFaceSpeed: 3
@@ -1050,12 +1050,20 @@ MonoBehaviour:
   attackDamage: 1
   enemyDrop: {fileID: 0}
   aud: {fileID: 6117181177156432663}
-  enemyDamageSound: []
-  enemyDamageSoundVol: 0
-  enemyDeathSound: []
-  enemyDeathSoundVol: 0
-  enemyAttackSound: []
-  enemyAttackSoundVol: 0
+  enemyDamageSound:
+  - {fileID: 8300000, guid: 5bd55d0723578ef4bbb55eca7b2a0854, type: 3}
+  - {fileID: 8300000, guid: 24dffa84fed154347941c637c36aaabc, type: 3}
+  enemyDamageSoundVol: 0.5
+  enemyDeathSound:
+  - {fileID: 8300000, guid: 3ab5c7c670910c24285ea2fbfbf3be5e, type: 3}
+  - {fileID: 8300000, guid: db0dd2ff3b3ba5848b71f795c4e1f798, type: 3}
+  - {fileID: 8300000, guid: 8412d4beed342fd4daf1839c9296e60a, type: 3}
+  enemyDeathSoundVol: 0.5
+  enemyAttackSound:
+  - {fileID: 8300000, guid: cdf16d3f14d33774ba99946370381eb8, type: 3}
+  - {fileID: 8300000, guid: 286640b1d21a658459081cf17d7b15f0, type: 3}
+  - {fileID: 8300000, guid: cb929d7839993514ea8205b3d00e688e, type: 3}
+  enemyAttackSoundVol: 0.5
 --- !u!195 &2743216041997153215
 NavMeshAgent:
   m_ObjectHideFlags: 0

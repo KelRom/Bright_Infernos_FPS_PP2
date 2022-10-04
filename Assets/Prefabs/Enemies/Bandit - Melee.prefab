@@ -5706,7 +5706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &999124884267469143
 Transform:
   m_ObjectHideFlags: 0
@@ -6160,7 +6160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &991719082873815431
 Transform:
   m_ObjectHideFlags: 0
@@ -14426,7 +14426,7 @@ GameObject:
   - component: {fileID: 901077741984784061}
   - component: {fileID: 901077741984784034}
   - component: {fileID: 5408855236257189582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bandit - Melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14442,7 +14442,7 @@ Transform:
   m_GameObject: {fileID: 997193815411275155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.43, y: 0.00000047683716, z: -2.51}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 998833511928465373}
@@ -14465,7 +14465,7 @@ MonoBehaviour:
   agent: {fileID: 901077741984784032}
   rend: {fileID: 881487361893797509}
   anim: {fileID: 901077741984784061}
-  HP: 100
+  HP: 25
   speedRoam: 3
   speedChase: 5
   playerFaceSpeed: 3
@@ -14484,11 +14484,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d57d3b1ff39735c44bdcbbcd8fdd303a, type: 3}
   - {fileID: 8300000, guid: fa7082d43187b214ca59594b9e863c4b, type: 3}
   - {fileID: 8300000, guid: 320ae7e006d9f23418a5e3b8aa29feb8, type: 3}
-  enemyDamageSoundVol: 0.5
-  enemyDeathSound: []
-  enemyDeathSoundVol: 0
-  enemyAttackSound: []
-  enemyAttackSoundVol: 0
+  enemyDamageSoundVol: 0.25
+  enemyDeathSound:
+  - {fileID: 8300000, guid: f9421bb4374b1b741a08b498028063f6, type: 3}
+  - {fileID: 8300000, guid: 5e57a2bcb5333554eb99b78b7a514a30, type: 3}
+  enemyDeathSoundVol: 0.05
+  enemyAttackSound:
+  - {fileID: 8300000, guid: 9672ccd349db6634ead3d28a1dc19ee8, type: 3}
+  - {fileID: 8300000, guid: ee5ae1e7765c5a04cb9279992778922b, type: 3}
+  enemyAttackSoundVol: 0.25
 --- !u!195 &901077741984784032
 NavMeshAgent:
   m_ObjectHideFlags: 0

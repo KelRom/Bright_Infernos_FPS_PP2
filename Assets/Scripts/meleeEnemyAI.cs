@@ -130,7 +130,6 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     public void takeDamage(int dmg)
     {
         HP -= dmg;
-        aud.PlayOneShot(enemyDamageSound[Random.Range(0, enemyDamageSound.Length)], enemyDamageSoundVol);
         anim.SetTrigger("Damage");
         agent.speed = 0;
 
@@ -140,6 +139,11 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         if (HP <= 0 && agent.enabled)
         {
             enemyDead();
+        }
+        else
+        {
+            aud.PlayOneShot(enemyDamageSound[Random.Range(0, enemyDamageSound.Length)], enemyDamageSoundVol);
+            print("Damage");
         }
 
 
@@ -166,11 +170,17 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         isMeleeing = true;
         anim.speed = attackRate;
         anim.SetTrigger("Attack");
-        //aud.PlayOneShot(enemyAttackSound[Random.Range(0, enemyAttackSound.Length)], enemyAttackSoundVol);
+        
         
         yield return new WaitForSeconds(attackRate);
         anim.speed = animSpeedOrig;
         isMeleeing = false;
+    }
+
+    public void AttackSound()
+    {
+        aud.PlayOneShot(enemyAttackSound[Random.Range(0, enemyAttackSound.Length)], enemyAttackSoundVol);
+        print("Attack");
     }
 
     public void DealDamageToPlayer() //This is an animation event, called on the enemy attack animations
@@ -238,7 +248,8 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
 
     void enemyDead()
     {
-        //aud.PlayOneShot(enemyDeathSound[Random.Range(0, enemyDeathSound.Length)], enemyDeathSoundVol);
+        aud.PlayOneShot(enemyDeathSound[Random.Range(0, enemyDeathSound.Length)], enemyDeathSoundVol);
+        print("Death");
         gameManager.instance.decreaseEnemyCount();
 
         anim.SetBool("Dead", true);

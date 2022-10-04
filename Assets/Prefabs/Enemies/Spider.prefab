@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 4163429338040207603}
   - component: {fileID: 391736831}
   - component: {fileID: 7993530311945081678}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ MonoBehaviour:
   agent: {fileID: 4163429338047511186}
   rend: {fileID: 4163429338035942963}
   anim: {fileID: 4163429338040207603}
-  HP: 100
+  HP: 25
   speedRoam: 3
   speedChase: 5
   playerFaceSpeed: 3
@@ -229,12 +229,15 @@ MonoBehaviour:
   attackDamage: 1
   enemyDrop: {fileID: 0}
   aud: {fileID: 7993530311945081678}
-  enemyDamageSound: []
-  enemyDamageSoundVol: 0
-  enemyDeathSound: []
-  enemyDeathSoundVol: 0
-  enemyAttackSound: []
-  enemyAttackSoundVol: 0
+  enemyDamageSound:
+  - {fileID: 8300000, guid: 9e3f6902d36460a4d80663a95fc41ad3, type: 3}
+  enemyDamageSoundVol: 0.5
+  enemyDeathSound:
+  - {fileID: 8300000, guid: 0a1ee53717928ef42a9559f19e0127df, type: 3}
+  enemyDeathSoundVol: 0.5
+  enemyAttackSound:
+  - {fileID: 8300000, guid: 3986d1979953e6844898e9c971139be0, type: 3}
+  enemyAttackSoundVol: 0.1
 --- !u!195 &4163429338047511186
 NavMeshAgent:
   m_ObjectHideFlags: 0
