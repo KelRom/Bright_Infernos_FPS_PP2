@@ -143,7 +143,7 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         else
         {
             aud.PlayOneShot(enemyDamageSound[Random.Range(0, enemyDamageSound.Length)], enemyDamageSoundVol);
-            print("Damage");
+            //print("Damage");
         }
 
 
@@ -180,7 +180,7 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     public void AttackSound()
     {
         aud.PlayOneShot(enemyAttackSound[Random.Range(0, enemyAttackSound.Length)], enemyAttackSoundVol);
-        print("Attack");
+        //print("Attack");
     }
 
     public void DealDamageToPlayer() //This is an animation event, called on the enemy attack animations
@@ -249,7 +249,7 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     void enemyDead()
     {
         aud.PlayOneShot(enemyDeathSound[Random.Range(0, enemyDeathSound.Length)], enemyDeathSoundVol);
-        print("Death");
+        //print("Death");
         gameManager.instance.decreaseEnemyCount();
 
         anim.SetBool("Dead", true);
