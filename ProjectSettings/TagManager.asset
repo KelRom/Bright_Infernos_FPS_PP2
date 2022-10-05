@@ -11,6 +11,7 @@ TagManager:
   - Sheep
   - Cow
   - Pig
+  - NPC
   layers:
   - Default
   - TransparentFX

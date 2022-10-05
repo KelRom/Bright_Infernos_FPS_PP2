@@ -7869,7 +7869,7 @@ GameObject:
   - component: {fileID: 7270885403004873325}
   m_Layer: 0
   m_Name: NPC_Male1
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7904,7 +7904,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 7410921403892856854}
-  rend: {fileID: 0}
   anim: {fileID: 8605456892217298199}
   roamRadius: 10
 --- !u!95 &8605456892217298199
@@ -7920,7 +7919,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 1a0ec5a6f0e543d4ba24aedee3d0b914, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

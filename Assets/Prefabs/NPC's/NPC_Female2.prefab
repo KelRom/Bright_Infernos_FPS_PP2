@@ -5621,7 +5621,7 @@ GameObject:
   - component: {fileID: -8166722929537445210}
   m_Layer: 0
   m_Name: NPC_Female2
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5633,7 +5633,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6606855329544103010}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3635.994, y: 304.40552, z: 601.3705}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
@@ -5656,7 +5656,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2649024961833402703}
-  rend: {fileID: 0}
   anim: {fileID: 6549835743788202862}
   roamRadius: 9
 --- !u!95 &6549835743788202862
@@ -5672,7 +5671,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 1a0ec5a6f0e543d4ba24aedee3d0b914, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
