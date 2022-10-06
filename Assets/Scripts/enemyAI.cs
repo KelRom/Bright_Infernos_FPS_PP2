@@ -40,6 +40,8 @@ public class enemyAI : MonoBehaviour, IDamageable
 
     private float angle; 
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -120,7 +122,6 @@ public class enemyAI : MonoBehaviour, IDamageable
         playerLastKnownPosition = gameManager.instance.player.transform.position;
         agent.SetDestination(playerLastKnownPosition);
         StartCoroutine(flashDamage());
-
         if (HP <= 0)
         {
             enemyDead();

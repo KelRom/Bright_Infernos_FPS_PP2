@@ -18,10 +18,13 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] float jumpHeight;
     [SerializeField] float gravityValue;
     [SerializeField] float sprintMultiplier;
-    [SerializeField] float knockbackResistance;
     [SerializeField] float turnSmoothTime;
-    float enemyKnockbackStrength = 10;
-    
+
+    public float knockbackForce;
+    public float knockbackTime;
+    private float knockbackCounter;
+    //[SerializeField] float knockbackResistance
+
     [SerializeField] float fallTimeThreshold;
     [SerializeField] int fallDamage;
     float airTime;
@@ -94,28 +97,35 @@ public class playerController : MonoBehaviour, IDamageable
     {
         if (!gameManager.instance.isPaused)
         {
-            movement();
-            switchWeapon();
-            switchingSpells();
-            StartCoroutine(footSteps());
-            if(Input.GetButtonDown("Activate Melee"))
+            if (knockbackCounter <= 0)
             {
-                isMeleeActive = true;
-                swordCollider.enabled = true;
-            }
-            else if(Input.GetButtonDown("Activate Spells"))
-            {
-                isMeleeActive = false;
-                swordCollider.enabled = false;
-            }
+                movement();
+                switchWeapon();
+                switchingSpells();
+                StartCoroutine(footSteps());
+                if (Input.GetButtonDown("Activate Melee"))
+                {
+                    isMeleeActive = true;
+                    swordCollider.enabled = true;
+                }
+                else if (Input.GetButtonDown("Activate Spells"))
+                {
+                    isMeleeActive = false;
+                    swordCollider.enabled = false;
+                }
 
-            if(!isSwinging && isMeleeActive) 
-            {
-                StartCoroutine(swing());
+                if (!isSwinging && isMeleeActive)
+                {
+                    StartCoroutine(swing());
+                }
+                else if (!isCasting && !isMeleeActive && currentMana > 0 && currentMana >= spellInventory[selectedSpell].manaCost)
+                {
+                    StartCoroutine(cast());
+                } 
             }
-            else if(!isCasting && !isMeleeActive && currentMana > 0 && currentMana >= spellInventory[selectedSpell].manaCost)
+            else
             {
-                StartCoroutine(cast());
+                knockbackCounter -= Time.deltaTime;
             }
 
 
@@ -151,8 +161,9 @@ public class playerController : MonoBehaviour, IDamageable
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         move = new Vector3(horizontal, 0f, vertical).normalized;
-        
-        if(move.magnitude >= 0.1f) { 
+
+        if (move.magnitude >= 0.1f)
+        {
             float targetAngle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0, angle, 0);
@@ -170,7 +181,7 @@ public class playerController : MonoBehaviour, IDamageable
         animator.SetInteger("TimesJumped", timesJumped);
         sprint();
         if (!isSprinting)
-            animator.SetFloat("Speed", Mathf.Lerp(animator.GetFloat("Speed"), Mathf.Clamp(controller.velocity.normalized.magnitude,0, .5f), Time.deltaTime * 5));
+            animator.SetFloat("Speed", Mathf.Lerp(animator.GetFloat("Speed"), Mathf.Clamp(controller.velocity.normalized.magnitude, 0, .5f), Time.deltaTime * 5));
         else
             animator.SetFloat("Speed", Mathf.Lerp(animator.GetFloat("Speed"), Mathf.Clamp(controller.velocity.normalized.magnitude, .5f, 1), Time.deltaTime * 2));
 
@@ -196,7 +207,7 @@ public class playerController : MonoBehaviour, IDamageable
         {
             isSprinting = true;
             playerSpeed *= sprintMultiplier;
-            
+
         }
         else if (Input.GetButtonUp("Sprint"))
         {
@@ -232,7 +243,7 @@ public class playerController : MonoBehaviour, IDamageable
         //    zoomWeapon();
         //else
         //    unZoomWeapon();
-    
+
     }
 
     IEnumerator cast()
@@ -262,15 +273,12 @@ public class playerController : MonoBehaviour, IDamageable
     {
         HP -= dmg;
         updatePlayerHP();
-      
+
         aud.PlayOneShot(playerDamageSound[Random.Range(0, playerDamageSound.Length)], playerDamageVol);
 
         StartCoroutine(damageFlash());
-        if (enemyKnockbackStrength > knockbackResistance)
-        {
-            //transform.position = gameManager.instance.playerKnockbackPoint.transform.position;
-           // Debug.Log("knockback");
-        }
+
+        knockback();
         if (HP <= 0)
         {
             gameManager.instance.playerIsDead();
@@ -291,6 +299,13 @@ public class playerController : MonoBehaviour, IDamageable
         updatePlayerHP();
         transform.position = gameManager.instance.playerSpawnPoint.transform.position;
         controller.enabled = true;
+    }
+    public void knockback()
+    {
+        Vector3 hitDirection = -gameManager.instance.player.transform.forward;
+        knockbackCounter = knockbackTime;
+        playerVelocity.y = knockbackForce;
+        controller.Move(hitDirection.normalized * knockbackForce);
     }
 
     public void updatePlayerHP()
@@ -324,30 +339,48 @@ public class playerController : MonoBehaviour, IDamageable
         selectedGun = weaponInventory.Count - 1;
     }
 
-    public void pickupHealth(int healAmount) 
+    public void pickupHealth(int healAmount)
     {
-       if( (HP += healAmount) > HPOriginal) 
+        if ((HP += healAmount) > HPOriginal)
         {
             HP = HPOriginal;
         }
         aud.PlayOneShot(healthPickup, healthPickupVol);
         updatePlayerHP();
     }
-    
-    public void pickupAmmo() 
+
+    public void updatePlayerMana()
     {
-        if((currentAmmoCount += (int)(maxAmmoCount * .2)) > maxAmmoCount)
+        gameManager.instance.MPBar.fillAmount = (float)currentMana / (float)maxMana;
+    }
+    public void pickupMana(int manaAmount)
+    {
+        if ((HP += manaAmount) > maxMana)
+        {
+            HP = HPOriginal;
+        }
+        aud.PlayOneShot(healthPickup, healthPickupVol); //change sound
+        updatePlayerMana();
+    }
+    public bool checkPlayerMana()
+    {
+        return currentMana < maxMana;
+    }
+
+    public void pickupAmmo()
+    {
+        if ((currentAmmoCount += (int)(maxAmmoCount * .2)) > maxAmmoCount)
         {
             currentAmmoCount = maxAmmoCount;
         }
     }
 
-    public bool checkPlayerAmmo() 
+    public bool checkPlayerAmmo()
     {
         return currentAmmoCount < maxAmmoCount;
     }
 
-    public bool checkPlayerHealth() 
+    public bool checkPlayerHealth()
     {
         return HP < HPOriginal;
     }

@@ -11,4 +11,5 @@ public class spellStats : ScriptableObject
     public float speed;
     public GameObject spellDisplay;
     public float Cooldown;
+    public int knockbackStength;
 }

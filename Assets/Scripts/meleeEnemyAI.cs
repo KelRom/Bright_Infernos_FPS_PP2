@@ -18,6 +18,7 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     [Range(0, 50)] [SerializeField] int roamRadius;
     [Range(1, 180)] [SerializeField] int viewAngle;
     [SerializeField] GameObject headPosition;
+    [SerializeField] int knockbackStrength;
 
 
     [Header("----- Attack Stats -----")]
