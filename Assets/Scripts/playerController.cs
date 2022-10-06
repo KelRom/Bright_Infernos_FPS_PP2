@@ -100,7 +100,6 @@ public class playerController : MonoBehaviour, IDamageable
             if (knockbackCounter <= 0)
             {
                 movement();
-                switchWeapon();
                 switchingSpells();
                 StartCoroutine(footSteps());
                 if (Input.GetButtonDown("Activate Melee"))
@@ -127,15 +126,6 @@ public class playerController : MonoBehaviour, IDamageable
             {
                 knockbackCounter -= Time.deltaTime;
             }
-
-
-            //else if(!isReloading && weaponInventory.Count > 0 && currentAmmoCount != 0) 
-            //{
-            //    StartCoroutine(reload());
-            //}
-
-            // Debug.Log(controller.isGrounded);
-            // Debug.Log(isGrounded);
         }
     }
     private void FixedUpdate()
@@ -224,26 +214,11 @@ public class playerController : MonoBehaviour, IDamageable
             swordCollider.enabled = true;
             //Debug.Log("Swinging Sword");
             animator.SetInteger("SwordAttack", Random.Range(1, 4));
-            //aud.PlayOneShot(weaponInventory[selectedGun].sound, gunShootVol); //undo comment when weapon scroll is implemented
-
-            //RaycastHit hit;
-            //if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(.5f, .5f)), out hit, shootDistance))
-            //{
-            //    if (hit.collider.GetComponent<IDamageable>() != null)
-            //        hit.collider.GetComponent<IDamageable>().takeDamage(shootDamage);
-
-            //    Instantiate(weaponInventory[selectedGun].hitEffect, hit.point, transform.rotation);
-            //}
+            
             yield return new WaitForSeconds(shootRate);
             isSwinging = false;
             animator.SetInteger("SwordAttack", 0);
         }
-
-        //if (Input.GetButton("Zoom"))
-        //    zoomWeapon();
-        //else
-        //    unZoomWeapon();
-
     }
 
     IEnumerator cast()
@@ -251,8 +226,8 @@ public class playerController : MonoBehaviour, IDamageable
         if (Input.GetButtonDown("Shoot"))
         {
             isCasting = true;
-            //Debug.Log("Casting Magic");
-            currentMana = currentMana - spellInventory[selectedSpell].manaCost;
+            currentMana -= spellInventory[selectedSpell].manaCost;
+            updatePlayerMana();
             Instantiate(spellInventory[selectedSpell].spellDisplay, castingPos.position, castingPos.rotation);
             yield return new WaitForSeconds(spellInventory[selectedSpell].Cooldown);
             isCasting = false;
@@ -353,15 +328,17 @@ public class playerController : MonoBehaviour, IDamageable
     {
         gameManager.instance.MPBar.fillAmount = (float)currentMana / (float)maxMana;
     }
+
     public void pickupMana(int manaAmount)
     {
-        if ((HP += manaAmount) > maxMana)
+        if ((currentMana += manaAmount) > maxMana)
         {
-            HP = HPOriginal;
+            currentMana = maxMana;
         }
         aud.PlayOneShot(healthPickup, healthPickupVol); //change sound
         updatePlayerMana();
     }
+
     public bool checkPlayerMana()
     {
         return currentMana < maxMana;
@@ -385,53 +362,44 @@ public class playerController : MonoBehaviour, IDamageable
         return HP < HPOriginal;
     }
 
-    public void switchWeapon()
-    {
-        if (weaponInventory.Count > 1)
-        {
-            weaponInventory[selectedGun].currentGunCapacity = currentGunCapacity;
-            weaponInventory[selectedGun].currentAmmoCount = currentAmmoCount;
-
-            if (Input.GetAxis("Mouse ScrollWheel") > 0 && selectedGun < weaponInventory.Count - 1)
-            {
-                selectedGun++;
-                shootRate = weaponInventory[selectedGun].fireRate;
-                shootDistance = weaponInventory[selectedGun].range;
-                shootDamage = weaponInventory[selectedGun].damage;
-                currentGunCapacity = weaponInventory[selectedGun].currentGunCapacity;
-                currentAmmoCount = weaponInventory[selectedGun].currentAmmoCount;
-                maxGunCapacity = weaponInventory[selectedGun].maxGunCapacity;
-                maxAmmoCount = weaponInventory[selectedGun].maxAmmoCount;
-
-                gunPos.GetComponent<MeshFilter>().sharedMesh = weaponInventory[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
-                gunPos.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
-            }
-            else if (Input.GetAxis("Mouse ScrollWheel") < 0 && selectedGun > 0)
-            {
-                selectedGun--;
-                shootRate = weaponInventory[selectedGun].fireRate;
-                shootDistance = weaponInventory[selectedGun].range;
-                shootDamage = weaponInventory[selectedGun].damage;
-                currentGunCapacity = weaponInventory[selectedGun].currentGunCapacity;
-                currentAmmoCount = weaponInventory[selectedGun].currentAmmoCount;
-                maxGunCapacity = weaponInventory[selectedGun].maxGunCapacity;
-                maxAmmoCount = weaponInventory[selectedGun].maxAmmoCount;
-
-                gunPos.GetComponent<MeshFilter>().sharedMesh = weaponInventory[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
-                gunPos.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
-            }
-        }
-    }
-
-    //private void zoomWeapon()
+    //public void switchWeapon()
     //{
-    //    Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, weaponFOV, weaponZoomSpeed * Time.deltaTime); 
+    //    if (weaponInventory.Count > 1)
+    //    {
+    //        weaponInventory[selectedGun].currentGunCapacity = currentGunCapacity;
+    //        weaponInventory[selectedGun].currentAmmoCount = currentAmmoCount;
+
+    //        if (Input.GetAxis("Mouse ScrollWheel") > 0 && selectedGun < weaponInventory.Count - 1)
+    //        {
+    //            selectedGun++;
+    //            shootRate = weaponInventory[selectedGun].fireRate;
+    //            shootDistance = weaponInventory[selectedGun].range;
+    //            shootDamage = weaponInventory[selectedGun].damage;
+    //            currentGunCapacity = weaponInventory[selectedGun].currentGunCapacity;
+    //            currentAmmoCount = weaponInventory[selectedGun].currentAmmoCount;
+    //            maxGunCapacity = weaponInventory[selectedGun].maxGunCapacity;
+    //            maxAmmoCount = weaponInventory[selectedGun].maxAmmoCount;
+
+    //            gunPos.GetComponent<MeshFilter>().sharedMesh = weaponInventory[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
+    //            gunPos.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
+    //        }
+    //        else if (Input.GetAxis("Mouse ScrollWheel") < 0 && selectedGun > 0)
+    //        {
+    //            selectedGun--;
+    //            shootRate = weaponInventory[selectedGun].fireRate;
+    //            shootDistance = weaponInventory[selectedGun].range;
+    //            shootDamage = weaponInventory[selectedGun].damage;
+    //            currentGunCapacity = weaponInventory[selectedGun].currentGunCapacity;
+    //            currentAmmoCount = weaponInventory[selectedGun].currentAmmoCount;
+    //            maxGunCapacity = weaponInventory[selectedGun].maxGunCapacity;
+    //            maxAmmoCount = weaponInventory[selectedGun].maxAmmoCount;
+
+    //            gunPos.GetComponent<MeshFilter>().sharedMesh = weaponInventory[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
+    //            gunPos.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
+    //        }
+    //    }
     //}
 
-    //private void unZoomWeapon()
-    //{
-    //    Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, originalFOV, weaponZoomSpeed * Time.deltaTime);
-    // }
     IEnumerator footSteps()
     {
         if (!playingFootsteps && controller.isGrounded && move.normalized.magnitude > 0.3f)

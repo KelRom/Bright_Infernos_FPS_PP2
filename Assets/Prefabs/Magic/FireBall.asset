@@ -15,5 +15,5 @@ MonoBehaviour:
   manaCost: 10
   damage: 10
   speed: 10
-  spellDisplay: {fileID: 7325454872729029055, guid: 608380104fa17514f947be4e9e59298d, type: 3}
+  spellDisplay: {fileID: 7408397340701255291, guid: 7f172657fd3e5b74ba3437aa2c339fc4, type: 3}
   Cooldown: 2
