@@ -1,5 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1773347260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1773347261}
+  - component: {fileID: 1773347262}
+  - component: {fileID: 1773347263}
+  - component: {fileID: 1773347264}
+  m_Layer: 6
+  m_Name: TriggerSphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1773347261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773347260}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2743216042006435249}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1773347262
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773347260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1773347263
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773347260}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1773347264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773347260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44706c85a0660447b069a65937b145d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2743216042006589765
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,11 +1065,10 @@ GameObject:
   - component: {fileID: 2743216042006435249}
   - component: {fileID: 1725357518187679201}
   - component: {fileID: 2743216041997153215}
-  - component: {fileID: 1807285323}
   - component: {fileID: 2743216041997153213}
   - component: {fileID: 1807285324}
   - component: {fileID: 6117181177156432663}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wolf
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1010,7 +1084,7 @@ Transform:
   m_GameObject: {fileID: 2743216042006786843}
   m_LocalRotation: {x: 0, y: -0.013220461, z: 0, w: 0.9999126}
   m_LocalPosition: {x: -12.032996, y: 0, z: -2.678254}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
+  m_LocalScale: {x: 0.5500001, y: 0.55, z: 0.5500001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2743216042006448143}
@@ -1020,6 +1094,7 @@ Transform:
   - {fileID: 2743216042006427907}
   - {fileID: 2743216042006425141}
   - {fileID: 2743216042006537395}
+  - {fileID: 1773347261}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -1.515, z: 0}
@@ -1038,24 +1113,33 @@ MonoBehaviour:
   agent: {fileID: 2743216041997153215}
   rend: {fileID: 2743216041993123773}
   anim: {fileID: 2743216041997153213}
-  HP: 100
+  HP: 25
   speedRoam: 3
   speedChase: 5
   playerFaceSpeed: 3
   roamRadius: 10
   viewAngle: 45
   headPosition: {fileID: 2743216042006781617}
+  aggroRange: 3.5
   attackRange: 3.5
   attackRate: 1
   attackDamage: 1
   enemyDrop: {fileID: 0}
   aud: {fileID: 6117181177156432663}
-  enemyDamageSound: []
-  enemyDamageSoundVol: 0
-  enemyDeathSound: []
-  enemyDeathSoundVol: 0
-  enemyAttackSound: []
-  enemyAttackSoundVol: 0
+  enemyDamageSound:
+  - {fileID: 8300000, guid: 5bd55d0723578ef4bbb55eca7b2a0854, type: 3}
+  - {fileID: 8300000, guid: 24dffa84fed154347941c637c36aaabc, type: 3}
+  enemyDamageSoundVol: 0.5
+  enemyDeathSound:
+  - {fileID: 8300000, guid: 3ab5c7c670910c24285ea2fbfbf3be5e, type: 3}
+  - {fileID: 8300000, guid: db0dd2ff3b3ba5848b71f795c4e1f798, type: 3}
+  - {fileID: 8300000, guid: 8412d4beed342fd4daf1839c9296e60a, type: 3}
+  enemyDeathSoundVol: 0.5
+  enemyAttackSound:
+  - {fileID: 8300000, guid: cdf16d3f14d33774ba99946370381eb8, type: 3}
+  - {fileID: 8300000, guid: 286640b1d21a658459081cf17d7b15f0, type: 3}
+  - {fileID: 8300000, guid: cb929d7839993514ea8205b3d00e688e, type: 3}
+  enemyAttackSoundVol: 0.5
 --- !u!195 &2743216041997153215
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1078,19 +1162,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!135 &1807285323
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2743216042006786843}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &2743216041997153213
 Animator:
   serializedVersion: 4

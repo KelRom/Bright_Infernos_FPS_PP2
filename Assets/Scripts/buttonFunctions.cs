@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -36,22 +37,18 @@ public class buttonFunctions : MonoBehaviour
     public void newGame()
     {
         StartCoroutine(titleScreen.instance.transitionScene());
-
     }
 
     public void continueGame()
     {
-
+        //This is just a placeHolder till we get everything finished and implemented with the save system
+        StartCoroutine(titleScreen.instance.transitionScene());
     }
 
-    public void settings()
+    public void goToNextMenu()
     {
-
-    }
-
-    public void credits()
-    {
-
+        titleScreen.instance.cirleTransition.SetActive(false);
+        StartCoroutine(titleScreen.instance.showNextMenu(this.name));
     }
     #endregion
 }

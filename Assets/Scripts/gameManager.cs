@@ -157,7 +157,7 @@ public class gameManager : MonoBehaviour
 
     IEnumerator turnFadeScreenOff()
     {
-        if (GameObject.Find("FadeScreen").activeSelf == true)
+        if (GameObject.Find("FadeScreen"))
         {
             yield return new WaitForSeconds(1);
             GameObject.Find("FadeScreen").SetActive(false);

@@ -12,8 +12,6 @@ public class spawner : MonoBehaviour
     bool isSpawning;
     int enemiesSpawned;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         gameManager.instance.increaseEnemyCount(maxEnemies);

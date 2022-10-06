@@ -21,6 +21,7 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
 
 
     [Header("----- Attack Stats -----")]
+    [SerializeField] float aggroRange;
     [SerializeField] float attackRange; //How far the enemy can attack from, keep in mind the distance between colliders
     [SerializeField] float attackRate;
     [SerializeField] int attackDamage;
@@ -101,14 +102,14 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void SphereTriggerEnter(Collider other)
     {
         //Debug.Log("On Trigger Enter : From " + gameObject.name.ToString());
         if (other.CompareTag("Player"))
             playerIsSeen = true;
     }
 
-    void OnTriggerExit(Collider other)
+    public void SphereTriggerExit(Collider other)
     {
         //Debug.Log("On Trigger Exit : From " + gameObject.name.ToString());
         if (other.CompareTag("Player"))
@@ -130,7 +131,6 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     public void takeDamage(int dmg)
     {
         HP -= dmg;
-        aud.PlayOneShot(enemyDamageSound[Random.Range(0, enemyDamageSound.Length)], enemyDamageSoundVol);
         anim.SetTrigger("Damage");
         agent.speed = 0;
 
@@ -140,6 +140,11 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         if (HP <= 0 && agent.enabled)
         {
             enemyDead();
+        }
+        else
+        {
+            aud.PlayOneShot(enemyDamageSound[Random.Range(0, enemyDamageSound.Length)], enemyDamageSoundVol);
+            //print("Damage");
         }
 
 
@@ -166,11 +171,17 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         isMeleeing = true;
         anim.speed = attackRate;
         anim.SetTrigger("Attack");
-        //aud.PlayOneShot(enemyAttackSound[Random.Range(0, enemyAttackSound.Length)], enemyAttackSoundVol);
+        
         
         yield return new WaitForSeconds(attackRate);
         anim.speed = animSpeedOrig;
         isMeleeing = false;
+    }
+
+    public void AttackSound()
+    {
+        aud.PlayOneShot(enemyAttackSound[Random.Range(0, enemyAttackSound.Length)], enemyAttackSoundVol);
+        //print("Attack");
     }
 
     public void DealDamageToPlayer() //This is an animation event, called on the enemy attack animations
@@ -191,7 +202,8 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
             Debug.DrawRay(headPosition.transform.position, playerDir + (transform.up / 2));
 #endif
             agent.speed = speedChase;
-            if (hit.collider.CompareTag("Player") && angle <= viewAngle)
+            
+            if (hit.collider.CompareTag("Player") && (angle <= viewAngle || Vector3.Distance(transform.position, gameManager.instance.player.transform.position) < aggroRange))
             {
                 hasSeen = true;
                 lastPlayerPos = gameManager.instance.player.transform.position;
@@ -204,6 +216,7 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
                 //Distance of the enemy then open fire.
                 agent.stoppingDistance = attackRange;
                 //Debug.Log("Stopping Distance : " + agent.stoppingDistance);
+                
                 if (!isMeleeing && agent.remainingDistance <= attackRange)
                 {
                     StartCoroutine(melee());
@@ -238,7 +251,8 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
 
     void enemyDead()
     {
-        //aud.PlayOneShot(enemyDeathSound[Random.Range(0, enemyDeathSound.Length)], enemyDeathSoundVol);
+        aud.PlayOneShot(enemyDeathSound[Random.Range(0, enemyDeathSound.Length)], enemyDeathSoundVol);
+        //print("Death");
         gameManager.instance.decreaseEnemyCount();
 
         anim.SetBool("Dead", true);
@@ -248,7 +262,6 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         {
             Instantiate(enemyDrop, transform.position, enemyDrop.transform.rotation);
         }
-
 
         //Turn off all the enemy collision models.
         foreach (Collider col in GetComponents<Collider>())

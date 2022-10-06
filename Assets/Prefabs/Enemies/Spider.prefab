@@ -174,11 +174,10 @@ GameObject:
   - component: {fileID: 4163429338047670135}
   - component: {fileID: 2195321789764990814}
   - component: {fileID: 4163429338047511186}
-  - component: {fileID: 391736830}
   - component: {fileID: 4163429338040207603}
   - component: {fileID: 391736831}
   - component: {fileID: 7993530311945081678}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -199,6 +198,7 @@ Transform:
   m_Children:
   - {fileID: 4163429338047670051}
   - {fileID: 4163429338047670129}
+  - {fileID: 2097550295711761167}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -217,24 +217,28 @@ MonoBehaviour:
   agent: {fileID: 4163429338047511186}
   rend: {fileID: 4163429338035942963}
   anim: {fileID: 4163429338040207603}
-  HP: 100
+  HP: 25
   speedRoam: 3
   speedChase: 5
   playerFaceSpeed: 3
   roamRadius: 10
   viewAngle: 45
   headPosition: {fileID: 4163429338047511199}
+  aggroRange: 4
   attackRange: 4
   attackRate: 1
   attackDamage: 1
   enemyDrop: {fileID: 0}
   aud: {fileID: 7993530311945081678}
-  enemyDamageSound: []
-  enemyDamageSoundVol: 0
-  enemyDeathSound: []
-  enemyDeathSoundVol: 0
-  enemyAttackSound: []
-  enemyAttackSoundVol: 0
+  enemyDamageSound:
+  - {fileID: 8300000, guid: 9e3f6902d36460a4d80663a95fc41ad3, type: 3}
+  enemyDamageSoundVol: 0.5
+  enemyDeathSound:
+  - {fileID: 8300000, guid: 0a1ee53717928ef42a9559f19e0127df, type: 3}
+  enemyDeathSoundVol: 0.5
+  enemyAttackSound:
+  - {fileID: 8300000, guid: 3986d1979953e6844898e9c971139be0, type: 3}
+  enemyAttackSoundVol: 0.1
 --- !u!195 &4163429338047511186
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -257,19 +261,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!135 &391736830
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4163429338047511191}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &4163429338040207603
 Animator:
   serializedVersion: 4
@@ -2168,3 +2159,78 @@ Transform:
   m_Father: {fileID: 4163429338047670105}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5479450042613868734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2097550295711761167}
+  - component: {fileID: 7614948292645930227}
+  - component: {fileID: 2021787619311783829}
+  - component: {fileID: 4083735192487004991}
+  m_Layer: 6
+  m_Name: TriggerSphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2097550295711761167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479450042613868734}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4163429338047670135}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7614948292645930227
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479450042613868734}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &2021787619311783829
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479450042613868734}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4083735192487004991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479450042613868734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44706c85a0660447b069a65937b145d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
