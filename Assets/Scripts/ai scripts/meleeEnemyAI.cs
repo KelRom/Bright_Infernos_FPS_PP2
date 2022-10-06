@@ -254,7 +254,6 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     {
         aud.PlayOneShot(enemyDeathSound[Random.Range(0, enemyDeathSound.Length)], enemyDeathSoundVol);
         //print("Death");
-        gameManager.instance.decreaseEnemyCount();
 
         anim.SetBool("Dead", true);
         agent.enabled = false;

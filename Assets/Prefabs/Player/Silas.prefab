@@ -2640,16 +2640,9 @@ MonoBehaviour:
   maxMana: 100
   currentMana: 0
   castingPos: {fileID: 3467061741563579225}
-  shootRate: 0.25
-  shootDamage: 0
-  shootDistance: 0
   gunPos: {fileID: 1113975830051470739}
-  maxAmmoCount: 0
-  currentAmmoCount: 0
-  maxGunCapacity: 0
-  currentGunCapacity: 0
   selectedSpell: 0
-  weaponInventory: []
+  swingRate: 0.1
   spellInventory:
   - {fileID: 11400000, guid: 8e8154bb8ea91db4d8c521a66c489edc, type: 2}
   - {fileID: 11400000, guid: 719c642cb7646a449874129797655711, type: 2}
@@ -2684,7 +2677,6 @@ MonoBehaviour:
   HPOriginal: 100
   playerSpeedOriginal: 5
   animator: {fileID: 9071769918684460997}
-  originalFOV: 60
 --- !u!95 &9071769918684460997
 Animator:
   serializedVersion: 4

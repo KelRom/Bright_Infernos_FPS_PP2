@@ -42,18 +42,9 @@ public class playerController : MonoBehaviour, IDamageable
 
 
     [Header("-----Weapon Stats-----")]
-    [SerializeField] float shootRate;
-    [SerializeField] int shootDamage;
-    [SerializeField] int shootDistance;
     [SerializeField] GameObject gunPos;
-    public int maxAmmoCount;
-    public int currentAmmoCount;
-    public int maxGunCapacity;
-    public int currentGunCapacity;
-    int selectedGun;
     [SerializeField] int selectedSpell;
-
-    [SerializeField] List<weaponStats> weaponInventory = new List<weaponStats>();
+    [SerializeField] float swingRate;
     [SerializeField] List<spellStats> spellInventory = new List<spellStats>();
 
     [Header("-----Audio-----")]
@@ -79,9 +70,6 @@ public class playerController : MonoBehaviour, IDamageable
 
     private bool isSwinging;
     private bool isCasting;
-    private float weaponZoomSpeed;
-    private float weaponFOV;
-    [SerializeField] float originalFOV;
 
     private bool isSprinting;
     private float turnSmoothVelocity;
@@ -208,14 +196,14 @@ public class playerController : MonoBehaviour, IDamageable
 
     IEnumerator swing()
     {
-        if (/*weaponInventory.Count > 0 && */!isSwinging && Input.GetButtonDown("Shoot"))
+        if (!isSwinging && Input.GetButtonDown("Shoot"))
         {
             isSwinging = true;
             swordCollider.enabled = true;
             //Debug.Log("Swinging Sword");
             animator.SetInteger("SwordAttack", Random.Range(1, 4));
             
-            yield return new WaitForSeconds(shootRate);
+            yield return new WaitForSeconds(swingRate);
             isSwinging = false;
             animator.SetInteger("SwordAttack", 0);
         }
@@ -267,6 +255,7 @@ public class playerController : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(0.1f);
         gameManager.instance.playerDamage.SetActive(false);
     }
+
     public void playerRespawn()
     {
         controller.enabled = false;
@@ -275,6 +264,7 @@ public class playerController : MonoBehaviour, IDamageable
         transform.position = gameManager.instance.playerSpawnPoint.transform.position;
         controller.enabled = true;
     }
+
     public void knockback()
     {
         Vector3 hitDirection = -gameManager.instance.player.transform.forward;
@@ -292,26 +282,6 @@ public class playerController : MonoBehaviour, IDamageable
         //Debug.Log("fall damage");
 
         //takeDamage(fallDamage);
-    }
-
-    public void pickup(weaponStats weapon)
-    {
-        //Spawn the player with 2 weapons (Staff and Sword/Shield)
-        shootDamage = weapon.damage;
-        shootDistance = weapon.range;
-        shootRate = weapon.fireRate;
-        weaponFOV = weapon.weaponFOV;
-        weaponZoomSpeed = weapon.weaponZoomSpeed;
-        currentGunCapacity = weapon.currentGunCapacity;
-        maxGunCapacity = weapon.maxGunCapacity;
-        currentAmmoCount = weapon.currentAmmoCount;
-        maxAmmoCount = weapon.maxAmmoCount;
-
-        gunPos.GetComponent<MeshFilter>().sharedMesh = weapon.model.GetComponent<MeshFilter>().sharedMesh;
-        gunPos.GetComponent<MeshRenderer>().sharedMaterial = weapon.model.GetComponent<MeshRenderer>().sharedMaterial;
-
-        weaponInventory.Add(weapon);
-        selectedGun = weaponInventory.Count - 1;
     }
 
     public void pickupHealth(int healAmount)
@@ -342,19 +312,6 @@ public class playerController : MonoBehaviour, IDamageable
     public bool checkPlayerMana()
     {
         return currentMana < maxMana;
-    }
-
-    public void pickupAmmo()
-    {
-        if ((currentAmmoCount += (int)(maxAmmoCount * .2)) > maxAmmoCount)
-        {
-            currentAmmoCount = maxAmmoCount;
-        }
-    }
-
-    public bool checkPlayerAmmo()
-    {
-        return currentAmmoCount < maxAmmoCount;
     }
 
     public bool checkPlayerHealth()

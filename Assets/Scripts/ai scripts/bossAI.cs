@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class enemyAI : MonoBehaviour, IDamageable
+public class bossAI : MonoBehaviour, IDamageable
 {
     [Header("----- Components -----")]
     [SerializeField] NavMeshAgent agent;
@@ -11,7 +11,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     [SerializeField] Animator anim;
 
     [Header("----- Enemy Stats -----")]
-    [Range(0,10)] [SerializeField] int HP;
+    [Range(0, 10)] [SerializeField] int HP;
     private int HPOriginal;
     [Range(1, 10)] [SerializeField] int playerFaceSpeed;
     [Range(1, 50)] [SerializeField] int roamRadius;
@@ -27,7 +27,7 @@ public class enemyAI : MonoBehaviour, IDamageable
 
     [Header("----- Drops -----")]
     [SerializeField] GameObject[] drops;
-    [Range(1,5)] [SerializeField] int dropRadius;
+    [Range(1, 5)] [SerializeField] int dropRadius;
 
     Vector3 playerDirection;
     bool isShooting;
@@ -38,13 +38,12 @@ public class enemyAI : MonoBehaviour, IDamageable
     Vector3 startingPos;
     bool isTakingDamage;
 
-    private float angle; 
-
-    
+    private float angle;
 
     // Start is called before the first frame update
     void Start()
     {
+        HPOriginal = HP;
         playerLastKnownPosition = transform.position;
         originalStoppingDistance = agent.stoppingDistance;
         origSpeed = agent.speed;
@@ -56,7 +55,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     {
         playerDirection = gameManager.instance.player.transform.position - transform.position;
         angle = Vector3.Angle(playerDirection, transform.forward);
-        anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"),agent.velocity.normalized.magnitude, Time.deltaTime * 4));
+        anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), agent.velocity.normalized.magnitude, Time.deltaTime * 4));
 
         if (!isTakingDamage)
         {
@@ -67,11 +66,11 @@ public class enemyAI : MonoBehaviour, IDamageable
             if (agent.remainingDistance < 0.1f && agent.destination != gameManager.instance.player.transform.position)
             {
                 roam();
-            } 
+            }
         }
     }
 
-    void roam() 
+    void roam()
     {
         agent.stoppingDistance = 0;
         agent.speed = origSpeed;
@@ -95,6 +94,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     {
         if (other.CompareTag("Player"))
             isPlayerInRange = true;
+        gameManager.instance.bossHealthMenu.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
@@ -104,6 +104,7 @@ public class enemyAI : MonoBehaviour, IDamageable
             isPlayerInRange = false;
             playerLastKnownPosition = gameManager.instance.player.transform.position;
             agent.stoppingDistance = 0;
+            gameManager.instance.bossHealthMenu.SetActive(false);
         }
     }
 
@@ -117,25 +118,25 @@ public class enemyAI : MonoBehaviour, IDamageable
     public void takeDamage(int damage)
     {
         HP -= damage;
+        updateBossHP();
         anim.SetTrigger("Damage");
-
         playerLastKnownPosition = gameManager.instance.player.transform.position;
         agent.SetDestination(playerLastKnownPosition);
         StartCoroutine(flashDamage());
+
         if (HP <= 0)
         {
             enemyDead();
         }
     }
-    public void updateEnemyHP()
+    public void updateBossHP()
     {
-        gameManager.instance.hostageHPBar.fillAmount = (float)HP / (float)HPOriginal;
+        gameManager.instance.enemyHPBar.fillAmount = (float)HP / (float)HPOriginal;
     }
     void enemyDead()
     {
         dropItem();
 
-        gameManager.instance.decreaseEnemyCount();
         anim.SetBool("Dead", true);
         foreach (Collider col in GetComponents<Collider>())
         {
@@ -146,13 +147,13 @@ public class enemyAI : MonoBehaviour, IDamageable
 
     }
 
-    void dropItem() 
+    void dropItem()
     {
         Vector3 randomDir = Random.insideUnitSphere * dropRadius;
         randomDir += transform.position;
         randomDir.y = .5f;
 
-        Instantiate(drops[Random.Range(0, drops.Length)], randomDir, transform.rotation);
+        Instantiate(drops[Random.Range(0, drops.Length - 1)], randomDir, transform.rotation);
     }
 
     IEnumerator flashDamage()
@@ -179,7 +180,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     private void canEnemySeePlayer()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position +  Vector3.up, playerDirection, out hit))
+        if (Physics.Raycast(transform.position + Vector3.up, playerDirection, out hit))
         {
             Debug.DrawRay(transform.position + Vector3.up, playerDirection);
             if (hit.collider.CompareTag("Player") && angle <= viewAngle)
@@ -196,7 +197,7 @@ public class enemyAI : MonoBehaviour, IDamageable
                 agent.stoppingDistance = 0;
         }
 
-        if (gameManager.instance.playerDeadMenu.activeSelf) 
+        if (gameManager.instance.playerDeadMenu.activeSelf)
         {
             isPlayerInRange = false;
             agent.stoppingDistance = 0;

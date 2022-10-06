@@ -14,7 +14,6 @@ public class spawner : MonoBehaviour
 
     void Start()
     {
-        gameManager.instance.increaseEnemyCount(maxEnemies);
     }
 
     // Update is called once per frame
