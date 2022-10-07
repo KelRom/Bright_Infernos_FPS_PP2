@@ -698,9 +698,10 @@ GameObject:
   m_Component:
   - component: {fileID: 495403447699483741}
   - component: {fileID: 5420686833494458119}
-  - component: {fileID: 6144822028266529336}
   - component: {fileID: 54045971344457286}
   - component: {fileID: 136997627148833516}
+  - component: {fileID: 2146358484}
+  - component: {fileID: 5520720540134503009}
   m_Layer: 0
   m_Name: Pig
   m_TagString: Pig
@@ -740,20 +741,7 @@ MonoBehaviour:
   FrontLegR: {fileID: 0}
   RearLegL: {fileID: 0}
   RearLegR: {fileID: 0}
-  moveAngle: 90
   movSpeed: 1
---- !u!114 &6144822028266529336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 495403447699483738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac87b2f9b6c62cd4e8efab6baa691295, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &54045971344457286
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -784,6 +772,41 @@ CapsuleCollider:
   m_Height: 1.4
   m_Direction: 2
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!135 &2146358484
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495403447699483738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!195 &5520720540134503009
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495403447699483738}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &495403447740859083
 GameObject:
   m_ObjectHideFlags: 0

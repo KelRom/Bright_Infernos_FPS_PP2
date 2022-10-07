@@ -7905,7 +7905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 7410921403892856854}
   anim: {fileID: 8605456892217298199}
-  roamRadius: 10
+  roamRadius: 20
 --- !u!95 &8605456892217298199
 Animator:
   serializedVersion: 4

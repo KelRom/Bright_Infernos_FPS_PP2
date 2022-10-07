@@ -12,12 +12,12 @@ public class npcAI : MonoBehaviour
     Vector3 startingPos;
     [Range(1, 50)] [SerializeField] int roamRadius;
 
+    private bool canRotate = true;
 
     // Start is called before the first frame update
     void Start()
     {
         startingPos = transform.position;
-
     }
 
     // Update is called once per frame
@@ -44,5 +44,30 @@ public class npcAI : MonoBehaviour
             agent.CalculatePath(hit.position, path);
             agent.SetPath(path);
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Fence") && canRotate) // If the animal collides with something that is not the ground, spin it around.
+        {
+            StartCoroutine(SpinMeRound());
+        }
+    }
+    
+        private IEnumerator SpinMeRound()
+    {
+        // Disable option to rotate.
+        canRotate = false;
+
+        //Move angle
+        float moveAngle = Random.Range(45, 180);
+
+        // Rotate animal.
+        this.transform.rotation *= Quaternion.Euler(0, moveAngle, 0);
+
+        // Wait...
+        yield return new WaitForSeconds(1f);
+
+        // Enable option to rotate.
+        canRotate = true;
     }
 }
