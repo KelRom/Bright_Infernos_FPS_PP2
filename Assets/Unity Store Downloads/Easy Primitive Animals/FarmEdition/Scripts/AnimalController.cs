@@ -21,7 +21,7 @@ namespace EasyPrimitiveAnimals
         private float rotSpeed;
 
         // Wander variables.
-        public float moveAngle = 90f; // Define angle the animal turns after a collision.
+        //public float moveAngle = 90f; // Define angle the animal turns after a collision.
         public float movSpeed = 1f; // Define speed that animal moves. This is also used to calculate leg movement speed.
 
         private bool canRotate = true;
@@ -71,9 +71,9 @@ namespace EasyPrimitiveAnimals
             }
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider other)
         {
-            if (!collision.gameObject.CompareTag("Ground") && canRotate) // If the animal collides with something that is not the ground, spin it around.
+            if (other.gameObject.CompareTag("Fence") && canRotate) // If the animal collides with something that is not the ground, spin it around.
             {
                 StartCoroutine(SpinMeRound());
             }
@@ -83,6 +83,9 @@ namespace EasyPrimitiveAnimals
         {
             // Disable option to rotate.
             canRotate = false;
+
+            //Move angle
+            float moveAngle = Random.Range(45, 180);
 
             // Rotate animal.
             this.transform.rotation *= Quaternion.Euler(0, moveAngle, 0);

@@ -12,6 +12,7 @@ TagManager:
   - Cow
   - Pig
   - NPC
+  - Fence
   layers:
   - Default
   - TransparentFX
