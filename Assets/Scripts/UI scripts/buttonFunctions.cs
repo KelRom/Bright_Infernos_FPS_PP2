@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
 
 public class buttonFunctions : MonoBehaviour
 {
-    public AudioMixer audioMix;
-    public AudioMixer sfxMix;
-
     public void resume()
     {
         if (gameManager.instance.isPaused)
@@ -53,21 +49,6 @@ public class buttonFunctions : MonoBehaviour
     {
         titleScreen.instance.cirleTransition.SetActive(false);
         StartCoroutine(titleScreen.instance.showNextMenu(this.name));
-    }
-
-    public void setMusicVolume(float volume)
-    {
-        audioMix.SetFloat("MusicVolume", volume);
-    }
-
-    public void setSFVolume(float volume)
-    {
-        audioMix.SetFloat("SFX Volume", volume);
-    }
-
-    public void setFullscreen(bool isFullscreen)
-    {
-        Screen.fullScreen = isFullscreen;
     }
     #endregion
 }
