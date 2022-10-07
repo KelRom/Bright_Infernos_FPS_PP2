@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaCost: 100
   damage: 25
-  speed: 10
+  speed: 2
   spellDisplay: {fileID: 453799785015407031, guid: 69979c3a155ba3846a5504e023084360, type: 3}
-  Cooldown: 0.5
+  Cooldown: 1
+  knockbackStength: 0

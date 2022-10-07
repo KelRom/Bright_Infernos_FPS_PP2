@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024e5dc236ead084b929f29b59c1ea7c, type: 3}
   m_Name: WindBlast
   m_EditorClassIdentifier: 
-  manaCost: 0
-  damage: 0
-  speed: 0
-  spellDisplay: {fileID: 0}
-  Cooldown: 0
+  manaCost: 25
+  damage: 25
+  speed: 2
+  spellDisplay: {fileID: 610630154940450941, guid: 5d1d1e766d2a32044b1814e39bfa4483, type: 3}
+  Cooldown: 1
   knockbackStength: 0

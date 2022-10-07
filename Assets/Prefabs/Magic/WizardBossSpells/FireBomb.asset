@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024e5dc236ead084b929f29b59c1ea7c, type: 3}
   m_Name: FireBomb
   m_EditorClassIdentifier: 
-  manaCost: 0
-  damage: 0
-  speed: 0
-  spellDisplay: {fileID: 0}
-  Cooldown: 0
+  manaCost: 50
+  damage: 25
+  speed: 2
+  spellDisplay: {fileID: 3913107850290154268, guid: 09530a34fa333454c857ae457c6ddd2c, type: 3}
+  Cooldown: 1
   knockbackStength: 0
