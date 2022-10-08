@@ -1386,10 +1386,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4064903863971825464, guid: bed8fa64647334547a91a393729d0226, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4340016781936551295, guid: bed8fa64647334547a91a393729d0226, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1602,10 +1598,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7419403839092978540, guid: bed8fa64647334547a91a393729d0226, type: 3}
-      propertyPath: dialogUI
-      value: 
-      objectReference: {fileID: 644892813}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed8fa64647334547a91a393729d0226, type: 3}
 --- !u!1 &450758540
@@ -1982,11 +1974,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541060287}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &644892813 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4064903863971825464, guid: bed8fa64647334547a91a393729d0226, type: 3}
-  m_PrefabInstance: {fileID: 418356221}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &681554028
 GameObject:
   m_ObjectHideFlags: 0

@@ -66,7 +66,7 @@ namespace UI
                 nextButton.gameObject.SetActive(playerConversant.HasNext());
             }
 
-            if(playerConversant.HasNext() == false && !playerConversant.IsCurrentDialogSkipable()) 
+            if(playerConversant.HasNext() == false) 
             {
                 quitButton.gameObject.SetActive(true);
             }
