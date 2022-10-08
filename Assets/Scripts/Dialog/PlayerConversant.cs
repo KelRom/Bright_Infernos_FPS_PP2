@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +9,42 @@ namespace Dialog
 {
     public class PlayerConversant : MonoBehaviour
     {
-        [SerializeField] Dialog currentDialog;
+        [SerializeField] Dialog testDialog;
+        Dialog currentDialog;
         DialogNode currentNode = null;
+        bool isChoosing = false;
 
-        private void Awake()
+        public event Action onConverstationUpdated;
+
+        IEnumerator Start() 
         {
+            yield return new WaitForSeconds(2);
+            StartDialog(testDialog);
+        }
+
+        public void StartDialog(Dialog newDialog) 
+        {
+            currentDialog = newDialog;
             currentNode = currentDialog.GetRootNode();
+            onConverstationUpdated();
+        }
+
+        public void Quit()
+        {
+            currentDialog = null;
+            currentNode = null;
+            isChoosing = false;
+            onConverstationUpdated();
+        }
+
+        public bool IsActive() 
+        {
+            return currentDialog != null;
+        }
+
+        public bool IsChoosing() 
+        {
+            return isChoosing;
         }
 
         public string GetText() 
@@ -26,10 +57,32 @@ namespace Dialog
             return currentNode.GetText();
         }
 
+        public IEnumerable<DialogNode> GetChoices() 
+        {
+            return currentDialog.GetPlayerChildren(currentNode);
+        }
+
+        public void SelectChoice(DialogNode chosenNode) 
+        {
+            currentNode = chosenNode;
+            isChoosing = false;
+            Next();
+        }
+
         public void Next() 
         {
-            DialogNode[] children = currentDialog.GetAllChildren(currentNode).ToArray();
-            currentNode = children[Random.Range(0, children.Count())];
+            int numPlayerResponse = currentDialog.GetPlayerChildren(currentNode).Count();
+
+            if(numPlayerResponse > 0) 
+            {
+                isChoosing = true;
+                onConverstationUpdated();
+                return;
+            }
+
+            DialogNode[] children = currentDialog.GetAIChildren(currentNode).ToArray();
+            currentNode = children[UnityEngine.Random.Range(0, children.Count())];
+            onConverstationUpdated();
         }
 
         public bool HasNext()

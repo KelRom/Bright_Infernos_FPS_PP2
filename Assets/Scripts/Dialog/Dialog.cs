@@ -30,6 +30,39 @@ namespace Dialog
         {
             return nodes;
         }
+        public IEnumerable<DialogNode> GetAllChildren(DialogNode parentNode)
+        {
+            foreach (string childID in parentNode.GetChildren())
+            {
+                if (nodeLookup.ContainsKey(childID))
+                {
+                    yield return nodeLookup[childID];
+                }
+            }
+        }
+
+        public IEnumerable<DialogNode> GetAIChildren(DialogNode currentNode)
+        {
+            foreach (DialogNode node in GetAllChildren(currentNode))
+            {
+                if (!node.IsPlayerSpeaking())
+                {
+                    yield return node;
+                }
+            }
+        }
+
+        public IEnumerable<DialogNode> GetPlayerChildren(DialogNode currentNode)
+        {
+            foreach(DialogNode node in GetAllChildren(currentNode)) 
+            {
+                if (node.IsPlayerSpeaking()) 
+                {
+                    yield return node;
+                }
+            }
+        }
+
 
         public DialogNode GetRootNode()
         {
@@ -37,16 +70,7 @@ namespace Dialog
         }
 
 #if UNITY_EDITOR
-        public IEnumerable<DialogNode> GetAllChildren(DialogNode parentNode)
-        {
-            foreach(string childID in parentNode.GetChildren()) 
-            {
-                if (nodeLookup.ContainsKey(childID)) 
-                {
-                   yield return nodeLookup[childID];
-                }
-            }
-        }
+
 
         public void CreateNode(DialogNode parent)
         {
