@@ -9,6 +9,8 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Renderer rend;
     [SerializeField] Animator anim;
+    [Header("optional")]
+    [SerializeField] UnityEngine.UI.Image hpBar;
 
     [Header("----- Enemy Stats -----")]
     [Range(0, 100)] [SerializeField] int HP;
@@ -55,6 +57,8 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     bool hasSeen;
     Vector3 startingPos;
     float animSpeedOrig;
+    int origHP;
+
 
     void Start()
     {
@@ -63,6 +67,7 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         agent.speed = speedRoam;
         startingPos = transform.position;
         animSpeedOrig = anim.speed;
+        origHP = HP;
     }
 
     // Update is called once per frame
@@ -157,6 +162,12 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         {
             agent.SetDestination(lastPlayerPos);
             //agent.SetPath();
+        }
+
+        if(hpBar != null)
+        {
+            hpBar.fillAmount = (float)HP / (float)origHP;
+            print("test");
         }
     }
     IEnumerator flashColor()
