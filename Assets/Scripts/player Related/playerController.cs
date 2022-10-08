@@ -83,7 +83,7 @@ public class playerController : MonoBehaviour, IDamageable
 
     void Update()
     {
-        if (!gameManager.instance.isPaused)
+        if (!gameManager.instance.isPaused && !GetComponent<Dialog.PlayerConversant>().IsActive())
         {
             if (knockbackCounter <= 0)
             {

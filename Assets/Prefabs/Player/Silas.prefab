@@ -2613,6 +2613,7 @@ GameObject:
   - component: {fileID: 9071769918684460992}
   - component: {fileID: 9071769918684460999}
   - component: {fileID: 9071769918684460998}
+  - component: {fileID: 1587261270206797939}
   - component: {fileID: 2187201445555229468}
   m_Layer: 9
   m_Name: Silas
@@ -2856,6 +2857,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1587261270206797939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152658252915316773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1a8e27721712340a3ca3ea406c4c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2187201445555229468
 MonoBehaviour:
   m_ObjectHideFlags: 0

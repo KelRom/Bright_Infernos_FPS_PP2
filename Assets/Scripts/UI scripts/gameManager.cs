@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class gameManager : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class gameManager : MonoBehaviour
 
     public bool isPaused;
     float timeScaleOriginal;
+
+    public event Action onPauseToggle;
 
     // Start is called before the first frame update
     void Awake()
@@ -61,11 +64,13 @@ public class gameManager : MonoBehaviour
                 cursorLockPause();
             else
                 cursorUnlockUnpause();
+           
         }
     }
 
     public void cursorLockPause()
     {
+        onPauseToggle();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         Time.timeScale = 0;
@@ -73,6 +78,7 @@ public class gameManager : MonoBehaviour
 
     public void cursorUnlockUnpause()
     {
+        onPauseToggle();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = timeScaleOriginal;

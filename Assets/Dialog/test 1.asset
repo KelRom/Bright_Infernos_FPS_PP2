@@ -60,8 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
   text: Do you?
-  children:
-  - e7732113-ee25-4dde-8d8b-e5b6b70d5f2a
+  children: []
   rect:
     serializedVersion: 2
     x: 778
@@ -82,8 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
   text: To dethrone the king
-  children:
-  - e7732113-ee25-4dde-8d8b-e5b6b70d5f2a
+  children: []
   rect:
     serializedVersion: 2
     x: 821
@@ -100,7 +98,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ebbb8eb6327ebc42ac34ff3d92b0492, type: 3}
-  m_Name: test
+  m_Name: test 1
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: -8778154764831838598}
@@ -112,10 +110,9 @@ MonoBehaviour:
   - {fileID: -3020900422448454204}
   - {fileID: -2977405937871225650}
   - {fileID: 3375466975283469919}
-  - {fileID: 3719343868429715860}
   - {fileID: 3938460501635365116}
   newNodeOffset: {x: 250, y: 0}
-  isSkipable: 1
+  isSkipable: 0
 --- !u!114 &31255240730781107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,8 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
   text: I dont have the time for you.
-  children:
-  - e7732113-ee25-4dde-8d8b-e5b6b70d5f2a
+  children: []
   rect:
     serializedVersion: 2
     x: 784
@@ -202,27 +198,6 @@ MonoBehaviour:
     serializedVersion: 2
     x: 252
     y: 249
-    width: 200
-    height: 100
---- !u!114 &3719343868429715860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: e7732113-ee25-4dde-8d8b-e5b6b70d5f2a
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: You are under arrest
-  children: []
-  rect:
-    serializedVersion: 2
-    x: 1028
-    y: 387.00006
     width: 200
     height: 100
 --- !u!114 &3938460501635365116

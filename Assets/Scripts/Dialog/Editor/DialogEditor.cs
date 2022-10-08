@@ -181,11 +181,6 @@ namespace Dialog.Editor
 
             GUILayout.EndHorizontal();
 
-            foreach (DialogNode childNode in selectedDialog.GetAllChildren(node))
-            {
-                EditorGUILayout.LabelField(childNode.GetText());
-            }
-
             GUILayout.EndArea();
         }
 

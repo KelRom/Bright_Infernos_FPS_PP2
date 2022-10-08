@@ -9,24 +9,22 @@ namespace Dialog
 {
     public class PlayerConversant : MonoBehaviour
     {
-        [SerializeField] Dialog testDialog;
-        Dialog currentDialog;
+        Dialog currentDialog = null;
         DialogNode currentNode = null;
         bool isChoosing = false;
 
         public event Action onConverstationUpdated;
-
-        IEnumerator Start() 
-        {
-            yield return new WaitForSeconds(2);
-            StartDialog(testDialog);
-        }
 
         public void StartDialog(Dialog newDialog) 
         {
             currentDialog = newDialog;
             currentNode = currentDialog.GetRootNode();
             onConverstationUpdated();
+        }
+
+        public bool IsCurrentDialogSkipable() 
+        {
+            return currentDialog.IsSkipable();
         }
 
         public void Quit()
@@ -66,7 +64,15 @@ namespace Dialog
         {
             currentNode = chosenNode;
             isChoosing = false;
-            Next();
+
+            if (HasNext()) 
+            {
+                Next();
+            }
+            else 
+            {
+                Quit();
+            }
         }
 
         public void Next() 

@@ -4,6 +4,7 @@ using UnityEngine;
 using Dialog;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 namespace UI
 {
@@ -19,24 +20,38 @@ namespace UI
         [SerializeField] GameObject choicePrefab;
         [SerializeField] Button quitButton;
 
-
         void Start()
         {
             playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
             playerConversant.onConverstationUpdated += UpdateUI;
+            gameManager.instance.onPauseToggle += UpdateUIPause;
             nextButton.onClick.AddListener(() => playerConversant.Next());
             quitButton.onClick.AddListener(() => playerConversant.Quit());
-            UpdateUI();        
+
+            UpdateUI();
         }
 
+        void UpdateUIPause() 
+        {
+            if (gameManager.instance.isPaused)
+            {
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                gameObject.SetActive(playerConversant.IsActive());
+            }
+        }
         void UpdateUI()
         {
+
             gameObject.SetActive(playerConversant.IsActive());
 
             if (!playerConversant.IsActive()) 
             {
                 return;
             }
+
 
             AIResponse.SetActive(!playerConversant.IsChoosing());
             choiceRoot.gameObject.SetActive(playerConversant.IsChoosing());
@@ -50,7 +65,17 @@ namespace UI
                 aiText.text = playerConversant.GetText();
                 nextButton.gameObject.SetActive(playerConversant.HasNext());
             }
+
+            if(playerConversant.HasNext() == false && !playerConversant.IsCurrentDialogSkipable()) 
+            {
+                quitButton.gameObject.SetActive(true);
+            }
+            else if (!playerConversant.IsCurrentDialogSkipable()) 
+            {
+                quitButton.gameObject.SetActive(false);
+            }
         }
+
 
         private void BuildChoiceList()
         {

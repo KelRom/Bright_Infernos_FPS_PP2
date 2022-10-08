@@ -11,6 +11,7 @@ namespace Dialog
     {
         [SerializeField] List<DialogNode> nodes = new List<DialogNode>();
         [SerializeField] Vector2 newNodeOffset = new Vector2(250, 0);
+        [SerializeField] bool isSkipable;
 
         Dictionary<string, DialogNode> nodeLookup = new Dictionary<string, DialogNode>();
 
@@ -24,6 +25,11 @@ namespace Dialog
                     nodeLookup[node.name] = node;
                 }
             }
+        }
+
+        public bool IsSkipable() 
+        {
+            return isSkipable;
         }
 
         public IEnumerable<DialogNode> GetAllNodes() 
