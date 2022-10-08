@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 9524fdb9a2264084b950157989438532, type: 2}
---- !u!4 &153850849 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3467061741563579225, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-  m_PrefabInstance: {fileID: 2049997024}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &259244191
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +412,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed8fa64647334547a91a393729d0226, type: 3}
+--- !u!4 &424834022 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4798845980054755227, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
+  m_PrefabInstance: {fileID: 2049997024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &450758540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,11 +1620,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7987639486532736931, guid: 377883a2e0b86374c94e08bb7f56cc6a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000018988336
+      value: 0.000000018988336
       objectReference: {fileID: 0}
     - target: {fileID: 7987639486532736931, guid: 377883a2e0b86374c94e08bb7f56cc6a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000030850345
+      value: -0.0000000030850345
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 377883a2e0b86374c94e08bb7f56cc6a, type: 3}
@@ -2105,19 +2105,27 @@ PrefabInstance:
     - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: castingPos
       value: 
-      objectReference: {fileID: 153850849}
+      objectReference: {fileID: 424834022}
     - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: isMeleeActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: spellInventory.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
+      propertyPath: spellInventory.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 15d94cece66bcb14cbbcc8f0587f3466, type: 2}
     - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: spellInventory.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 719c642cb7646a449874129797655711, type: 2}
+      objectReference: {fileID: 11400000, guid: dda7d30dce06e0c4cb29392771e02d6c, type: 2}
+    - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
+      propertyPath: spellInventory.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0af7a7ece3856a0419d677e3c163ae63, type: 2}
     - target: {fileID: 9190605968333137051, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: m_Icon
       value: 
@@ -2436,6 +2444,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PolyArtWizardStandardMat
       objectReference: {fileID: 0}
+    - target: {fileID: 1755960885506303337, guid: 14348125416e58c4c82b270a46479742, type: 3}
+      propertyPath: spellInventory.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755960885506303337, guid: 14348125416e58c4c82b270a46479742, type: 3}
+      propertyPath: spellInventory.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: dda7d30dce06e0c4cb29392771e02d6c, type: 2}
     - target: {fileID: 1755960885506303337, guid: 14348125416e58c4c82b270a46479742, type: 3}
       propertyPath: spellInventory.Array.data[1]
       value: 
