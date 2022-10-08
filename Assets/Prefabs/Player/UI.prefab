@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &87598914
 RectTransform:
   m_ObjectHideFlags: 0
@@ -452,6 +452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicMixer: {fileID: 0}
+  sfxMixer: {fileID: 0}
 --- !u!1 &624406762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,6 +1556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicMixer: {fileID: 0}
+  sfxMixer: {fileID: 0}
 --- !u!1 &417096122482922616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,6 +1840,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicMixer: {fileID: 0}
+  sfxMixer: {fileID: 0}
 --- !u!1 &907265529054001080
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicMixer: {fileID: 0}
+  sfxMixer: {fileID: 0}
 --- !u!1 &1479780678839978636
 GameObject:
   m_ObjectHideFlags: 0
@@ -2400,6 +2408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicMixer: {fileID: 0}
+  sfxMixer: {fileID: 0}
 --- !u!1 &1934007332124711853
 GameObject:
   m_ObjectHideFlags: 0
@@ -3087,6 +3097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicMixer: {fileID: 0}
+  sfxMixer: {fileID: 0}
 --- !u!1 &3729874993929710133
 GameObject:
   m_ObjectHideFlags: 0
@@ -3545,7 +3557,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 447.9, y: -66}
+  m_AnchoredPosition: {x: -327, y: -66}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7363613975584010201
@@ -3810,6 +3822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicMixer: {fileID: 0}
+  sfxMixer: {fileID: 0}
 --- !u!1 &6109771669735523441
 GameObject:
   m_ObjectHideFlags: 0
@@ -3957,6 +3971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicMixer: {fileID: 0}
+  sfxMixer: {fileID: 0}
 --- !u!1 &6556348989079684816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,6 +4120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicMixer: {fileID: 0}
+  sfxMixer: {fileID: 0}
 --- !u!1 &7419403838055287719
 GameObject:
   m_ObjectHideFlags: 0
@@ -4427,6 +4445,7 @@ MonoBehaviour:
   winMenu: {fileID: 7613267364189130241}
   playerDeadMenu: {fileID: 7464029546493750485}
   gameOverMenu: {fileID: 1889648947}
+  settingsMenu: {fileID: 0}
   interactPopUpWindow: {fileID: 1651825041}
   isPaused: 0
 --- !u!1 &7419403839248502234
@@ -4815,6 +4834,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicMixer: {fileID: 0}
+  sfxMixer: {fileID: 0}
 --- !u!1 &8424563537521838230
 GameObject:
   m_ObjectHideFlags: 0

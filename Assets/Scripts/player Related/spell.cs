@@ -18,6 +18,7 @@ public class spell : MonoBehaviour
     private void Update()
     { 
         transform.position += playerLastLookDirection * Time.deltaTime * speed;
+        Destroy(gameObject, destroyTime);
     }
 
     private void OnParticleCollision(GameObject other)

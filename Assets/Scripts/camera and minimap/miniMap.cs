@@ -10,7 +10,7 @@ public class miniMap : MonoBehaviour
     private void LateUpdate()
     {
         position = gameManager.instance.player.transform.position;
-        position.y = transform.position.y;
+        position.y += 30;
         transform.position = position;
     }
 }

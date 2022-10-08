@@ -2670,7 +2670,7 @@ MonoBehaviour:
   jumpsMax: 2
   maxMana: 100
   currentMana: 0
-  castingPos: {fileID: 0}
+  castingPos: {fileID: 4798845980054755227}
   gunPos: {fileID: 1113975830051470739}
   selectedSpell: 0
   swingRate: 0.1
