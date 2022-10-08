@@ -26,6 +26,7 @@ public class gameManager : MonoBehaviour
     public GameObject winMenu;
     public GameObject playerDeadMenu;
     public GameObject gameOverMenu;
+    public GameObject settingsMenu;
     public GameObject interactPopUpWindow;
 
     public bool isPaused;

@@ -1,36 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class spell : MonoBehaviour
 {
-
-    [SerializeField] Rigidbody rb;
-
     public int damage;
     public int speed;
     public int destroyTime;
-
+    private Vector3 playerLastLookDirection;
     private void Start()
     {
-        if (rb != null)
-        {
-            rb.velocity = transform.forward * speed;
-            Destroy(gameObject, destroyTime);
-        }
+        playerLastLookDirection = gameManager.instance.player.transform.forward;
     }
 
     private void Update()
-    {
-        
+    { 
+        transform.position += playerLastLookDirection * Time.deltaTime * speed;
+        Destroy(gameObject, destroyTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnParticleCollision(GameObject other)
     {
-        if (other.GetComponent<IDamageable>() != null)
+        if(other.GetComponent<IDamageable>() != null)
         {
             other.GetComponent<IDamageable>().takeDamage(damage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }

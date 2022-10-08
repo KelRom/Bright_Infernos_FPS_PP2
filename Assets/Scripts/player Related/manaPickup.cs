@@ -26,9 +26,6 @@ public class manaPickup : MonoBehaviour
             playerInRange = false;
     }
 
-
-
-
     public void pickUp()
     {
         if (!useButtonToPickUp && playerInRange && gameManager.instance.playerScript.checkPlayerMana())

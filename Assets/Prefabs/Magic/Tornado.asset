@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 024e5dc236ead084b929f29b59c1ea7c, type: 3}
-  m_Name: EarthGlaive
+  m_Name: Tornado
   m_EditorClassIdentifier: 
-  manaCost: 25
-  damage: 15
+  manaCost: 10
+  damage: 10
   speed: 10
-  spellDisplay: {fileID: 6564458819564178554, guid: ad2fbddf00dbab24d836959fb9b32e1f, type: 3}
-  Cooldown: 2
+  spellDisplay: {fileID: 2017854636608485661, guid: 8e5ee56cc9db53549953edc19d76166f, type: 3}
+  Cooldown: 1
+  knockbackStength: 10

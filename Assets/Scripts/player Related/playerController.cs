@@ -216,7 +216,7 @@ public class playerController : MonoBehaviour, IDamageable
             isCasting = true;
             currentMana -= spellInventory[selectedSpell].manaCost;
             updatePlayerMana();
-            Instantiate(spellInventory[selectedSpell].spellDisplay, castingPos.position, castingPos.rotation);
+            Instantiate(spellInventory[selectedSpell].spellDisplay, Vector3.Scale(castingPos.position, spellInventory[selectedSpell].spellDisplay.transform.position), castingPos.rotation);
             yield return new WaitForSeconds(spellInventory[selectedSpell].Cooldown);
             isCasting = false;
         }
