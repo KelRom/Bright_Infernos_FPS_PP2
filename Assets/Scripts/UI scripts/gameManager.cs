@@ -10,6 +10,8 @@ public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
 
+    public AudioSource gameMusicSource;
+    public AudioClip[] gameMusicClips;
     public Animator fadeScreen;
     public GameObject player;
     public playerController playerScript;
@@ -43,6 +45,8 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         playerSpawnPoint = GameObject.Find("Player Spawn Point");
         timeScaleOriginal = Time.timeScale;
+        gameMusicSource.clip = gameMusicClips[SceneManager.GetActiveScene().buildIndex - 1];
+        gameMusicSource.Play();
         StartCoroutine(turnFadeScreenOff());
         // It is save to remove listeners even if they
         // didn't exist so far.
@@ -54,16 +58,26 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gameMusicSource.volume <= 1)
+        {
+            gameMusicSource.volume = Mathf.Lerp(gameMusicSource.volume, 1f, Time.deltaTime * .1f);
+        }
         if (Input.GetButtonDown("Cancel") && menuCurrentlyOpen != playerDeadMenu && menuCurrentlyOpen != winMenu)
         {
             if(menuCurrentlyOpen == settingsMenu && menuCurrentlyOpen != null)
             {
                 menuCurrentlyOpen.SetActive(false);
+                menuCurrentlyOpen = pauseMenu;
+                menuCurrentlyOpen.SetActive(isPaused);
+            }
+            else
+            {
+                isPaused = !isPaused;
+                menuCurrentlyOpen = pauseMenu;
+                menuCurrentlyOpen.SetActive(isPaused);
             }
 
-            isPaused = !isPaused;
-            menuCurrentlyOpen = pauseMenu;
-            menuCurrentlyOpen.SetActive(isPaused);
+            
 
             if (isPaused)
                 cursorLockPause();
