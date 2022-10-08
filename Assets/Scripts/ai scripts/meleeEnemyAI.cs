@@ -167,7 +167,6 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         if(hpBar != null)
         {
             hpBar.fillAmount = (float)HP / (float)origHP;
-            print("test");
         }
     }
     IEnumerator flashColor()
