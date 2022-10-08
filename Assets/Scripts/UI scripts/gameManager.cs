@@ -56,6 +56,11 @@ public class gameManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel") && menuCurrentlyOpen != playerDeadMenu && menuCurrentlyOpen != winMenu)
         {
+            if(menuCurrentlyOpen == settingsMenu && menuCurrentlyOpen != null)
+            {
+                menuCurrentlyOpen.SetActive(false);
+            }
+
             isPaused = !isPaused;
             menuCurrentlyOpen = pauseMenu;
             menuCurrentlyOpen.SetActive(isPaused);

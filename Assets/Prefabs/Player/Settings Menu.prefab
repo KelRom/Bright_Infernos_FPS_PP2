@@ -33,8 +33,8 @@ RectTransform:
   m_Father: {fileID: 8301451488940195569}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -162,7 +162,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8301451487924612690}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: buttonFunctions, Assembly-CSharp
         m_MethodName: setFullscreen
         m_Mode: 0
@@ -343,8 +343,8 @@ RectTransform:
   m_Father: {fileID: 8301451488346435336}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -555,7 +555,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -937,14 +937,13 @@ GameObject:
   - component: {fileID: 8301451487924612687}
   - component: {fileID: 8301451487924612685}
   - component: {fileID: 8301451487924612684}
-  - component: {fileID: 8301451487924612690}
   m_Layer: 5
   m_Name: Settings Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8301451487924612687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1007,20 +1006,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8301451487924612690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8301451487924612686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicMixer: {fileID: 24100000, guid: 886530e57ce1b5146aeebd39f325b244, type: 2}
-  sfxMixer: {fileID: 24100000, guid: 4cca0bc43335cc24da48c20dccd9b8a1, type: 2}
 --- !u!1 &8301451488018717964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,8 +1318,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8301451488741742992}
   - component: {fileID: 8301451488741742993}
+  - component: {fileID: 177934509}
   m_Layer: 5
-  m_Name: MusicVolume
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1415,9 +1401,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8301451487924612690}
+      - m_Target: {fileID: 177934509}
         m_TargetAssemblyTypeName: buttonFunctions, Assembly-CSharp
-        m_MethodName: setMusicVolume
+        m_MethodName: setVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1427,6 +1413,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &177934509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8301451488741742995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMixer: {fileID: 24100000, guid: a3e2d38629f7e364aabc8f3c7f89ead8, type: 2}
 --- !u!1 &8301451488940195568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,7 +1497,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1550,8 +1549,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8301451489168625758}
   - component: {fileID: 8301451489168625759}
+  - component: {fileID: 1333307279}
   m_Layer: 5
-  m_Name: SFX Volume
+  m_Name: SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1632,9 +1632,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8301451487924612690}
+      - m_Target: {fileID: 1333307279}
         m_TargetAssemblyTypeName: buttonFunctions, Assembly-CSharp
-        m_MethodName: setSFXVolume
+        m_MethodName: setVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1644,3 +1644,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1333307279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8301451489168625753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec5f6daf20163744a2e4a92b81c327c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMixer: {fileID: 24100000, guid: a3e2d38629f7e364aabc8f3c7f89ead8, type: 2}

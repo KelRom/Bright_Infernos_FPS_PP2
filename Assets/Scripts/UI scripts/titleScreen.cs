@@ -38,7 +38,7 @@ public class titleScreen : MonoBehaviour
     public IEnumerator showNextMenu(string nextMenu)
     {
         cirleTransition.SetActive(true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.9f);
         currentMenu.SetActive(false);
         switch (nextMenu)
         {

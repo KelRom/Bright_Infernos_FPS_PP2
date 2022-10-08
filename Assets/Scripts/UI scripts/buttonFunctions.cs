@@ -7,10 +7,7 @@ using UnityEngine.Audio;
 
 public class buttonFunctions : MonoBehaviour
 {
-
-    public AudioMixer musicMixer;
-    public AudioMixer sfxMixer;
-
+    [SerializeField] AudioMixer mainMixer; 
     public void resume()
     {
         if (gameManager.instance.isPaused)
@@ -56,14 +53,16 @@ public class buttonFunctions : MonoBehaviour
         StartCoroutine(titleScreen.instance.showNextMenu(this.name));
     }
 
-    public void setMusicVolume(float volume)
+    public void showSettingsMenu()
     {
-        musicMixer.SetFloat("Music Volume", volume);
-    } 
-    
-    public void setSFXVolume(float volume)
+        gameManager.instance.pauseMenu.SetActive(false);
+        gameManager.instance.menuCurrentlyOpen = gameManager.instance.settingsMenu;
+        gameManager.instance.menuCurrentlyOpen.SetActive(true);
+    }
+
+    public void setVolume(float volume)
     {
-        musicMixer.SetFloat("SFX Volume", volume);
+        mainMixer.SetFloat(gameObject.name, volume);
     }
 
     public void setFullscreen(bool isFullscreen)

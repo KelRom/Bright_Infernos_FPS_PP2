@@ -26,7 +26,9 @@ public class spell : MonoBehaviour
         if(other.GetComponent<IDamageable>() != null)
         {
             other.GetComponent<IDamageable>().takeDamage(damage);
-            Destroy(gameObject);
         }
+        if(other.name != "Terrain")
+            Destroy(gameObject);
+        
     }
 }
