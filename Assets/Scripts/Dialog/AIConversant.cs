@@ -62,12 +62,12 @@ namespace Dialog
         {
             if (playerInRange && useButtonToStartDialog && Input.GetKeyDown(KeyCode.E) && !gameManager.instance.playerScript.GetComponent<PlayerConversant>().IsActive())
             {
-                gameManager.instance.player.GetComponent<PlayerConversant>().StartDialog(dialog);
+                gameManager.instance.player.GetComponent<PlayerConversant>().StartDialog(this,dialog);
                 isDialogStarted = true;
             }
             else if (playerInRange && !useButtonToStartDialog && !gameManager.instance.playerScript.GetComponent<PlayerConversant>().IsActive())
             {
-                gameManager.instance.player.GetComponent<PlayerConversant>().StartDialog(dialog);
+                gameManager.instance.player.GetComponent<PlayerConversant>().StartDialog(this,dialog);
                 isDialogStarted = true;
             }
 

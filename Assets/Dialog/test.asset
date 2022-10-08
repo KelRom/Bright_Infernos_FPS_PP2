@@ -23,6 +23,8 @@ MonoBehaviour:
     y: 243
     width: 200
     height: 100
+  onEnterAction: TestRootEntry
+  onExitAction: 
 --- !u!114 &-3020900422448454204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,6 +48,8 @@ MonoBehaviour:
     y: 202
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: TestAIExit
 --- !u!114 &-2977405937871225650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,6 +72,8 @@ MonoBehaviour:
     y: 387.00006
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-2905508921119769846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +96,8 @@ MonoBehaviour:
     y: 244
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +146,8 @@ MonoBehaviour:
     y: 506.99994
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &2426981680361480084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +170,8 @@ MonoBehaviour:
     y: 354
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &3375466975283469919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +194,8 @@ MonoBehaviour:
     y: 109.000015
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &3698082371345459568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +218,8 @@ MonoBehaviour:
     y: 249
     width: 200
     height: 100
+  onEnterAction: TestSelection
+  onExitAction: 
 --- !u!114 &3719343868429715860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +241,8 @@ MonoBehaviour:
     y: 387.00006
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: Attack
 --- !u!114 &3938460501635365116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,6 +264,8 @@ MonoBehaviour:
     y: 109.000015
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &6091013541442223990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,3 +289,5 @@ MonoBehaviour:
     y: 366.00006
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 

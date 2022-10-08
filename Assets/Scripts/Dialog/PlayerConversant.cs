@@ -11,14 +11,17 @@ namespace Dialog
     {
         Dialog currentDialog = null;
         DialogNode currentNode = null;
+        AIConversant currentConversant = null;
         bool isChoosing = false;
 
         public event Action onConverstationUpdated;
 
-        public void StartDialog(Dialog newDialog) 
+        public void StartDialog(AIConversant newConversant, Dialog newDialog) 
         {
             currentDialog = newDialog;
             currentNode = currentDialog.GetRootNode();
+            currentConversant = newConversant;
+            TriggerEnterAction();
             onConverstationUpdated();
         }
 
@@ -30,7 +33,9 @@ namespace Dialog
         public void Quit()
         {
             currentDialog = null;
+            TriggerExitAction();
             currentNode = null;
+            currentConversant = null;
             isChoosing = false;
             onConverstationUpdated();
         }
@@ -63,6 +68,7 @@ namespace Dialog
         public void SelectChoice(DialogNode chosenNode) 
         {
             currentNode = chosenNode;
+            TriggerEnterAction();
             isChoosing = false;
 
             if (HasNext()) 
@@ -82,18 +88,43 @@ namespace Dialog
             if(numPlayerResponse > 0) 
             {
                 isChoosing = true;
+                TriggerExitAction();
                 onConverstationUpdated();
                 return;
             }
 
             DialogNode[] children = currentDialog.GetAIChildren(currentNode).ToArray();
+            TriggerExitAction();
             currentNode = children[UnityEngine.Random.Range(0, children.Count())];
+            TriggerEnterAction();
             onConverstationUpdated();
         }
 
         public bool HasNext()
         {
             return currentDialog.GetAllChildren(currentNode).Count() > 0;
+        }
+
+        private void TriggerEnterAction()
+        {
+            TriggerAction(currentNode.GetOnEnterAction());
+        }
+        private void TriggerExitAction()
+        {
+            TriggerAction(currentNode.GetOnExitAction());   
+        }
+
+        private void TriggerAction(string action) 
+        {
+            if(action == "") 
+            {
+                return;
+            }
+
+            foreach(DialogTrigger trigger in currentConversant.GetComponents<DialogTrigger>()) 
+            {
+                trigger.Trigger(action);
+            }
         }
     }
 }
