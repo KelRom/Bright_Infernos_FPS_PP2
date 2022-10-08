@@ -18,7 +18,10 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
     [Range(0, 50)] [SerializeField] int roamRadius;
     [Range(1, 180)] [SerializeField] int viewAngle;
     [SerializeField] GameObject headPosition;
-    [SerializeField] int knockbackStrength;
+    [SerializeField] float knockbackForce;
+    [SerializeField] float knockbackTime;
+    private float knockbackCounter;
+    private Vector3 enemyVelocity;
 
 
     [Header("----- Attack Stats -----")]
@@ -136,6 +139,7 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         agent.speed = 0;
 
         StartCoroutine(flashColor());
+        knockback();
         lastPlayerPos = gameManager.instance.player.transform.position;
 
         if (HP <= 0 && agent.enabled)
@@ -266,5 +270,12 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         //Turn off all the enemy collision models.
         foreach (Collider col in GetComponents<Collider>())
             col.enabled = false;
+    }
+    public void knockback()
+    {
+        Vector3 hitDirection = -transform.position;
+        knockbackCounter = knockbackTime;
+        enemyVelocity.y = knockbackForce;
+        agent.Move(hitDirection.normalized * knockbackForce);
     }
 }
