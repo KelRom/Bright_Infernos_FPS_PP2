@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 843624262}
   - component: {fileID: 843624261}
   m_Layer: 0
-  m_Name: CityTerrainPlane
+  m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13843,6 +13843,7 @@ GameObject:
   - component: {fileID: 644311998690465598}
   - component: {fileID: 614253775129996886}
   - component: {fileID: 625140045040407278}
+  - component: {fileID: 914917}
   m_Layer: 0
   m_Name: street_green_belt_a (4)
   m_TagString: Untagged
@@ -13916,6 +13917,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &914917
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646446166745770436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.008059, y: 5.8796782, z: 1.2381619}
+  m_Center: {x: -0.0038938692, y: 0.00040467374, z: 0.61633015}
 --- !u!1 &646446166755206301
 GameObject:
   m_ObjectHideFlags: 0
@@ -13927,6 +13941,7 @@ GameObject:
   - component: {fileID: 644311998697806439}
   - component: {fileID: 614253775120556815}
   - component: {fileID: 625140045033070519}
+  - component: {fileID: 881886716}
   m_Layer: 0
   m_Name: street_green_belt_a (3)
   m_TagString: Untagged
@@ -14000,6 +14015,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &881886716
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646446166755206301}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.008059, y: 5.879675, z: 1.2381603}
+  m_Center: {x: -0.0039243703, y: 0.0004657507, z: 0.6163148}
 --- !u!1 &646446166824496218
 GameObject:
   m_ObjectHideFlags: 0
@@ -14011,6 +14039,7 @@ GameObject:
   - component: {fileID: 644311998493905568}
   - component: {fileID: 614253775190174664}
   - component: {fileID: 625140044834183024}
+  - component: {fileID: 2018166884}
   m_Layer: 0
   m_Name: street_green_belt_a
   m_TagString: Untagged
@@ -14087,6 +14116,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2018166884
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646446166824496218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.008066, y: 5.8796806, z: 1.2381649}
+  m_Center: {x: -0.003924445, y: 0.00040464275, z: 0.61633027}
 --- !u!1 &646446167146363159
 GameObject:
   m_ObjectHideFlags: 0
@@ -14098,6 +14140,7 @@ GameObject:
   - component: {fileID: 644311998818355181}
   - component: {fileID: 614253775538912901}
   - component: {fileID: 625140045717815869}
+  - component: {fileID: 1650895994}
   m_Layer: 0
   m_Name: street_green_belt_a (5)
   m_TagString: Untagged
@@ -14171,6 +14214,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1650895994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646446167146363159}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.008059, y: 5.879679, z: 1.2381624}
+  m_Center: {x: -0.003893816, y: 0.0005877611, z: 0.61633015}
 --- !u!1 &646446167327106608
 GameObject:
   m_ObjectHideFlags: 0
@@ -14182,6 +14238,7 @@ GameObject:
   - component: {fileID: 644311998998059210}
   - component: {fileID: 614253775760810402}
   - component: {fileID: 625140045337845018}
+  - component: {fileID: 566966950}
   m_Layer: 0
   m_Name: street_green_belt_a (7)
   m_TagString: Untagged
@@ -14255,6 +14312,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &566966950
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646446167327106608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.008059, y: 5.879679, z: 1.2381624}
+  m_Center: {x: -0.0038327808, y: 0.0005877611, z: 0.61633015}
 --- !u!1 &646446167554136343
 GameObject:
   m_ObjectHideFlags: 0
@@ -14266,6 +14336,7 @@ GameObject:
   - component: {fileID: 644311997345097709}
   - component: {fileID: 614253773788913285}
   - component: {fileID: 625140046385652285}
+  - component: {fileID: 716719104}
   m_Layer: 0
   m_Name: street_green_belt_a (1)
   m_TagString: Untagged
@@ -14342,6 +14413,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &716719104
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646446167554136343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.008066, y: 5.87968, z: 1.2381649}
+  m_Center: {x: -0.0039242976, y: 0.00055722974, z: 0.61633027}
 --- !u!1 &646446167907824067
 GameObject:
   m_ObjectHideFlags: 0
@@ -14353,6 +14437,7 @@ GameObject:
   - component: {fileID: 644311997469560633}
   - component: {fileID: 614253774236907089}
   - component: {fileID: 625140045925632745}
+  - component: {fileID: 1519008549}
   m_Layer: 0
   m_Name: street_green_belt_a (6)
   m_TagString: Untagged
@@ -14426,6 +14511,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1519008549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646446167907824067}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.008059, y: 5.879679, z: 1.2381624}
+  m_Center: {x: -0.003893816, y: 0.0005877611, z: 0.61633015}
 --- !u!1 &646446168170087725
 GameObject:
   m_ObjectHideFlags: 0
@@ -14437,6 +14535,7 @@ GameObject:
   - component: {fileID: 644311997727128535}
   - component: {fileID: 614253774515159743}
   - component: {fileID: 625140046742879751}
+  - component: {fileID: 1288701546}
   m_Layer: 0
   m_Name: street_green_belt_a (8)
   m_TagString: Untagged
@@ -14510,6 +14609,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1288701546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646446168170087725}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.008059, y: 5.879678, z: 1.2381632}
+  m_Center: {x: -0.0039549144, y: 0.00040467916, z: 0.6163454}
 --- !u!1 &646446168180359659
 GameObject:
   m_ObjectHideFlags: 0
@@ -14521,6 +14633,7 @@ GameObject:
   - component: {fileID: 644311997742153489}
   - component: {fileID: 614253774501185145}
   - component: {fileID: 625140046726937281}
+  - component: {fileID: 884657535}
   m_Layer: 0
   m_Name: street_green_belt_a (2)
   m_TagString: Untagged
@@ -14594,6 +14707,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &884657535
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646446168180359659}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.008062, y: 5.8796806, z: 1.2381634}
+  m_Center: {x: -0.003954836, y: 0.000542023, z: 0.61633027}
 --- !u!1 &646458846401516857
 GameObject:
   m_ObjectHideFlags: 0
@@ -33790,6 +33916,7 @@ GameObject:
   - component: {fileID: 644308399193386446}
   - component: {fileID: 614375994657641344}
   - component: {fileID: 624904278894720772}
+  - component: {fileID: 847998856}
   m_Layer: 0
   m_Name: pine_b (25)
   m_TagString: Untagged
@@ -33863,6 +33990,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &847998856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647004269557914134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.3020523, z: 1}
+  m_Center: {x: -0.12691577, y: 0.050025422, z: 5.467295}
 --- !u!1 &647004269570367864
 GameObject:
   m_ObjectHideFlags: 0
@@ -72126,6 +72266,7 @@ GameObject:
   - component: {fileID: 644484480035460494}
   - component: {fileID: 615663660526587208}
   - component: {fileID: 625723137839016948}
+  - component: {fileID: 1940086586}
   m_Layer: 0
   m_Name: street_pond_a (9)
   m_TagString: Untagged
@@ -72201,6 +72342,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1940086586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744071273302804}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.53084, y: 5.5968494, z: 1.3369257}
+  m_Center: {x: 0.01208107, y: -0.006929123, z: 0.668476}
 --- !u!1 &647744071416442170
 GameObject:
   m_ObjectHideFlags: 0
@@ -72212,6 +72366,7 @@ GameObject:
   - component: {fileID: 644484480114635680}
   - component: {fileID: 615663660101397350}
   - component: {fileID: 625723137947536858}
+  - component: {fileID: 589339144}
   m_Layer: 0
   m_Name: street_pond_a (3)
   m_TagString: Untagged
@@ -72287,6 +72442,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &589339144
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744071416442170}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.530836, y: 5.596846, z: 1.3369218}
+  m_Center: {x: 0.012081136, y: -0.006837517, z: 0.66843003}
 --- !u!1 &647744071592831368
 GameObject:
   m_ObjectHideFlags: 0
@@ -72298,6 +72466,7 @@ GameObject:
   - component: {fileID: 644484480223917842}
   - component: {fileID: 615663660344700884}
   - component: {fileID: 625723138056423784}
+  - component: {fileID: 686965526}
   m_Layer: 0
   m_Name: street_pond_a (11)
   m_TagString: Untagged
@@ -72373,6 +72542,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &686965526
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744071592831368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.530836, y: 5.5968466, z: 1.3369215}
+  m_Center: {x: 0.0120506305, y: -0.006868007, z: 0.6684607}
 --- !u!1 &647744071734332888
 GameObject:
   m_ObjectHideFlags: 0
@@ -72384,6 +72566,7 @@ GameObject:
   - component: {fileID: 644484480363352898}
   - component: {fileID: 615663660987485060}
   - component: {fileID: 625723137092775224}
+  - component: {fileID: 1144170828}
   m_Layer: 0
   m_Name: street_pond_a (2)
   m_TagString: Untagged
@@ -72459,6 +72642,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1144170828
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744071734332888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.530836, y: 5.596846, z: 1.3369218}
+  m_Center: {x: 0.011959066, y: -0.0068680346, z: 0.66843003}
 --- !u!1 &647744071798956620
 GameObject:
   m_ObjectHideFlags: 0
@@ -72470,6 +72666,7 @@ GameObject:
   - component: {fileID: 644484480553811158}
   - component: {fileID: 615663661077275664}
   - component: {fileID: 625723137321747116}
+  - component: {fileID: 2017848032}
   m_Layer: 0
   m_Name: street_pond_a (16)
   m_TagString: Untagged
@@ -72545,6 +72742,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2017848032
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744071798956620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.53084, y: 5.596846, z: 1.3369218}
+  m_Center: {x: 0.01209642, y: -0.006868035, z: 0.66846055}
 --- !u!1 &647744071981693268
 GameObject:
   m_ObjectHideFlags: 0
@@ -72556,6 +72766,7 @@ GameObject:
   - component: {fileID: 644484480669394894}
   - component: {fileID: 615663660622479112}
   - component: {fileID: 625723137407457716}
+  - component: {fileID: 1766557410}
   m_Layer: 0
   m_Name: street_pond_a (13)
   m_TagString: Untagged
@@ -72631,6 +72842,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1766557410
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744071981693268}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.530836, y: 5.5968466, z: 1.3369215}
+  m_Center: {x: 0.0120506305, y: -0.006806972, z: 0.6684607}
 --- !u!1 &647744072110500065
 GameObject:
   m_ObjectHideFlags: 0
@@ -72642,6 +72866,7 @@ GameObject:
   - component: {fileID: 644484480808695419}
   - component: {fileID: 615663660761837245}
   - component: {fileID: 625723137538754561}
+  - component: {fileID: 1482064690}
   m_Layer: 0
   m_Name: street_pond_a (8)
   m_TagString: Untagged
@@ -72717,6 +72942,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1482064690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744072110500065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.530836, y: 5.5968466, z: 1.3369226}
+  m_Center: {x: 0.012050615, y: -0.006928979, z: 0.66843}
 --- !u!1 &647744072344966943
 GameObject:
   m_ObjectHideFlags: 0
@@ -72728,6 +72966,7 @@ GameObject:
   - component: {fileID: 644484478951278981}
   - component: {fileID: 615663659442311491}
   - component: {fileID: 625723136759035903}
+  - component: {fileID: 1862440713}
   m_Layer: 0
   m_Name: street_pond_a (17)
   m_TagString: Untagged
@@ -72803,6 +73042,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1862440713
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744072344966943}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.53084, y: 5.596846, z: 1.3369218}
+  m_Center: {x: 0.012077346, y: -0.006868035, z: 0.66846055}
 --- !u!1 &647744072347585780
 GameObject:
   m_ObjectHideFlags: 0
@@ -72814,6 +73066,7 @@ GameObject:
   - component: {fileID: 644484478965437038}
   - component: {fileID: 615663659455417000}
   - component: {fileID: 625723136764800020}
+  - component: {fileID: 1787505775}
   m_Layer: 0
   m_Name: street_pond_a (5)
   m_TagString: Untagged
@@ -72889,6 +73142,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1787505775
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744072347585780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.53084, y: 5.5968456, z: 1.3369211}
+  m_Center: {x: 0.012081149, y: -0.0068680057, z: 0.66846055}
 --- !u!1 &647744072677410835
 GameObject:
   m_ObjectHideFlags: 0
@@ -72900,6 +73166,7 @@ GameObject:
   - component: {fileID: 644484479151576713}
   - component: {fileID: 615663659239919183}
   - component: {fileID: 625723136963389683}
+  - component: {fileID: 122358034}
   m_Layer: 0
   m_Name: street_pond_a (1)
   m_TagString: Untagged
@@ -72975,6 +73242,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &122358034
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744072677410835}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.530836, y: 5.596846, z: 1.3369212}
+  m_Center: {x: 0.012081148, y: -0.0068680067, z: 0.66844535}
 --- !u!1 &647744072745777620
 GameObject:
   m_ObjectHideFlags: 0
@@ -72986,6 +73266,7 @@ GameObject:
   - component: {fileID: 644484479355201358}
   - component: {fileID: 615663659845287816}
   - component: {fileID: 625723136089725236}
+  - component: {fileID: 1135800677}
   m_Layer: 0
   m_Name: street_pond_a
   m_TagString: Untagged
@@ -73061,6 +73342,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1135800677
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744072745777620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.530836, y: 5.596846, z: 1.3369212}
+  m_Center: {x: 0.012081148, y: -0.0068680067, z: 0.6684606}
 --- !u!1 &647744072754017361
 GameObject:
   m_ObjectHideFlags: 0
@@ -73072,6 +73366,7 @@ GameObject:
   - component: {fileID: 644484479360330443}
   - component: {fileID: 615663659851428365}
   - component: {fileID: 625723136098260145}
+  - component: {fileID: 1325386937}
   m_Layer: 0
   m_Name: street_pond_a (14)
   m_TagString: Untagged
@@ -73147,6 +73442,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1325386937
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744072754017361}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.530836, y: 5.5968466, z: 1.3369215}
+  m_Center: {x: 0.012081148, y: -0.006868007, z: 0.6684607}
 --- !u!1 &647744072847258279
 GameObject:
   m_ObjectHideFlags: 0
@@ -73158,6 +73466,7 @@ GameObject:
   - component: {fileID: 644484479254309949}
   - component: {fileID: 615663659879593211}
   - component: {fileID: 625723135988306503}
+  - component: {fileID: 1401874490}
   m_Layer: 0
   m_Name: street_pond_a (7)
   m_TagString: Untagged
@@ -73233,6 +73542,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1401874490
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744072847258279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.530848, y: 5.5968504, z: 1.3369257}
+  m_Center: {x: 0.012142108, y: -0.0069901585, z: 0.6684302}
 --- !u!1 &647744073094005596
 GameObject:
   m_ObjectHideFlags: 0
@@ -73244,6 +73566,7 @@ GameObject:
   - component: {fileID: 644484479510535622}
   - component: {fileID: 615663659631478016}
   - component: {fileID: 625723136269968316}
+  - component: {fileID: 1227756114}
   m_Layer: 0
   m_Name: street_pond_a (12)
   m_TagString: Untagged
@@ -73319,6 +73642,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1227756114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744073094005596}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.53084, y: 5.596846, z: 1.3369218}
+  m_Center: {x: 0.012020102, y: -0.0068222587, z: 0.6684453}
 --- !u!1 &647744073106194401
 GameObject:
   m_ObjectHideFlags: 0
@@ -73330,6 +73666,7 @@ GameObject:
   - component: {fileID: 644484479511142779}
   - component: {fileID: 615663659632982461}
   - component: {fileID: 625723136283025153}
+  - component: {fileID: 1334001453}
   m_Layer: 0
   m_Name: street_pond_a (4)
   m_TagString: Untagged
@@ -73405,6 +73742,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1334001453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744073106194401}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.530836, y: 5.596845, z: 1.3369211}
+  m_Center: {x: 0.012081148, y: -0.0067459354, z: 0.66846055}
 --- !u!1 &647744073162139117
 GameObject:
   m_ObjectHideFlags: 0
@@ -73416,6 +73766,7 @@ GameObject:
   - component: {fileID: 644484479710788471}
   - component: {fileID: 615663659697316785}
   - component: {fileID: 625723136470336781}
+  - component: {fileID: 540062628}
   m_Layer: 0
   m_Name: street_pond_a (10)
   m_TagString: Untagged
@@ -73491,6 +73842,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &540062628
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744073162139117}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.53084, y: 5.5968494, z: 1.3369257}
+  m_Center: {x: 0.01208107, y: -0.006929123, z: 0.668476}
 --- !u!1 &647744073183107876
 GameObject:
   m_ObjectHideFlags: 0
@@ -73502,6 +73866,7 @@ GameObject:
   - component: {fileID: 644484479723357630}
   - component: {fileID: 615663659676343672}
   - component: {fileID: 625723136457767876}
+  - component: {fileID: 1096441279}
   m_Layer: 0
   m_Name: street_pond_a (15)
   m_TagString: Untagged
@@ -73577,6 +73942,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1096441279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744073183107876}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.530836, y: 5.5968466, z: 1.3369215}
+  m_Center: {x: 0.012081148, y: -0.006745937, z: 0.6684607}
 --- !u!1 &647744073226774860
 GameObject:
   m_ObjectHideFlags: 0
@@ -73588,6 +73966,7 @@ GameObject:
   - component: {fileID: 644484479642220502}
   - component: {fileID: 615663659764051728}
   - component: {fileID: 625723136405703084}
+  - component: {fileID: 752237114}
   m_Layer: 0
   m_Name: street_pond_a (6)
   m_TagString: Untagged
@@ -73663,6 +74042,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &752237114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647744073226774860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.530848, y: 5.5968504, z: 1.3369257}
+  m_Center: {x: 0.012142108, y: -0.0069291233, z: 0.6684607}
 --- !u!1 &647747749983577308
 GameObject:
   m_ObjectHideFlags: 0
@@ -88592,6 +88984,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88f2fd29f58b9734683512546acec310, type: 3}
+--- !u!1 &5677265968561787221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2222111361404534124, guid: 88f2fd29f58b9734683512546acec310, type: 3}
+  m_PrefabInstance: {fileID: 5773392428411808825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1819059646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5677265968561787221}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5.561799, z: 1}
+  m_Center: {x: -0.06553579, y: 2.780911, z: 0.098039165}
 --- !u!4 &5677265968562015605 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310, type: 3}
@@ -89053,6 +89463,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0c16f0ea935ea64297ca1d4d55d9746, type: 3}
+--- !u!1 &8568421215296439391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2807449429036958551, guid: f0c16f0ea935ea64297ca1d4d55d9746, type: 3}
+  m_PrefabInstance: {fileID: 5773392428492211976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &322034067
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8568421215296439391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6.6903257, z: 1}
+  m_Center: {x: -0.2144852, y: 3.337813, z: 0.021466317}
 --- !u!4 &8568421215296673919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2807449429036539767, guid: f0c16f0ea935ea64297ca1d4d55d9746, type: 3}
@@ -92138,6 +92566,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0c16f0ea935ea64297ca1d4d55d9746, type: 3}
+--- !u!1 &8568421216267523050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2807449429036958551, guid: f0c16f0ea935ea64297ca1d4d55d9746, type: 3}
+  m_PrefabInstance: {fileID: 5773392429664489661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1572507043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8568421216267523050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6.6903257, z: 1}
+  m_Center: {x: -0.21460727, y: 3.337813, z: 0.021527352}
 --- !u!4 &8568421216267554762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2807449429036539767, guid: f0c16f0ea935ea64297ca1d4d55d9746, type: 3}
