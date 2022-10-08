@@ -62,7 +62,7 @@ public class buttonFunctions : MonoBehaviour
 
     public void setVolume(float volume)
     {
-        mainMixer.SetFloat(gameObject.name, volume);
+        mainMixer.SetFloat(gameObject.name, Mathf.Log10(volume) * 20);
     }
 
     public void setFullscreen(bool isFullscreen)

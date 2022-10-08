@@ -224,6 +224,8 @@ MonoBehaviour:
   roamRadius: 10
   viewAngle: 45
   headPosition: {fileID: 4163429338047511199}
+  knockbackForce: 0
+  knockbackTime: 0
   aggroRange: 4
   attackRange: 4
   attackRate: 1
@@ -303,7 +305,7 @@ AudioSource:
   m_GameObject: {fileID: 4163429338047511191}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1975834014078074090, guid: a3e2d38629f7e364aabc8f3c7f89ead8, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
