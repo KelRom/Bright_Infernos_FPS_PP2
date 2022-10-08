@@ -153,7 +153,7 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         }
 
 
-        if (!playerIsSeen)
+        if (!playerIsSeen && agent.enabled)
         {
             agent.SetDestination(lastPlayerPos);
             //agent.SetPath();
