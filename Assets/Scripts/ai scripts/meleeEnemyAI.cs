@@ -1,3 +1,4 @@
+using Dialog;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,9 @@ using UnityEngine.AI;
 
 public class meleeEnemyAI : MonoBehaviour, IDamageable
 {
+    [Header("----- TriggerAction -----")]
+    [SerializeField] string onDeathAction;
+
     [Header("----- Components -----")]
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Renderer rend;
@@ -280,6 +284,8 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         //Turn off all the enemy collision models.
         foreach (Collider col in GetComponents<Collider>())
             col.enabled = false;
+
+        TriggerAction(onDeathAction);
     }
     public void knockback()
     {
@@ -287,5 +293,18 @@ public class meleeEnemyAI : MonoBehaviour, IDamageable
         knockbackCounter = knockbackTime;
         enemyVelocity.y = knockbackForce;
         agent.Move(hitDirection.normalized * knockbackForce);
+    }
+
+    private void TriggerAction(string action)
+    {
+        if (action == "")
+        {
+            return;
+        }
+
+        foreach (DialogTrigger trigger in GetComponents<DialogTrigger>())
+        {
+            trigger.Trigger(action);
+        }
     }
 }

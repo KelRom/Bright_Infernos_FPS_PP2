@@ -25,7 +25,7 @@ namespace Dialog
             currentConversant = newConversant;
             TriggerEnterAction();
             onConverstationUpdated();
-            gameManager.instance.onRestart += Quit;
+            gameManager.instance.onRestart += Restart;
         }
 
         public bool IsCurrentDialogSkipable() 
@@ -35,8 +35,16 @@ namespace Dialog
 
         public void Quit()
         {
-            currentDialog = null;
             TriggerExitAction();
+            currentDialog = null;
+            currentNode = null;
+            currentConversant = null;
+            isChoosing = false;
+            onConverstationUpdated();
+        }
+        public void Restart()
+        {
+            currentDialog = null;
             currentNode = null;
             currentConversant = null;
             isChoosing = false;

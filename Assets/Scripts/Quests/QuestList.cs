@@ -34,6 +34,10 @@ namespace Quests {
             {
                 addedQuest();
             }
+            if(quest.name == "Kill the wizard king" && quest.GetObjectiveCount() == GetQuestStatus(quest).GetCompletedCount()) 
+            {
+                gameManager.instance.Win();
+            }
         }
 
         public bool HasQuest(Quest quest)
