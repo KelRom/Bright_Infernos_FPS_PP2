@@ -12,6 +12,7 @@ namespace Dialog
         [SerializeField] bool useButtonToStartDialog;
         [SerializeField] bool repeatableDialog;
         [SerializeField] TextMeshProUGUI startConversation;
+        [SerializeField] string conversantName;
         private bool playerInRange;
         private bool isDialogStarted;
 
@@ -33,7 +34,7 @@ namespace Dialog
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player")) 
+            if (other.CompareTag("Player"))
             {
                 playerInRange = true;
             }
@@ -41,8 +42,10 @@ namespace Dialog
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("Player")) 
+            {
                 playerInRange = false;
+            }
         }
 
         public void CheckDialog()
@@ -55,7 +58,11 @@ namespace Dialog
             {
                 StartDialog();
             }
+        }
 
+        public string GetName() 
+        {
+            return conversantName;
         }
 
         private void StartDialog()
@@ -73,13 +80,13 @@ namespace Dialog
 
             if(startConversation != null) 
             {
-                if (gameManager.instance.isPaused)
+                if (gameManager.instance.isPaused || !playerInRange)
                 {
                     startConversation.gameObject.SetActive(false);
                 }
-                else
+                else if(playerInRange && useButtonToStartDialog)
                 {
-                    startConversation.gameObject.SetActive(playerInRange && useButtonToStartDialog);
+                    startConversation.gameObject.SetActive(true);
                 }
             }
         }

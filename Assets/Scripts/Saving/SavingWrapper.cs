@@ -10,16 +10,16 @@ namespace Saving
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.V))
             {
-                print("Save needs to be configured");
-                //Save();
+                print("Saving...");
+                Save();
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.B))
             {
-                print("Load needs to be configured");
-                //Load();
+                print("loading...");
+                Load();
             }
         }
 

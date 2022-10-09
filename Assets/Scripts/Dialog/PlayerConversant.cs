@@ -9,6 +9,8 @@ namespace Dialog
 {
     public class PlayerConversant : MonoBehaviour
     {
+        [SerializeField] string playerName;
+
         Dialog currentDialog = null;
         DialogNode currentNode = null;
         AIConversant currentConversant = null;
@@ -64,6 +66,18 @@ namespace Dialog
         public IEnumerable<DialogNode> GetChoices() 
         {
             return currentDialog.GetPlayerChildren(currentNode);
+        }
+
+        public string GetCurrentConversantName()
+        {
+            if (isChoosing) 
+            {
+                return playerName;
+            }
+            else 
+            {
+                return currentConversant.GetName();
+            }
         }
 
         public void SelectChoice(DialogNode chosenNode) 

@@ -23,6 +23,8 @@ MonoBehaviour:
     y: 243
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-3020900422448454204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,6 +48,8 @@ MonoBehaviour:
     y: 202
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-2977405937871225650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,13 +64,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
   text: Do you?
-  children: []
+  children:
+  - d3e4a3a6-1e17-4c5d-a2e3-7282123bee93
   rect:
     serializedVersion: 2
     x: 778
     y: 387.00006
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-2905508921119769846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,13 +88,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
   text: To dethrone the king
-  children: []
+  children:
+  - d3e4a3a6-1e17-4c5d-a2e3-7282123bee93
   rect:
     serializedVersion: 2
     x: 821
     y: 244
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,13 +137,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
   text: I dont have the time for you.
-  children: []
+  children:
+  - d3e4a3a6-1e17-4c5d-a2e3-7282123bee93
   rect:
     serializedVersion: 2
     x: 784
     y: 506.99994
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &2426981680361480084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +169,8 @@ MonoBehaviour:
     y: 354
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &3375466975283469919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +193,8 @@ MonoBehaviour:
     y: 109.000015
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &3698082371345459568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +217,8 @@ MonoBehaviour:
     y: 249
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &3938460501635365116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,10 +236,12 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 1016
-    y: 109.000015
+    x: 1140
+    y: 296.00003
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: TestObjective
 --- !u!114 &6091013541442223990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,3 +265,5 @@ MonoBehaviour:
     y: 366.00006
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 

@@ -2615,6 +2615,7 @@ GameObject:
   - component: {fileID: 9071769918684460998}
   - component: {fileID: 1587261270206797939}
   - component: {fileID: 2187201445555229468}
+  - component: {fileID: 1914587078020841344}
   m_Layer: 9
   m_Name: Silas
   m_TagString: Player
@@ -2869,6 +2870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1a8e27721712340a3ca3ea406c4c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: Silas
 --- !u!114 &2187201445555229468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2882,6 +2884,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueIdentifier: 789af910-599f-4ff8-bd42-d8397f2407d9
+--- !u!114 &1914587078020841344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152658252915316773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8f3603cfbaa014eab6c7743ae51550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8173322417104560364
 GameObject:
   m_ObjectHideFlags: 0
