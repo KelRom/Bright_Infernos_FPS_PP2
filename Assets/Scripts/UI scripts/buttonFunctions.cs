@@ -4,11 +4,26 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 using Dialog;
 
 public class buttonFunctions : MonoBehaviour
 {
-    [SerializeField] AudioMixer mainMixer; 
+    [SerializeField] AudioMixer mainMixer;
+    [SerializeField] AudioClip hoverClip;
+    [SerializeField] AudioClip clickClip;
+    [SerializeField] AudioSource audioButtonSource;
+    
+    public void onHover()
+    {
+        audioButtonSource.PlayOneShot(hoverClip);
+    }
+
+    public void buttonPressedSound()
+    {
+        audioButtonSource.PlayOneShot(clickClip);
+    }
+
     public void resume()
     {
         if (gameManager.instance.isPaused)

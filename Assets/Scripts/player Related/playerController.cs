@@ -158,7 +158,7 @@ public class playerController : MonoBehaviour, IDamageable
         }
         animator.SetInteger("TimesJumped", timesJumped);
         sprint();
-        if (!isSprinting)
+        if (!isSprinting || controller.velocity.x <= .01 && controller.velocity.z <= .01)
             animator.SetFloat("Speed", Mathf.Lerp(animator.GetFloat("Speed"), Mathf.Clamp(controller.velocity.normalized.magnitude, 0, .5f), Time.deltaTime * 5));
         else
             animator.SetFloat("Speed", Mathf.Lerp(animator.GetFloat("Speed"), Mathf.Clamp(controller.velocity.normalized.magnitude, .5f, 1), Time.deltaTime * 2));
@@ -378,4 +378,9 @@ public class playerController : MonoBehaviour, IDamageable
     }
 
     public bool playerSwinging() { return isSwinging; }
+    public void resetSprint()
+    {
+        isSprinting = false;
+        playerSpeed = playerSpeedOriginal;
+    }
 }
