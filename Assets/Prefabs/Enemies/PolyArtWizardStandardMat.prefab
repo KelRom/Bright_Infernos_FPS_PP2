@@ -1197,7 +1197,6 @@ GameObject:
   - component: {fileID: 1755960885506303337}
   - component: {fileID: 1804088978711329341}
   - component: {fileID: 1854991039957562225}
-  - component: {fileID: 1755960885506303254}
   - component: {fileID: 1755960885506303255}
   - component: {fileID: 1755960885506303252}
   m_Layer: 6
@@ -1294,19 +1293,6 @@ CapsuleCollider:
   m_Height: 1.882848
   m_Direction: 1
   m_Center: {x: 0, y: 0.98, z: 0}
---- !u!135 &1755960885506303254
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755960885506303253}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 70
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &1755960885506303255
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2724,7 +2710,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2963746100106992867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.108, y: 0.921, z: 0.912}
+  m_LocalPosition: {x: 0.33, y: 0.921, z: 2.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
