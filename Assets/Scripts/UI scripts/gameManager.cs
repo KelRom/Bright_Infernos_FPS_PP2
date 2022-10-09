@@ -46,8 +46,8 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         playerSpawnPoint = GameObject.Find("Player Spawn Point");
         timeScaleOriginal = Time.timeScale;
-        //gameMusicSource.clip = gameMusicClips[SceneManager.GetActiveScene().buildIndex - 1];
-        //gameMusicSource.Play();
+        gameMusicSource.clip = gameMusicClips[SceneManager.GetActiveScene().buildIndex - 1];
+        gameMusicSource.Play();
         StartCoroutine(turnFadeScreenOff());
         // It is save to remove listeners even if they
         // didn't exist so far.
