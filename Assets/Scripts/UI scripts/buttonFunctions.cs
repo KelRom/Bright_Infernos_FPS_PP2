@@ -4,10 +4,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class buttonFunctions : MonoBehaviour
 {
-    [SerializeField] AudioMixer mainMixer; 
+    [SerializeField] AudioMixer mainMixer;
+
     public void resume()
     {
         if (gameManager.instance.isPaused)

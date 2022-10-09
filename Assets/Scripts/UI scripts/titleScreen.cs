@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class titleScreen : MonoBehaviour
 {
@@ -23,9 +24,9 @@ public class titleScreen : MonoBehaviour
 
     private void Awake()
     {
+
         instance = this;
         currentMenu = titleMenu;
-        
     }
 
     public IEnumerator transitionScene()
