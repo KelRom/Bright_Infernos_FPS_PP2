@@ -1,5 +1,5 @@
 ## Unity ##
-*.cs diff=csharp text
+*.cs filter=lfs diff=lfs merge=lfs -text
 *.cginc text
 *.shader text
 *.mat merge=unityyamlmerge eol=lf
@@ -9,7 +9,7 @@
 *.physicsMaterial2D merge=unityyamlmerge eol=lf
 *.physicMaterial merge=unityyamlmerge eol=lf
 *.asset eol=lf-text
-*.meta merge=unityyamlmerge eol=lf
+*.meta filter=lfs diff=lfs merge=lfs -text
 *.controller merge=unityyamlmerge eol=lf
 ## git-lfs ##
 #Image

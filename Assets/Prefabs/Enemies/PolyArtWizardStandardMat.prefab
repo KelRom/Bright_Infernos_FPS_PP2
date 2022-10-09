@@ -145,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1753213600632030701
 Transform:
   m_ObjectHideFlags: 0
@@ -1202,7 +1202,7 @@ GameObject:
   - component: {fileID: 1755960885506303252}
   m_Layer: 6
   m_Name: PolyArtWizardStandardMat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1216,7 +1216,7 @@ Transform:
   m_GameObject: {fileID: 1755960885506303253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.3032694, y: 0, z: -2.4127772}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1753447083471824921}
@@ -1240,18 +1240,21 @@ MonoBehaviour:
   agent: {fileID: 1755960885506303255}
   rend: {fileID: 1755960885506303252}
   anim: {fileID: 1804088978711329341}
+  hpBar: {fileID: 0}
   HP: 5
   playerFaceSpeed: 5
   engagementSpeed: 0
   knockbackStrength: 0
   knockbackResistance: 0
+  manaRegenerationTime: 0
   castRate: 1
   spellInventory:
+  - {fileID: 11400000, guid: 15d94cece66bcb14cbbcc8f0587f3466, type: 2}
   - {fileID: 11400000, guid: dda7d30dce06e0c4cb29392771e02d6c, type: 2}
-  - {fileID: 11400000, guid: 8e8154bb8ea91db4d8c521a66c489edc, type: 2}
-  - {fileID: 11400000, guid: 719c642cb7646a449874129797655711, type: 2}
-  drops: []
-  dropRadius: 0
+  - {fileID: 11400000, guid: 0af7a7ece3856a0419d677e3c163ae63, type: 2}
+  drops:
+  - {fileID: 615122441199885494, guid: ba715c4b00fbc5740ae50658e746cfec, type: 3}
+  dropRadius: 1
   maxMana: 1000
   currentMana: 0
   castingPosition: {fileID: 2963746100106992866}
@@ -1267,7 +1270,7 @@ Animator:
   m_GameObject: {fileID: 1755960885506303253}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: bed7a092d53e7c748bd65db98cebf9d6, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2890c9060ce4f6b45b4082d87f47b27e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 70ff261383a8ab447829ad86bb337ca8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1302,7 +1305,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 25
+  m_Radius: 70
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &1755960885506303255
 NavMeshAgent:
@@ -2721,7 +2724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2963746100106992867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 1.29, z: 1.01}
+  m_LocalPosition: {x: 0.108, y: 0.921, z: 0.912}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

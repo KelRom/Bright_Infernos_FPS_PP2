@@ -45,13 +45,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 610630154940450941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acee5ac001d4fee48878d392962b9be3, type: 3}
+  m_Script: {fileID: 11500000, guid: 161326ce586454147b8e502306314357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1118051527711248949}
-  damage: 10
-  speed: 5
-  destroyTime: 5
+  damage: 25
+  speed: 30
+  destroyTime: 15
 --- !u!33 &355070362146474908
 MeshFilter:
   m_ObjectHideFlags: 0

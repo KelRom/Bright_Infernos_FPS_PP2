@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 453799785015407031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1, z: 1}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 2}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,13 +45,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 453799785015407031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acee5ac001d4fee48878d392962b9be3, type: 3}
+  m_Script: {fileID: 11500000, guid: 161326ce586454147b8e502306314357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: -7263128292816779569}
-  damage: 10
-  speed: 5
-  destroyTime: 5
+  damage: 25
+  speed: 30
+  destroyTime: 15
 --- !u!33 &4741210945544195067
 MeshFilter:
   m_ObjectHideFlags: 0

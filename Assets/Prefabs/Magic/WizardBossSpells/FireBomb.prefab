@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5865136017654258105}
   - component: {fileID: 6370470911088783385}
   - component: {fileID: 7190983485596676336}
-  - component: {fileID: -5986979910844655060}
+  - component: {fileID: -444648512167575504}
   m_Layer: 7
   m_Name: FireBomb
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3913107850290154268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1, z: 1}
-  m_LocalScale: {x: 2, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 8, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,13 +45,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3913107850290154268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acee5ac001d4fee48878d392962b9be3, type: 3}
+  m_Script: {fileID: 11500000, guid: 161326ce586454147b8e502306314357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: -5986979910844655060}
-  damage: 10
-  speed: 5
-  destroyTime: 5
+  rb: {fileID: -444648512167575504}
+  damage: 25
+  speed: 30
+  destroyTime: 20
 --- !u!33 &5865136017654258105
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-5986979910844655060
+--- !u!54 &-444648512167575504
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

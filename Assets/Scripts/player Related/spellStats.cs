@@ -1,15 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-[CreateAssetMenu]
-
-public class spellStats : ScriptableObject
-{
-    public float manaCost;
-    public float damage;
-    public float speed;
-    public GameObject spellDisplay;
-    public float Cooldown;
-    public int knockbackStength;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:59ffb268b38d0bf5ee8cfa3d727bcb514fdfcf192e749e521827bda1497b8f68
+size 364
