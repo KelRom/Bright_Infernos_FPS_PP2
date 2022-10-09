@@ -118,12 +118,19 @@ public class gameManager : MonoBehaviour
         menuCurrentlyOpen = playerDeadMenu;
         menuCurrentlyOpen.SetActive(true);
         cursorLockPause();
-    } 
+    }
 
     public void gameOver()
     {
         isPaused = true;
         menuCurrentlyOpen = gameOverMenu;
+        menuCurrentlyOpen.SetActive(true);
+        cursorLockPause();
+    }
+    public void Win()
+    {
+        isPaused = true;
+        menuCurrentlyOpen = winMenu;
         menuCurrentlyOpen.SetActive(true);
         cursorLockPause();
     }
