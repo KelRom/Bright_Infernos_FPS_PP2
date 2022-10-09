@@ -9,6 +9,19 @@ using UnityEngine.UI;
 public class buttonFunctions : MonoBehaviour
 {
     [SerializeField] AudioMixer mainMixer;
+    [SerializeField] AudioClip hoverClip;
+    [SerializeField] AudioClip clickClip;
+    [SerializeField] AudioSource audioButtonSource;
+    
+    public void onHover()
+    {
+        audioButtonSource.PlayOneShot(hoverClip);
+    }
+
+    public void buttonPressedSound()
+    {
+        audioButtonSource.PlayOneShot(clickClip);
+    }
 
     public void resume()
     {

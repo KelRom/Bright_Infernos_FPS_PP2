@@ -28,7 +28,6 @@ public class gameManager : MonoBehaviour
     public GameObject bossHPBar;
     public GameObject winMenu;
     public GameObject playerDeadMenu;
-    public GameObject gameOverMenu;
     public GameObject settingsMenu;
     public GameObject interactPopUpWindow;
 
@@ -121,13 +120,6 @@ public class gameManager : MonoBehaviour
         cursorLockPause();
     }
 
-    public void gameOver()
-    {
-        isPaused = true;
-        menuCurrentlyOpen = gameOverMenu;
-        menuCurrentlyOpen.SetActive(true);
-        cursorLockPause();
-    }
     public void Win()
     {
         isPaused = true;
