@@ -23,6 +23,7 @@ namespace Dialog
             currentConversant = newConversant;
             TriggerEnterAction();
             onConverstationUpdated();
+            gameManager.instance.onRestart += Quit;
         }
 
         public bool IsCurrentDialogSkipable() 

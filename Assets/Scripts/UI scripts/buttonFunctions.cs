@@ -19,6 +19,7 @@ public class buttonFunctions : MonoBehaviour
 
     public void restart()
     {
+        gameManager.instance.ResetDialog();
         gameManager.instance.cursorUnlockUnpause();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
