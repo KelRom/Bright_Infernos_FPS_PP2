@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using Dialog;
 
 public class buttonFunctions : MonoBehaviour
 {
@@ -19,7 +20,11 @@ public class buttonFunctions : MonoBehaviour
 
     public void restart()
     {
-        gameManager.instance.ResetDialog();
+        if (gameManager.instance.player.GetComponent<PlayerConversant>().IsActive()) 
+        {
+            gameManager.instance.ResetDialog();
+        }
+
         gameManager.instance.cursorUnlockUnpause();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

@@ -29,14 +29,18 @@ namespace Quests {
         public void CompleteObjective(Quest quest, string objective)
         {
             QuestStatus status = GetQuestStatus(quest);
-            status.CompleteObjective(objective);
-            if (addedQuest != null)
+
+            if (status != null)
             {
-                addedQuest();
-            }
-            if(quest.name == "Kill the wizard king" && quest.GetObjectiveCount() == GetQuestStatus(quest).GetCompletedCount()) 
-            {
-                gameManager.instance.Win();
+                status.CompleteObjective(objective);
+                if (addedQuest != null)
+                {
+                    addedQuest();
+                }
+                if (quest.name == "Kill the wizard king" && quest.GetObjectiveCount() == GetQuestStatus(quest).GetCompletedCount())
+                {
+                    gameManager.instance.Win();
+                }
             }
         }
 
