@@ -407,9 +407,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questListRoot: {fileID: 1847913468151209302}
-  tempQuests:
-  - {fileID: 11400000, guid: 8f4789c7deed02c408748147c568aa2b, type: 2}
-  - {fileID: 11400000, guid: 150fdaedcf6a75d4a8f10ee98ad12284, type: 2}
   questPrefab: {fileID: 7397939347559007284, guid: 10649d7bc1787ef4e9b50fd7f488c8dd, type: 3}
 --- !u!1 &4084821210214890248
 GameObject:
@@ -532,7 +529,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7661237020686371416}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ToggleQuests, Assembly-CSharp
         m_MethodName: Toggle
         m_Mode: 1
@@ -779,6 +776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7599834953144363366}
+  - component: {fileID: 4967012958716869335}
   m_Layer: 5
   m_Name: Quest UI
   m_TagString: Untagged
@@ -808,6 +806,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4967012958716869335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5004763229944266993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e734ba7337b8279489eeb646285dc4da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleKey: 113
+  uiContainer: {fileID: 7831363925788080396}
 --- !u!1 &5203093169369989330
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +984,6 @@ GameObject:
   - component: {fileID: 634503480534216687}
   - component: {fileID: 6280259151693554121}
   - component: {fileID: 7054038193777011784}
-  - component: {fileID: 7661237020686371416}
   m_Layer: 5
   m_Name: Quest BackGround
   m_TagString: Untagged
@@ -1040,20 +1051,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7661237020686371416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7831363925788080396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e734ba7337b8279489eeb646285dc4da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleKey: 113
-  uiContainer: {fileID: 7831363925788080396}
 --- !u!1 &8860942601474209147
 GameObject:
   m_ObjectHideFlags: 0
