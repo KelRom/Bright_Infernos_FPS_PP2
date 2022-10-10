@@ -2092,7 +2092,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6466414142510033544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.088, y: 0, z: 1.262}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2691,9 +2691,9 @@ MonoBehaviour:
   controller: {fileID: 9071769918684460992}
   cam: {fileID: 0}
   swordCollider: {fileID: 670477291}
-  Sword: {fileID: 0}
-  Shield: {fileID: 0}
-  Staff: {fileID: 0}
+  Sword: {fileID: 7267068689712513829}
+  Shield: {fileID: 2586158661474482527}
+  Staff: {fileID: 8311614394993468048}
   HP: 100
   playerSpeed: 5
   jumpHeight: 10
@@ -2714,7 +2714,8 @@ MonoBehaviour:
   swingRate: 0.1
   spellInventory:
   - {fileID: 11400000, guid: 8e8154bb8ea91db4d8c521a66c489edc, type: 2}
-  - {fileID: 11400000, guid: 719c642cb7646a449874129797655711, type: 2}
+  - {fileID: 11400000, guid: f5ca06d2c1679874c82e7015d791c668, type: 2}
+  - {fileID: 11400000, guid: a281d3be70166a94498c996dc028b3ef, type: 2}
   aud: {fileID: 9071769918684460999}
   playerDamageSound:
   - {fileID: 8300000, guid: 6870b58155df53d4c8e991807d3deeec, type: 3}

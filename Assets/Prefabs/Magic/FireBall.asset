@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: FireBall
   m_EditorClassIdentifier: 
   manaCost: 10
-  damage: 10
+  damage: 5
   speed: 10
   spellDisplay: {fileID: 7408397340701255291, guid: 7f172657fd3e5b74ba3437aa2c339fc4, type: 3}
+  caster: {fileID: 0}
   Cooldown: 2
+  knockbackStength: 0
