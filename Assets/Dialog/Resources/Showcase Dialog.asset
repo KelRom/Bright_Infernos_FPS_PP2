@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7741878469190930573
+--- !u!114 &-7464562319177494527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: 3327b28a-3ae9-4ea6-96c5-acbd8340cfb3
+  m_Name: 73ff0818-c5e9-4eb3-ab2d-a8d4de0645b4
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: You can swing or cast spells with mouse left click
+  text: You can control the camera with the mouse
   children:
-  - 028f5108-b848-4b03-aed2-a5c15d16c973
+  - c2cdb667-bef9-4d7f-9c4b-b7611b8c2608
   rect:
     serializedVersion: 2
-    x: 420
-    y: 72
+    x: 90
+    y: 282
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
---- !u!114 &-2501714505854706215
+--- !u!114 &-6954511495404163811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,16 +34,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: 586da526-74d4-48a1-a6e3-2cc3fdbb8510
+  m_Name: c2cdb667-bef9-4d7f-9c4b-b7611b8c2608
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: You can swing or cast spells with mouse left click
+  children:
+  - b412e859-da50-4182-9948-a568ef804e51
+  rect:
+    serializedVersion: 2
+    x: 330
+    y: 79
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-5848678043402095381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 5eec2105-1d39-474f-96a3-c252a189c7b5
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
   text: You can select the previous spell with 1
   children:
-  - e726adc5-073c-4e84-9728-89cfc69b737b
+  - 5ebee511-ad9d-48b2-a22f-bb1d435b29cb
   rect:
     serializedVersion: 2
-    x: 420
-    y: 294
+    x: 321
+    y: 283
     width: 200
     height: 100
   onEnterAction: 
@@ -58,19 +82,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ebbb8eb6327ebc42ac34ff3d92b0492, type: 3}
-  m_Name: Show Case Dialog
+  m_Name: Showcase Dialog
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 7605723418726438085}
-  - {fileID: 1493912421221034595}
-  - {fileID: 1500052160995216739}
-  - {fileID: -7741878469190930573}
-  - {fileID: 7488737729588115242}
-  - {fileID: -2501714505854706215}
-  - {fileID: 6880213862616042712}
+  - {fileID: 7991238263473291805}
+  - {fileID: 7557766013686993379}
+  - {fileID: -7464562319177494527}
+  - {fileID: -6954511495404163811}
+  - {fileID: 1922293925701820091}
+  - {fileID: -5848678043402095381}
+  - {fileID: 2763494196058880542}
   newNodeOffset: {x: 250, y: 0}
   isSkipable: 0
---- !u!114 &1493912421221034595
+--- !u!114 &1922293925701820091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,21 +104,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: 3f586941-ed51-4e58-ae16-54d7f60b9888
+  m_Name: b412e859-da50-4182-9948-a568ef804e51
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: You can Move using W, A, S, and D
+  text: You can switch between sword and staff using F
   children:
-  - 4d4fd3ef-022c-4810-87a7-c3d5c2c75d6f
+  - 5eec2105-1d39-474f-96a3-c252a189c7b5
   rect:
     serializedVersion: 2
-    x: 208
-    y: 188
+    x: 341
+    y: 181
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
---- !u!114 &1500052160995216739
+--- !u!114 &2763494196058880542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,44 +128,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: 4d4fd3ef-022c-4810-87a7-c3d5c2c75d6f
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: You can control the camera with the mouse
-  children:
-  - 3327b28a-3ae9-4ea6-96c5-acbd8340cfb3
-  rect:
-    serializedVersion: 2
-    x: 207
-    y: 296
-    width: 200
-    height: 100
-  onEnterAction: 
-  onExitAction: 
---- !u!114 &6880213862616042712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: e726adc5-073c-4e84-9728-89cfc69b737b
+  m_Name: 5ebee511-ad9d-48b2-a22f-bb1d435b29cb
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
   text: You can select the next spell with 2
   children: []
   rect:
     serializedVersion: 2
-    x: 631
-    y: 72
+    x: 560
+    y: 71
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: GiveQuest
---- !u!114 &7488737729588115242
+--- !u!114 &7557766013686993379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,21 +151,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: 028f5108-b848-4b03-aed2-a5c15d16c973
+  m_Name: 5be4cb58-9ceb-4574-858c-af7e51f8feba
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: You can switch between sword and staff using F
+  text: You can Move using W, A, S, and D
   children:
-  - 586da526-74d4-48a1-a6e3-2cc3fdbb8510
+  - 73ff0818-c5e9-4eb3-ab2d-a8d4de0645b4
   rect:
     serializedVersion: 2
-    x: 405
-    y: 171
+    x: 94
+    y: 185
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
---- !u!114 &7605723418726438085
+--- !u!114 &7991238263473291805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,16 +175,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: 7105e3b0-f964-41e4-a971-7412a3ab3090
+  m_Name: 7dd051d4-a278-46b1-9b1a-278efa569142
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
   text: Welcome to Equei Iter
   children:
-  - 3f586941-ed51-4e58-ae16-54d7f60b9888
+  - 5be4cb58-9ceb-4574-858c-af7e51f8feba
   rect:
     serializedVersion: 2
-    x: 203
-    y: 83
+    x: 92
+    y: 78
     width: 200
     height: 100
   onEnterAction: 

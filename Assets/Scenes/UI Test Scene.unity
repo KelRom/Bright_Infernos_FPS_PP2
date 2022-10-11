@@ -6714,7 +6714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a839aad437b81041af090fdc1a3358d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog: {fileID: 11400000, guid: 742a579b0785cd8498ea33a905365430, type: 2}
+  dialog: {fileID: 11400000, guid: 044a393044e92a948a6dd2266c1e5d13, type: 2}
   useButtonToStartDialog: 0
   repeatableDialog: 0
   startConversation: {fileID: 1470713405}

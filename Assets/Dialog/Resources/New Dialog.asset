@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8912812710900589609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 7a902e1c-9534-43c6-b0a1-4e099bb3dac1
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: test
+  children:
+  - 52173dfa-5170-47f0-b02c-a4fa7d0e320c
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebbb8eb6327ebc42ac34ff3d92b0492, type: 3}
+  m_Name: New Dialog
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -8912812710900589609}
+  - {fileID: 5367985965683534031}
+  - {fileID: 3039071756146371190}
+  newNodeOffset: {x: 250, y: 0}
+  isSkipable: 0
+--- !u!114 &3039071756146371190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: afdd54da-e714-4a64-b5c4-b5ecbf46d86f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: test 4
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 500
+    y: 0
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &5367985965683534031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 52173dfa-5170-47f0-b02c-a4fa7d0e320c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: test2tes
+  children:
+  - afdd54da-e714-4a64-b5c4-b5ecbf46d86f
+  rect:
+    serializedVersion: 2
+    x: 233
+    y: 8
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
