@@ -1,18 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
-
-public class sword : MonoBehaviour
-
-{
-    [SerializeField] int damage;
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.GetComponent<IDamageable>() != null && other.GetType() != typeof(SphereCollider) && gameManager.instance.playerScript.playerSwinging())
-        {
-            GetComponent<Collider>().enabled = false;
-            other.GetComponent<IDamageable>().takeDamage(damage);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6efde3aecc2ddf0cb12c1d3458d0aee16a9ae4331f7e9f77795e2ee0152009c9
+size 535
