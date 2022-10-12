@@ -60729,7 +60729,7 @@ MonoBehaviour:
   roamRadius: 10
   viewAngle: 45
   headPosition: {fileID: 7955378540460617694}
-  knockbackForce: 0
+  knockbackForce: 5
   knockbackTime: 0
   bleed: {fileID: 9016737703376782284, guid: bcaa30156393a67459309de187daabba, type: 3}
   aggroRange: 4

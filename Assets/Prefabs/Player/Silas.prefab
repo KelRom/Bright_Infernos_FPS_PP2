@@ -2688,6 +2688,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb95432d8feaee4e84491cdd864b499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSwing: 
+  onWeaponSwitch: 
+  OnCastFire: 
+  OnCastIce: 
+  OnCastTornado: 
   controller: {fileID: 9071769918684460992}
   cam: {fileID: 0}
   swordCollider: {fileID: 670477291}
@@ -2700,7 +2705,7 @@ MonoBehaviour:
   gravityValue: 25
   sprintMultiplier: 2
   turnSmoothTime: 0.1
-  knockbackForce: 15
+  knockbackForce: 5
   knockbackTime: 0.2
   fallTimeThreshold: 1
   fallDamage: 2
@@ -2708,6 +2713,8 @@ MonoBehaviour:
   jumpsMax: 2
   maxMana: 100
   currentMana: 0
+  manaRegenAmount: 0
+  manaRegenTime: 0
   castingPos: {fileID: 4798845980054755227}
   gunPos: {fileID: 1113975830051470739}
   selectedSpell: 0
