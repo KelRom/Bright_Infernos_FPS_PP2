@@ -2648,6 +2648,7 @@ GameObject:
   - component: {fileID: 1587261270206797939}
   - component: {fileID: 2187201445555229468}
   - component: {fileID: 1914587078020841344}
+  - component: {fileID: 468250765}
   m_Layer: 9
   m_Name: Silas
   m_TagString: Player
@@ -2699,11 +2700,12 @@ MonoBehaviour:
   Sword: {fileID: 7267068689712513829}
   Shield: {fileID: 2586158661474482527}
   Staff: {fileID: 8311614394993468048}
+  playerControls: {fileID: 468250765}
   HP: 100
   playerSpeed: 5
   jumpHeight: 10
   gravityValue: 25
-  sprintMultiplier: 2
+  sprintSpeed: 15
   turnSmoothTime: 0.1
   knockbackForce: 5
   knockbackTime: 0.2
@@ -2940,6 +2942,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8f3603cfbaa014eab6c7743ae51550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &468250765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152658252915316773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 72c6c84bd703ce54c8836a595bd7fbcc, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerControls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &8173322417104560364
 GameObject:
   m_ObjectHideFlags: 0
