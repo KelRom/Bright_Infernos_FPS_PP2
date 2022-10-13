@@ -971,8 +971,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
-  - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
-  - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   maxEnemies: 3
   timer: 5
 --- !u!135 &389426468
@@ -1732,8 +1730,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
-  - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
-  - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   maxEnemies: 3
   timer: 5
 --- !u!135 &989842870
@@ -2165,8 +2161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
-  - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
-  - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   maxEnemies: 3
   timer: 1
 --- !u!135 &1814790410
@@ -2233,8 +2227,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
-  - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   maxEnemies: 5
   timer: 5
@@ -3004,8 +2996,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
-  - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   - {fileID: 4163429338047511191, guid: 9e6b197cfaec4f4468a627cf2e7c8120, type: 3}
   maxEnemies: 5
   timer: 5

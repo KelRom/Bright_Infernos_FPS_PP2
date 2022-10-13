@@ -14468,7 +14468,7 @@ MonoBehaviour:
   rend: {fileID: 881487361893797509}
   anim: {fileID: 901077741984784061}
   hpBar: {fileID: 0}
-  HP: 25
+  HP: 40
   speedRoam: 3
   speedChase: 5
   playerFaceSpeed: 3
@@ -14481,8 +14481,10 @@ MonoBehaviour:
   aggroRange: 4
   attackRange: 4
   attackRate: 2
-  attackDamage: 1
-  enemyDrop: {fileID: 0}
+  attackDamage: 4
+  enemyDrop:
+  - {fileID: 7943168550485124487, guid: e1abc7640d1ddd4438ef67d46560d614, type: 3}
+  - {fileID: 615122441199885494, guid: ba715c4b00fbc5740ae50658e746cfec, type: 3}
   aud: {fileID: 5408855236257189582}
   enemyDamageSound:
   - {fileID: 8300000, guid: 6870b58155df53d4c8e991807d3deeec, type: 3}

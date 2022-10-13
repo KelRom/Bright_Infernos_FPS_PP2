@@ -227,14 +227,16 @@ MonoBehaviour:
   roamRadius: 10
   viewAngle: 45
   headPosition: {fileID: 4163429338047511199}
-  knockbackForce: 5
+  knockbackForce: 3
   knockbackTime: 0
   bleed: {fileID: 9016737703376782284, guid: bcaa30156393a67459309de187daabba, type: 3}
   aggroRange: 4
   attackRange: 4
   attackRate: 1
-  attackDamage: 1
-  enemyDrop: {fileID: 0}
+  attackDamage: 2
+  enemyDrop:
+  - {fileID: 7943168550485124487, guid: e1abc7640d1ddd4438ef67d46560d614, type: 3}
+  - {fileID: 615122441199885494, guid: ba715c4b00fbc5740ae50658e746cfec, type: 3}
   aud: {fileID: 7993530311945081678}
   enemyDamageSound:
   - {fileID: 8300000, guid: 9e3f6902d36460a4d80663a95fc41ad3, type: 3}

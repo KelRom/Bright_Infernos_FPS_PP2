@@ -1823,21 +1823,22 @@ MonoBehaviour:
   rend: {fileID: 533949195050610576}
   anim: {fileID: 533949195054813520}
   hpBar: {fileID: 0}
-  HP: 100
+  HP: 40
   speedRoam: 3
   speedChase: 5
   playerFaceSpeed: 3
   roamRadius: 10
   viewAngle: 45
   headPosition: {fileID: 533949195062108988}
-  knockbackForce: 8
+  knockbackForce: 5
   knockbackTime: 0
   bleed: {fileID: 9016737703376782284, guid: bcaa30156393a67459309de187daabba, type: 3}
   aggroRange: 8
   attackRange: 8
   attackRate: 0.5
-  attackDamage: 1
-  enemyDrop: {fileID: 0}
+  attackDamage: 2
+  enemyDrop:
+  - {fileID: 7943168550485124487, guid: e1abc7640d1ddd4438ef67d46560d614, type: 3}
   aud: {fileID: 5782963241768930029}
   enemyDamageSound:
   - {fileID: 8300000, guid: 9e3f6902d36460a4d80663a95fc41ad3, type: 3}

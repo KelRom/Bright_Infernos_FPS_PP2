@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024e5dc236ead084b929f29b59c1ea7c, type: 3}
   m_Name: FireBall
   m_EditorClassIdentifier: 
-  manaCost: 10
+  manaCost: 5
   damage: 5
   speed: 10
   spellDisplay: {fileID: 7408397340701255291, guid: 7f172657fd3e5b74ba3437aa2c339fc4, type: 3}
