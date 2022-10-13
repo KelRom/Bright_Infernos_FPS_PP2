@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Castle.unity
     guid: 521bc863711d19e4ca4b17202badd129
   - enabled: 1
-    path: Assets/Scenes/UI Test Scene.unity
-    guid: d88c1b8687dbaab4f9a4c2a143028926
+    path: Assets/Scenes/Cave1.unity
+    guid: fb432ac4e1968234d9cd5230bde87ede
+  - enabled: 1
+    path: Assets/Scenes/Cave2.unity
+    guid: f00cf71b1ef6224499966eb2b33ccacd
+  - enabled: 1
+    path: Assets/Scenes/Cave3.unity
+    guid: e41790b7ac29b8d4493f0e356e06556c
   m_configObjects: {}
