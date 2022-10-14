@@ -1,27 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ToggleQuests : MonoBehaviour
-{
-    [SerializeField] KeyCode toggleKey = KeyCode.Q;
-    [SerializeField] GameObject uiContainer = null;
-    void Start()
-    {
-        uiContainer.SetActive(false);
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(toggleKey)) 
-        {
-            Toggle();
-        }
-    }
-
-    public void Toggle()
-    {
-        uiContainer.SetActive(!uiContainer.activeSelf);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d61b2dc3d5d17695a7ae93771699ae92c03b8fa49779815033c57b1dfe1d9486
+size 521
