@@ -2955,7 +2955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 72c6c84bd703ce54c8836a595bd7fbcc, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -2966,7 +2966,91 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ceb894a4-3dc2-4185-a885-5e252f8e883a
+    m_ActionName: PlayerControls/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca6e544d-ce67-44b0-979e-28780ec1e1b3
+    m_ActionName: PlayerControls/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3755a386-f438-4762-90d6-ef34e4378bd0
+    m_ActionName: PlayerControls/Movement[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c8dfe21b-5ddf-46a6-8e64-95e3d6d2551f
+    m_ActionName: PlayerControls/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3852be9d-0e7e-4d50-b293-9a36bbc9eacf
+    m_ActionName: PlayerControls/Swap Weapons[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9e074587-0776-42c8-abc8-68ce9e67c038
+    m_ActionName: PlayerControls/Next Spell[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e97de4d2-672c-46a6-b715-9f9faa19b5a1
+    m_ActionName: PlayerControls/Previous Spell[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c007a923-0866-4d36-89c3-af9822a52c7d
+    m_ActionName: PlayerControls/Sprint[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 687c25a9-9246-49c3-83b5-732d6c54f162
+    m_ActionName: UIControls/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f255c595-5198-494a-8d72-4f95d354e18f
+    m_ActionName: UIControls/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 526e6bbf-fb64-4155-a6f9-d84aebb53c2a
+    m_ActionName: UIControls/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e59b9f89-42ff-4339-9f7c-c817097846ac
+    m_ActionName: UIControls/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 82f7c9ed-a715-4ac0-a5f3-12f86827ce95
+    m_ActionName: UIControls/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 08e7f213-332d-4550-b948-71e6fb8f8435
+    m_ActionName: UIControls/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2a94aa7b-701a-4025-aa29-c9ef32ee5780
+    m_ActionName: UIControls/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 73c49f27-67e4-43b9-9d5e-18ac6ea11461
+    m_ActionName: UIControls/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 77c9f32f-de1f-4145-91ef-3cdbd70c5fb8
+    m_ActionName: UIControls/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f89e5d67-891a-4dbd-a628-c89d62450f16
+    m_ActionName: UIControls/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f2adef44-8a97-47d5-94e8-335eb2251067
+    m_ActionName: UIControls/Show Quest[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a74537df-e874-4e34-801a-f5a6bed6b0ca
+    m_ActionName: UIControls/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 349842a9-e8a2-45c3-b844-dc1be49299c7
+    m_ActionName: UIControls/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls

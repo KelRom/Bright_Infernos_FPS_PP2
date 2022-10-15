@@ -16,7 +16,7 @@
                 },
                 {
                     "name": "Look",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "ca6e544d-ce67-44b0-979e-28780ec1e1b3",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -91,8 +91,8 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "ArrowKeys",
-                    "id": "1ec82103-bac4-404e-82ba-047d6c3cab35",
+                    "name": "WASDKeys",
+                    "id": "d15b6709-3c8b-4666-824d-43a2481a3854",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -144,17 +144,6 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "WASDKeys",
-                    "id": "d15b6709-3c8b-4666-824d-43a2481a3854",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "up",
