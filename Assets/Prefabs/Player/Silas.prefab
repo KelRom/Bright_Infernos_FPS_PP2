@@ -2649,6 +2649,7 @@ GameObject:
   - component: {fileID: 2187201445555229468}
   - component: {fileID: 1914587078020841344}
   - component: {fileID: 468250765}
+  - component: {fileID: 4073015560987656304}
   m_Layer: 9
   m_Name: Silas
   m_TagString: Player
@@ -2701,7 +2702,7 @@ MonoBehaviour:
   Shield: {fileID: 2586158661474482527}
   Staff: {fileID: 8311614394993468048}
   playerControls: {fileID: 468250765}
-  HP: 100
+  HP: 0
   playerSpeed: 5
   jumpHeight: 10
   gravityValue: 25
@@ -2713,7 +2714,7 @@ MonoBehaviour:
   fallDamage: 2
   isMeleeActive: 0
   jumpsMax: 2
-  maxMana: 100
+  maxMana: 0
   currentMana: 0
   manaRegenAmount: 0
   manaRegenTime: 0
@@ -2753,7 +2754,7 @@ MonoBehaviour:
   playerFootstepsVol: 0.09
   healthPickup: {fileID: 8300000, guid: aaf41e5443ff944419289bf347437bc0, type: 3}
   healthPickupVol: 0
-  HPOriginal: 100
+  HPOriginal: 0
   playerSpeedOriginal: 5
   animator: {fileID: 9071769918684460997}
 --- !u!95 &9071769918684460997
@@ -3056,6 +3057,22 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4073015560987656304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152658252915316773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a6b8a54c356f6459be0f1a1dc549f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelText: {fileID: 0}
+  expText: {fileID: 0}
+  expBar: {fileID: 0}
+  playCon: {fileID: 9071769918684460993}
 --- !u!1 &8173322417104560364
 GameObject:
   m_ObjectHideFlags: 0
