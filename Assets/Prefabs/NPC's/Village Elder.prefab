@@ -863,6 +863,7 @@ GameObject:
   - component: {fileID: 5476454928308407915}
   - component: {fileID: 5826518144346431504}
   - component: {fileID: 5515097919169915945}
+  - component: {fileID: 6932821868840597223}
   m_Layer: 0
   m_Name: Village Elder
   m_TagString: NPC
@@ -877,7 +878,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171512227480352437}
-  m_LocalRotation: {x: -0, y: 0.7128914, z: -0, w: 0.70127445}
+  m_LocalRotation: {x: 0, y: 0.7128895, z: 0, w: 0.7012764}
   m_LocalPosition: {x: 3618.2004, y: 312.52264, z: 650.17126}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
@@ -1001,6 +1002,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quest: {fileID: 11400000, guid: 150fdaedcf6a75d4a8f10ee98ad12284, type: 2}
+--- !u!114 &6932821868840597223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171512227480352437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: GiveQuest
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5515097919169915945}
+        m_TargetAssemblyTypeName: Quests.QuestGiver, Assembly-CSharp
+        m_MethodName: GiveQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1171513508446169019
 GameObject:
   m_ObjectHideFlags: 0

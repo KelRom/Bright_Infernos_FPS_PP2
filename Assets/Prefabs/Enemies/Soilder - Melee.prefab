@@ -60679,6 +60679,11 @@ GameObject:
   - component: {fileID: 7955378540453221894}
   - component: {fileID: 7955378540460639111}
   - component: {fileID: 7955378540460639109}
+  - component: {fileID: 1077330544}
+  - component: {fileID: 1077330534}
+  - component: {fileID: 1077330538}
+  - component: {fileID: 1077330550}
+  - component: {fileID: 1077330551}
   m_Layer: 0
   m_Name: Soilder - Melee
   m_TagString: Untagged
@@ -60695,7 +60700,7 @@ Transform:
   m_GameObject: {fileID: 7955378540460617316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7955378540460639110}
@@ -60717,7 +60722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8acaf95ec6a594b9c58598f5c4fb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDeathAction: 
+  onDeathAction: Killed
   agent: {fileID: 7955378540460639131}
   rend: {fileID: 7955378540449050024}
   anim: {fileID: 7955378540453221894}
@@ -60732,6 +60737,7 @@ MonoBehaviour:
   knockbackForce: 5
   knockbackTime: 0
   bleed: {fileID: 9016737703376782284, guid: bcaa30156393a67459309de187daabba, type: 3}
+  expValue: 0
   aggroRange: 4
   attackRange: 4
   attackRate: 2
@@ -60763,7 +60769,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7955378540460617316}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -60807,10 +60813,10 @@ BoxCollider:
   m_GameObject: {fileID: 7955378540460617316}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.75, z: 1}
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Size: {x: 0.937632, y: 1.75, z: 1}
+  m_Center: {x: -0.03118378, y: 0.8999976, z: 1.8418031e-10}
 --- !u!82 &7955378540460639109
 AudioSource:
   m_ObjectHideFlags: 0
@@ -60907,6 +60913,106 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1077330544
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955378540460617316}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.188007, y: 2.3556957, z: 2.0387173}
+  m_Center: {x: -0.064202435, y: 0.67784643, z: -0.12401796}
+--- !u!114 &1077330534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955378540460617316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: Killed
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1077330538}
+        m_TargetAssemblyTypeName: Quests.QuestCompletion, Assembly-CSharp
+        m_MethodName: CompleteObjective
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1077330538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955378540460617316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10182615c599d841872d5153afdb490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 150fdaedcf6a75d4a8f10ee98ad12284, type: 2}
+  objective: Kill assassin
+--- !u!114 &1077330550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955378540460617316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a839aad437b81041af090fdc1a3358d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 11400000, guid: 4374889dac8c63f46adaccc3a4197be7, type: 2}
+  useButtonToStartDialog: 0
+  repeatableDialog: 0
+  startConversation: {fileID: 0}
+  conversantName: Assassin
+--- !u!114 &1077330551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955378540460617316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: Attack
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7955378540460639131}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &7955378540460617318
 GameObject:
   m_ObjectHideFlags: 0

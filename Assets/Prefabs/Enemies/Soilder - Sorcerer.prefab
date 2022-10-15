@@ -46407,9 +46407,11 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   HP: 10
   playerFaceSpeed: 6
+  speedRoam: 0
+  speedChase: 0
   engagementSpeed: 7.09
-  knockbackStrength: 0
-  knockbackResistance: 0
+  knockbackForce: 0
+  knockbackTime: 0
   manaRegenerationTime: 0
   bleed: {fileID: 9016737703376782284, guid: bcaa30156393a67459309de187daabba, type: 3}
   castRate: 0
@@ -46430,7 +46432,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6744142481739281418}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -69563,7 +69565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6578461160499742492, guid: bcaa30156393a67459309de187daabba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.063
+      value: 0.037
       objectReference: {fileID: 0}
     - target: {fileID: 6578461160499742492, guid: bcaa30156393a67459309de187daabba, type: 3}
       propertyPath: m_LocalRotation.w

@@ -2703,10 +2703,12 @@ MonoBehaviour:
   Staff: {fileID: 8311614394993468048}
   playerControls: {fileID: 468250765}
   HP: 0
-  playerSpeed: 5
+  HPOriginal: 0
+  playerSpeed: 12
+  playerSpeedOriginal: 12
   jumpHeight: 10
   gravityValue: 25
-  sprintSpeed: 15
+  sprintSpeed: 25
   turnSmoothTime: 0.1
   knockbackForce: 5
   knockbackTime: 0.2
@@ -2754,8 +2756,6 @@ MonoBehaviour:
   playerFootstepsVol: 0.09
   healthPickup: {fileID: 8300000, guid: aaf41e5443ff944419289bf347437bc0, type: 3}
   healthPickupVol: 0
-  HPOriginal: 0
-  playerSpeedOriginal: 5
   animator: {fileID: 9071769918684460997}
 --- !u!95 &9071769918684460997
 Animator:

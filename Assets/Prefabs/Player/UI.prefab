@@ -6399,6 +6399,13 @@ MonoBehaviour:
   playerDeadMenu: {fileID: 7464029546493750485}
   settingsMenu: {fileID: 2614442502232386901}
   interactPopUpWindow: {fileID: 1651825041}
+  controls: {fileID: -944628639613478452, guid: 72c6c84bd703ce54c8836a595bd7fbcc, type: 3}
+  UIControls:
+    m_Name: 
+    m_Id: 
+    m_Asset: {fileID: 0}
+    m_Actions: []
+    m_Bindings: []
   isPaused: 0
   respawnPoint: {x: 0, y: 0, z: 0}
 --- !u!82 &2013693949
