@@ -1126,8 +1126,8 @@ MonoBehaviour:
   headPosition: {fileID: 2743216042006781617}
   knockbackForce: 3
   knockbackTime: 0
-  bleed: {fileID: 9016737703376782284, guid: bcaa30156393a67459309de187daabba, type: 3}
-  expValue: 0
+  bleed: {fileID: 7611613171729039837}
+  expValue: 1
   aggroRange: 3.5
   attackRange: 3.5
   attackRate: 1
@@ -1767,5 +1767,10 @@ PrefabInstance:
 --- !u!4 &5749796428817335565 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6578461160499742492, guid: bcaa30156393a67459309de187daabba, type: 3}
+  m_PrefabInstance: {fileID: 1477183912529429009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7611613171729039837 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9016737703376782284, guid: bcaa30156393a67459309de187daabba, type: 3}
   m_PrefabInstance: {fileID: 1477183912529429009}
   m_PrefabAsset: {fileID: 0}
