@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5428035122482783273}
   - component: {fileID: 5303656918123766229}
   - component: {fileID: 2232407908435540912}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: NPCSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 75
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2232407908435540912
 MonoBehaviour:
