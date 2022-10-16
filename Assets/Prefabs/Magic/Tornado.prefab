@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2017854636608485662}
   - component: {fileID: 2017854636608485663}
   - component: {fileID: 2017854636608485660}
-  - component: {fileID: -435256354636076641}
+  - component: {fileID: -9134218223035016706}
   m_Layer: 0
   m_Name: Tornado
   m_TagString: Untagged
@@ -4822,7 +4822,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-435256354636076641
+--- !u!114 &-9134218223035016706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4831,9 +4831,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2017854636608485661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42a8f76be0e8ca149afdc820ff8db455, type: 3}
+  m_Script: {fileID: 11500000, guid: 96535bae2cc67a84985be4bf9c83cda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  cooldown: 1
+  knockbackStength: 0
+  manaCost: 10
+  rb: {fileID: 0}
+  isPlayer: 1
   speed: 10
   destroyTime: 10
+  SpellIcon: {fileID: 21300000, guid: 90f0336b2f03c9f4a9ed6cbc6cda5a23, type: 3}
+  SpellText: {fileID: 5159774115378514555, guid: 5f53f174aadf60a4fb670f5a4cd0987b, type: 3}

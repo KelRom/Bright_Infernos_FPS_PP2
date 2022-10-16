@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 348842014777939859}
   - component: {fileID: 348842014777939856}
   - component: {fileID: 348842014777939857}
-  - component: {fileID: -6348500736254679053}
+  - component: {fileID: 5042765786315561668}
   m_Layer: 0
   m_Name: Lightning
   m_TagString: Untagged
@@ -4872,7 +4872,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-6348500736254679053
+--- !u!114 &5042765786315561668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4881,9 +4881,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 348842014777939854}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42a8f76be0e8ca149afdc820ff8db455, type: 3}
+  m_Script: {fileID: 11500000, guid: 96535bae2cc67a84985be4bf9c83cda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  cooldown: 1
+  knockbackStength: 0
+  manaCost: 10
+  rb: {fileID: 0}
+  isPlayer: 1
   speed: 10
-  destroyTime: 2
+  destroyTime: 10
+  SpellIcon: {fileID: 21300000, guid: c6f9d3976d335cb4f8380d35b26f7997, type: 3}
+  SpellText: {fileID: 5159774115378514555, guid: 3dee14645beee834e95fd394d77a124f, type: 3}

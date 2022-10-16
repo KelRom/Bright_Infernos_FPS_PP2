@@ -9760,7 +9760,7 @@ GameObject:
   - component: {fileID: 8732188886295905264}
   - component: {fileID: 8732188886295905267}
   - component: {fileID: 8732188886295905266}
-  - component: {fileID: -3194106871442732638}
+  - component: {fileID: 6962205573616934078}
   m_Layer: 0
   m_Name: IcePower
   m_TagString: Untagged
@@ -14622,7 +14622,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-3194106871442732638
+--- !u!114 &6962205573616934078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14631,9 +14631,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8732188886295905269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42a8f76be0e8ca149afdc820ff8db455, type: 3}
+  m_Script: {fileID: 11500000, guid: 96535bae2cc67a84985be4bf9c83cda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  speed: 0
-  destroyTime: 4
+  cooldown: 1
+  knockbackStength: 0
+  manaCost: 10
+  rb: {fileID: 0}
+  isPlayer: 1
+  speed: 10
+  destroyTime: 10
+  SpellIcon: {fileID: 21300000, guid: 93dbafa7400baf74c87795132f1dced0, type: 3}
+  SpellText: {fileID: 5159774115378514555, guid: c5473f4597c34ef48ba4c1fd7963a787, type: 3}
