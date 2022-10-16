@@ -60729,7 +60729,7 @@ MonoBehaviour:
   anim: {fileID: 7955378540453221894}
   hpBar: {fileID: 0}
   HP: 25
-  speedRoam: 3
+  speedRoam: 8.27
   speedChase: 5
   playerFaceSpeed: 3
   roamRadius: 10
