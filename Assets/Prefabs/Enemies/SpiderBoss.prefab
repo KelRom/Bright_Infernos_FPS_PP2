@@ -1818,7 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8acaf95ec6a594b9c58598f5c4fb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDeathAction: 
+  onDeathAction: Killed
   agent: {fileID: 533949195062108977}
   rend: {fileID: 533949195050610576}
   anim: {fileID: 533949195054813520}

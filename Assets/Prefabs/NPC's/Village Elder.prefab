@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc3aa9ed9a23344a83ca6f94ea13e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quest: {fileID: 11400000, guid: 150fdaedcf6a75d4a8f10ee98ad12284, type: 2}
+  quest: {fileID: 11400000, guid: c83ba8b346f0bac4583a234a8ce4bc31, type: 2}
 --- !u!114 &6932821868840597223
 MonoBehaviour:
   m_ObjectHideFlags: 0

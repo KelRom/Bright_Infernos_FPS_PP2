@@ -68,8 +68,8 @@ MonoBehaviour:
   - d3e4a3a6-1e17-4c5d-a2e3-7282123bee93
   rect:
     serializedVersion: 2
-    x: 778
-    y: 387.00006
+    x: 834
+    y: 321.00006
     width: 200
     height: 100
   onEnterAction: 

@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6653703677388457829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 652cd551-5659-417e-aeaf-7d35043135e3
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Today is the day I start my journey to becoming a man
+  children:
+  - fbc54f7a-c15f-4dfa-a7e5-3382a3f7a398
+  rect:
+    serializedVersion: 2
+    x: 37.000015
+    y: 158
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-3223547304075314905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 91e16012-5857-44a5-b8d3-adba15483ce4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Last night a traveler spoke of a magical spring whose water cures all illnesses
+  children:
+  - 14eb8378-57cc-4809-82d5-3ad14eea6957
+  rect:
+    serializedVersion: 2
+    x: 472
+    y: 151
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-2988257067740340571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 14eb8378-57cc-4809-82d5-3ad14eea6957
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: This sping is located in the Mountains of Magnus. But first, I have to traverse
+    through the Jade Forest.
+  children:
+  - c6b40010-c01a-4b84-befe-c0de55c0fe08
+  rect:
+    serializedVersion: 2
+    x: 48.999985
+    y: 276
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-751793675631856105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: fbc54f7a-c15f-4dfa-a7e5-3382a3f7a398
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: The village has been stricken with a mysterious and grave illness.
+  children:
+  - 91e16012-5857-44a5-b8d3-adba15483ce4
+  rect:
+    serializedVersion: 2
+    x: 251
+    y: 154
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebbb8eb6327ebc42ac34ff3d92b0492, type: 3}
+  m_Name: HelpTheVillageDialog
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -6653703677388457829}
+  - {fileID: -751793675631856105}
+  - {fileID: -3223547304075314905}
+  - {fileID: -2988257067740340571}
+  - {fileID: 4314495605155135571}
+  newNodeOffset: {x: 250, y: 0}
+  isSkipable: 1
+--- !u!114 &4314495605155135571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: c6b40010-c01a-4b84-befe-c0de55c0fe08
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: The Jade Forest holds many dangers. I must hold steadfast to save the village!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 371
+    y: 278
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: GiveQuest
