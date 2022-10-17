@@ -180,6 +180,7 @@ MonoBehaviour:
   hoverClip: {fileID: 8300000, guid: b1fe5568c407dd048a0290f83508eb76, type: 3}
   clickClip: {fileID: 8300000, guid: f6a326dab31264c4a93ab287ec6fbc6b, type: 3}
   audioButtonSource: {fileID: 2157018021242799034}
+  dropdown: {fileID: 0}
 --- !u!114 &44692673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,7 +808,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Q
+  m_text: ;
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1971,6 +1972,7 @@ MonoBehaviour:
   hoverClip: {fileID: 8300000, guid: b1fe5568c407dd048a0290f83508eb76, type: 3}
   clickClip: {fileID: 8300000, guid: f6a326dab31264c4a93ab287ec6fbc6b, type: 3}
   audioButtonSource: {fileID: 2157018021242799034}
+  dropdown: {fileID: 0}
 --- !u!114 &491883066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2092,7 +2094,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: E
+  m_text: .
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2469,7 +2471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shift
+  m_text: Left Shift
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3643,6 +3645,7 @@ MonoBehaviour:
   hoverClip: {fileID: 8300000, guid: b1fe5568c407dd048a0290f83508eb76, type: 3}
   clickClip: {fileID: 8300000, guid: f6a326dab31264c4a93ab287ec6fbc6b, type: 3}
   audioButtonSource: {fileID: 2157018021242799034}
+  dropdown: {fileID: 0}
 --- !u!114 &959213326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4300,6 +4303,7 @@ MonoBehaviour:
   hoverClip: {fileID: 8300000, guid: b1fe5568c407dd048a0290f83508eb76, type: 3}
   clickClip: {fileID: 8300000, guid: f6a326dab31264c4a93ab287ec6fbc6b, type: 3}
   audioButtonSource: {fileID: 1122274841}
+  dropdown: {fileID: 0}
 --- !u!114 &1122274837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5058,7 +5062,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: '&'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5422,6 +5426,7 @@ MonoBehaviour:
   hoverClip: {fileID: 8300000, guid: b1fe5568c407dd048a0290f83508eb76, type: 3}
   clickClip: {fileID: 8300000, guid: f6a326dab31264c4a93ab287ec6fbc6b, type: 3}
   audioButtonSource: {fileID: 1406809302}
+  dropdown: {fileID: 0}
 --- !u!114 &1406809301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5788,7 +5793,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: F
+  m_text: U
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5923,6 +5928,7 @@ MonoBehaviour:
   hoverClip: {fileID: 8300000, guid: b1fe5568c407dd048a0290f83508eb76, type: 3}
   clickClip: {fileID: 8300000, guid: f6a326dab31264c4a93ab287ec6fbc6b, type: 3}
   audioButtonSource: {fileID: 1531994651}
+  dropdown: {fileID: 0}
 --- !u!114 &1531994647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6216,7 +6222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2
+  m_text: '['
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6427,6 +6433,7 @@ MonoBehaviour:
   hoverClip: {fileID: 8300000, guid: b1fe5568c407dd048a0290f83508eb76, type: 3}
   clickClip: {fileID: 8300000, guid: f6a326dab31264c4a93ab287ec6fbc6b, type: 3}
   audioButtonSource: {fileID: 1580960826}
+  dropdown: {fileID: 0}
 --- !u!114 &1580960822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7244,6 +7251,7 @@ MonoBehaviour:
   hoverClip: {fileID: 8300000, guid: b1fe5568c407dd048a0290f83508eb76, type: 3}
   clickClip: {fileID: 8300000, guid: f6a326dab31264c4a93ab287ec6fbc6b, type: 3}
   audioButtonSource: {fileID: 1722231733}
+  dropdown: {fileID: 0}
 --- !u!114 &1722231736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7531,6 +7539,7 @@ MonoBehaviour:
   hoverClip: {fileID: 8300000, guid: b1fe5568c407dd048a0290f83508eb76, type: 3}
   clickClip: {fileID: 8300000, guid: f6a326dab31264c4a93ab287ec6fbc6b, type: 3}
   audioButtonSource: {fileID: 1816896353}
+  dropdown: {fileID: 0}
 --- !u!114 &1816896349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9359,6 +9368,7 @@ MonoBehaviour:
   hoverClip: {fileID: 8300000, guid: b1fe5568c407dd048a0290f83508eb76, type: 3}
   clickClip: {fileID: 8300000, guid: f6a326dab31264c4a93ab287ec6fbc6b, type: 3}
   audioButtonSource: {fileID: 2098036682}
+  dropdown: {fileID: 0}
 --- !u!114 &2098036678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9781,6 +9791,7 @@ MonoBehaviour:
   hoverClip: {fileID: 8300000, guid: b1fe5568c407dd048a0290f83508eb76, type: 3}
   clickClip: {fileID: 8300000, guid: f6a326dab31264c4a93ab287ec6fbc6b, type: 3}
   audioButtonSource: {fileID: 2157018021242799034}
+  dropdown: {fileID: 0}
 --- !u!1 &8301451487144905940
 GameObject:
   m_ObjectHideFlags: 0
