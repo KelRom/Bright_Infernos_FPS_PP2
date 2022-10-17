@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd3c7d5b50317c447a28a2619b3db7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueIdentifier: 
+  uniqueIdentifier: 06042025-fe87-4860-a7fe-2c839d0fc829
 --- !u!1 &4443413351556935536
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +76,12 @@ GameObject:
   - component: {fileID: 4443413351556935537}
   - component: {fileID: 4443413351556935539}
   - component: {fileID: 4443413351556935538}
+  - component: {fileID: 1101829212}
+  - component: {fileID: 1101829213}
+  - component: {fileID: 1101829214}
+  - component: {fileID: 1101829215}
+  - component: {fileID: 1101829216}
+  - component: {fileID: 1101829217}
   m_Layer: 11
   m_Name: CityCheckpoint - Castle
   m_TagString: Untagged
@@ -91,7 +97,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4443413351556935536}
   m_LocalRotation: {x: -0, y: -0.24025103, z: -0, w: 0.9707108}
-  m_LocalPosition: {x: -1604.1, y: 158, z: 131.9}
+  m_LocalPosition: {x: -1629.35, y: 158, z: 109.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -124,8 +130,124 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 0}
-  campfire: {fileID: 0}
+  activated: 1
+  campfire: {fileID: 4443413351556935538}
   respawnCoorinates: {x: 0, y: 0, z: 0}
+--- !u!114 &1101829212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413351556935536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc3aa9ed9a23344a83ca6f94ea13e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 6fa4ff6658d911a49b4d69e211864ca7, type: 2}
+--- !u!114 &1101829213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413351556935536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: GiveQuest
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1101829212}
+        m_TargetAssemblyTypeName: Quests.QuestGiver, Assembly-CSharp
+        m_MethodName: GiveQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1101829214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413351556935536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10182615c599d841872d5153afdb490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 2b1fbc41b2553574c9a2af5c15d64029, type: 2}
+  objective: Make it inside the castle
+--- !u!114 &1101829215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413351556935536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: CompleteObjective
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1101829214}
+        m_TargetAssemblyTypeName: Quests.QuestCompletion, Assembly-CSharp
+        m_MethodName: CompleteObjective
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1101829216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413351556935536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a839aad437b81041af090fdc1a3358d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 11400000, guid: a505cb46953c71746ab64a8427b1a918, type: 2}
+  useButtonToStartDialog: 0
+  repeatableDialog: 0
+  startConversation: {fileID: 0}
+  conversantName: Wizard King
+  questMustBeComplete: {fileID: 0}
+--- !u!114 &1101829217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413351556935536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10182615c599d841872d5153afdb490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 824541ea34429e14baac61c2c82c5eb2, type: 2}
+  objective: 
 --- !u!1 &4443413352332394712
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +259,14 @@ GameObject:
   - component: {fileID: 4443413352332394713}
   - component: {fileID: 4443413352332394714}
   - component: {fileID: 4443413352332394715}
+  - component: {fileID: 2141242215}
+  - component: {fileID: 2141242216}
+  - component: {fileID: 2141242217}
+  - component: {fileID: 2141242218}
+  - component: {fileID: 2141242219}
+  - component: {fileID: 2141242220}
+  - component: {fileID: 2141242221}
+  - component: {fileID: 2141242222}
   m_Layer: 11
   m_Name: CityCheckpoint
   m_TagString: Untagged
@@ -151,14 +281,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4443413352332394712}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1052.1, y: -4.1, z: 58.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.038701255, z: -0, w: 0.9992508}
+  m_LocalPosition: {x: -1051.48, y: -20.649994, z: 64.66998}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4443413351042304810}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 4.436, z: 0}
 --- !u!65 &4443413352332394714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -185,8 +315,170 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 0}
-  campfire: {fileID: 0}
+  activated: 1
+  campfire: {fileID: 4443413352332394715}
   respawnCoorinates: {x: 0, y: 0, z: 0}
+--- !u!114 &2141242215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413352332394712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc3aa9ed9a23344a83ca6f94ea13e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 2b1fbc41b2553574c9a2af5c15d64029, type: 2}
+--- !u!114 &2141242216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413352332394712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: GiveQuest
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2141242215}
+        m_TargetAssemblyTypeName: Quests.QuestGiver, Assembly-CSharp
+        m_MethodName: GiveQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2141242217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413352332394712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10182615c599d841872d5153afdb490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
+  objective: Follow patrol into the royal city
+--- !u!114 &2141242218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413352332394712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: CompleteObjective
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2141242217}
+        m_TargetAssemblyTypeName: Quests.QuestCompletion, Assembly-CSharp
+        m_MethodName: CompleteObjective
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2141242219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413352332394712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a839aad437b81041af090fdc1a3358d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 11400000, guid: ae4c0c1f073d7594a8e0dbfb2578483d, type: 2}
+  useButtonToStartDialog: 0
+  repeatableDialog: 0
+  startConversation: {fileID: 0}
+  conversantName: Silas
+  questMustBeComplete: {fileID: 0}
+--- !u!114 &2141242220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413352332394712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: CompleteObjective2
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2141242221}
+        m_TargetAssemblyTypeName: Quests.QuestCompletion, Assembly-CSharp
+        m_MethodName: CompleteObjective
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2141242221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413352332394712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10182615c599d841872d5153afdb490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 824541ea34429e14baac61c2c82c5eb2, type: 2}
+  objective: Escape the royal city with your life
+--- !u!114 &2141242222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413352332394712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a839aad437b81041af090fdc1a3358d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 11400000, guid: e1c25d0e124a5e849bb934b35605990d, type: 2}
+  useButtonToStartDialog: 0
+  repeatableDialog: 0
+  startConversation: {fileID: 0}
+  conversantName: Silas
+  questMustBeComplete: {fileID: 11400000, guid: 6fa4ff6658d911a49b4d69e211864ca7, type: 2}
 --- !u!1001 &4443413351229332304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -224,19 +516,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -176.7
+      value: -184.76
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 504.6
+      value: 580.36426
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.98224896
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.18758191
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalRotation.y
@@ -248,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -21.623
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -286,6 +578,10 @@ PrefabInstance:
       propertyPath: camp
       value: 
       objectReference: {fileID: 3581468705233885645}
+    - target: {fileID: 4992812804109026451, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: campfire
+      value: 
+      objectReference: {fileID: 8710001451884109763}
     - target: {fileID: 5481876256077642711, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -361,11 +657,145 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 871941485495599773, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
   m_PrefabInstance: {fileID: 4443413351229332304}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &915687615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705233885645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a839aad437b81041af090fdc1a3358d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 11400000, guid: 434d2c33b90643b4cba402710ac1c274, type: 2}
+  useButtonToStartDialog: 0
+  repeatableDialog: 0
+  startConversation: {fileID: 0}
+  conversantName: Patrol
+  questMustBeComplete: {fileID: 11400000, guid: 8f4789c7deed02c408748147c568aa2b, type: 2}
+--- !u!114 &915687616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705233885645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: GiveDialog
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 915687615}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: ChangeDialog
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: d38b9603297a7014895088a55ac6b1ff, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Dialog.Dialog, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 915687615}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: changeRepeatable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 915687615}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: setConversantName
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Silas
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &915687617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705233885645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: GiveQuest
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 915687618}
+        m_TargetAssemblyTypeName: Quests.QuestGiver, Assembly-CSharp
+        m_MethodName: GiveQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 915687615}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: changeRepeatable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &915687618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705233885645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc3aa9ed9a23344a83ca6f94ea13e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
 --- !u!4 &3581468705233885646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
   m_PrefabInstance: {fileID: 4443413351229332304}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8710001451884109763 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4992812804109026451, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+  m_PrefabInstance: {fileID: 4443413351229332304}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705233885645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2475892a3b2496441bcafd6ac8681ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4443413351459193790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -465,6 +895,10 @@ PrefabInstance:
       propertyPath: camp
       value: 
       objectReference: {fileID: 3581468705408696611}
+    - target: {fileID: 4992812804109026451, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: campfire
+      value: 
+      objectReference: {fileID: 8710001452627838765}
     - target: {fileID: 5481876256077642711, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -521,6 +955,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7311783596145846518, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 65.112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
 --- !u!4 &3581468705408696608 stripped
@@ -533,6 +971,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 871941485495599773, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
   m_PrefabInstance: {fileID: 4443413351459193790}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8710001452627838765 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4992812804109026451, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+  m_PrefabInstance: {fileID: 4443413351459193790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705408696611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2475892a3b2496441bcafd6ac8681ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4443413351783278218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -566,11 +1015,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -136.5
+      value: -134.71
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -163.5
+      value: -163.71
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -632,6 +1081,10 @@ PrefabInstance:
       propertyPath: camp
       value: 
       objectReference: {fileID: 3581468705753752599}
+    - target: {fileID: 4992812804109026451, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: campfire
+      value: 
+      objectReference: {fileID: 8710001452438118937}
     - target: {fileID: 5481876256077642711, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -712,6 +1165,140 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 871941485495599773, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
   m_PrefabInstance: {fileID: 4443413351783278218}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1540336035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705753752599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a839aad437b81041af090fdc1a3358d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 11400000, guid: 434d2c33b90643b4cba402710ac1c274, type: 2}
+  useButtonToStartDialog: 0
+  repeatableDialog: 0
+  startConversation: {fileID: 0}
+  conversantName: Patrol
+  questMustBeComplete: {fileID: 11400000, guid: 8f4789c7deed02c408748147c568aa2b, type: 2}
+--- !u!114 &1540336036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705753752599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc3aa9ed9a23344a83ca6f94ea13e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
+--- !u!114 &1540336037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705753752599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: GiveQuest
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1540336036}
+        m_TargetAssemblyTypeName: Quests.QuestGiver, Assembly-CSharp
+        m_MethodName: GiveQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1540336035}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: changeRepeatable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1540336038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705753752599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: GiveDialog
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1540336035}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: ChangeDialog
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: d38b9603297a7014895088a55ac6b1ff, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Dialog.Dialog, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1540336035}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: changeRepeatable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1540336035}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: setConversantName
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Silas
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8710001452438118937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4992812804109026451, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+  m_PrefabInstance: {fileID: 4443413351783278218}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705753752599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2475892a3b2496441bcafd6ac8681ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4443413351840650876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -745,43 +1332,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -407.5
+      value: -396.50427
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -157.6
+      value: -168.27353
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 700
+      value: 746.17126
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9929224
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.115620755
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.0031400574
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.02696603
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -13.264
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -0.734
       objectReference: {fileID: 0}
     - target: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 3.197
       objectReference: {fileID: 0}
     - target: {fileID: 1775079820077753968, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Layer
@@ -811,6 +1398,10 @@ PrefabInstance:
       propertyPath: camp
       value: 
       objectReference: {fileID: 3581468705564185825}
+    - target: {fileID: 4992812804109026451, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: campfire
+      value: 
+      objectReference: {fileID: 8710001452480746223}
     - target: {fileID: 5481876256077642711, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -865,7 +1456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Size.x
-      value: 5
+      value: 7.284709
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Size.y
@@ -873,7 +1464,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Size.z
-      value: 5
+      value: 7.9968863
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: m_Center.x
+      value: 13.330424
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: m_Center.z
+      value: 17.001577
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_IsTrigger
@@ -886,8 +1485,142 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 871941485495599773, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
   m_PrefabInstance: {fileID: 4443413351840650876}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1877446837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705564185825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a839aad437b81041af090fdc1a3358d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 11400000, guid: 434d2c33b90643b4cba402710ac1c274, type: 2}
+  useButtonToStartDialog: 0
+  repeatableDialog: 0
+  startConversation: {fileID: 0}
+  conversantName: Patrol
+  questMustBeComplete: {fileID: 11400000, guid: 8f4789c7deed02c408748147c568aa2b, type: 2}
+--- !u!114 &1877446838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705564185825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: GiveDialog
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1877446837}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: ChangeDialog
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: d38b9603297a7014895088a55ac6b1ff, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Dialog.Dialog, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1877446837}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: changeRepeatable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1877446837}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: setConversantName
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Silas
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1877446839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705564185825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: GiveQuest
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1877446840}
+        m_TargetAssemblyTypeName: Quests.QuestGiver, Assembly-CSharp
+        m_MethodName: GiveQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1877446837}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: changeRepeatable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1877446840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705564185825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc3aa9ed9a23344a83ca6f94ea13e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
 --- !u!4 &3581468705564185826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 871941485495599774, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
   m_PrefabInstance: {fileID: 4443413351840650876}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8710001452480746223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4992812804109026451, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+  m_PrefabInstance: {fileID: 4443413351840650876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581468705564185825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2475892a3b2496441bcafd6ac8681ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
