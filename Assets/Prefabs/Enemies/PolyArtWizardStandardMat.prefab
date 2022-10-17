@@ -1240,7 +1240,7 @@ MonoBehaviour:
   agent: {fileID: 1755960885506303255}
   rend: {fileID: 1755960885506303252}
   anim: {fileID: 1804088978711329341}
-  hpBar: {fileID: 8990331905752705663}
+  hpBar: {fileID: 0}
   HP: 50
   playerFaceSpeed: 5
   engagementSpeed: 0
@@ -2715,7 +2715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2963746100106992867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.33, y: 0.921, z: 2.09}
+  m_LocalPosition: {x: 0.1944611, y: 0.921, z: 0.7954861}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2795,15 +2795,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2294678974751965102, guid: 5aaa2356e07a1af4ba972bb249a5b043, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2294678974751965102, guid: 5aaa2356e07a1af4ba972bb249a5b043, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2294678974751965102, guid: 5aaa2356e07a1af4ba972bb249a5b043, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2294678974751965102, guid: 5aaa2356e07a1af4ba972bb249a5b043, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2836,14 +2836,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2294678974751965102, guid: 5aaa2356e07a1af4ba972bb249a5b043, type: 3}
   m_PrefabInstance: {fileID: 1543380304784534509}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8990331905752705663 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7615344018670748050, guid: 5aaa2356e07a1af4ba972bb249a5b043, type: 3}
-  m_PrefabInstance: {fileID: 1543380304784534509}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
