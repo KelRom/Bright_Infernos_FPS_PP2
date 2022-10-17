@@ -12120,6 +12120,8 @@ MonoBehaviour:
   MPBar: {fileID: 5763957698292714643}
   enemyHPBar: {fileID: 1233150404}
   bossHealthMenu: {fileID: 5783811848146073522}
+  spellIcon: {fileID: 4897964714793959688}
+  spellText: {fileID: 3105557775693129553}
   menuCurrentlyOpen: {fileID: 0}
   pauseMenu: {fileID: 7419403839248502234}
   playerDamage: {fileID: 3865861732955676358}
