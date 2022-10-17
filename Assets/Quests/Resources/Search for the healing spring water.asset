@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Search for the healing spring water
   m_EditorClassIdentifier: 
   objectives:
+  - Travel to the first cave
   - Kill first cave boss
+  - Travel to the second cave
   - Kill second cave boss
+  - Travel to the third cave
   - Kill third cave boss
