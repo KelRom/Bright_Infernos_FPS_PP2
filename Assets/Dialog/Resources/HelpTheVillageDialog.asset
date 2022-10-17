@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6653703677388457829
+--- !u!114 &-8432258692152150373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: 652cd551-5659-417e-aeaf-7d35043135e3
+  m_Name: 5ce7768d-a096-4bcc-a69d-2a070f13f255
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Today is the day I start my journey to becoming a man
+  text: Hello Silas, I am afraid we must postpone your coming of age rite
   children:
-  - fbc54f7a-c15f-4dfa-a7e5-3382a3f7a398
+  - 2ef0b6ad-a1c0-42fd-8892-b0a71c20d83d
   rect:
     serializedVersion: 2
-    x: 37.000015
-    y: 158
+    x: 50.000023
+    y: 17
     width: 200
     height: 100
-  onEnterAction: 
+  onEnterAction: CompleteObjective
   onExitAction: 
---- !u!114 &-3223547304075314905
+--- !u!114 &-7938844449964349422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,21 +34,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: 91e16012-5857-44a5-b8d3-adba15483ce4
+  m_Name: 077abbcd-77e0-4b18-ae91-7f0777843cbf
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Last night a traveler spoke of a magical spring whose water cures all illnesses
+  text: To get to the Mountains of Magnus you must first traverse the Jade Forest.
   children:
-  - 14eb8378-57cc-4809-82d5-3ad14eea6957
+  - b7bef8ff-0d25-4ab3-908d-e899b6e00a63
   rect:
     serializedVersion: 2
-    x: 472
-    y: 151
+    x: 790
+    y: 329
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
---- !u!114 &-2988257067740340571
+--- !u!114 &-7872701072465418789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,22 +58,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: 14eb8378-57cc-4809-82d5-3ad14eea6957
+  m_Name: 24e83453-3b66-4425-aebe-eea9ab27e1b1
   m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: This sping is located in the Mountains of Magnus. But first, I have to traverse
-    through the Jade Forest.
+  isPlayerSpeaking: 1
+  text: What about the magic spring?
   children:
-  - c6b40010-c01a-4b84-befe-c0de55c0fe08
+  - a0e01a30-1e1a-4337-b692-3bbefc9e08fa
   rect:
     serializedVersion: 2
-    x: 48.999985
-    y: 276
+    x: 355
+    y: 370
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
---- !u!114 &-751793675631856105
+--- !u!114 &-7320107081781516495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,20 +82,167 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: fbc54f7a-c15f-4dfa-a7e5-3382a3f7a398
+  m_Name: d08ca5af-0df7-4fe7-bff7-4c66b4b99432
   m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: The village has been stricken with a mysterious and grave illness.
+  isPlayerSpeaking: 1
+  text: I hope so!
   children:
-  - 91e16012-5857-44a5-b8d3-adba15483ce4
+  - 884cff1b-38a6-4e3c-8747-61036f2c1798
   rect:
     serializedVersion: 2
-    x: 251
-    y: 154
+    x: 794
+    y: 124.000015
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+--- !u!114 &-6974870831161781938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 0f61f9b8-f5c9-4ff0-bfbb-17f67a87c496
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I am ready!
+  children:
+  - 884cff1b-38a6-4e3c-8747-61036f2c1798
+  rect:
+    serializedVersion: 2
+    x: 781
+    y: 44.000015
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-6658864054149079068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 1c32cac5-1bd8-4a72-834b-05b47bf408d7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: What if there was something I could do?
+  children:
+  - bcd02e21-e9e6-4515-97be-81c658781e92
+  rect:
+    serializedVersion: 2
+    x: 337
+    y: 1
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-3770801938972206555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: bcd02e21-e9e6-4515-97be-81c658781e92
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Go on...
+  children:
+  - 4f693c12-83fb-4f87-9e2e-af963e8fb981
+  - 24e83453-3b66-4425-aebe-eea9ab27e1b1
+  rect:
+    serializedVersion: 2
+    x: 325.99997
+    y: 114.00001
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-3492896815092214540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 18fe6537-2456-49a6-800c-4d5d4a3cf164
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Do you think you are ready for such a task?
+  children:
+  - d08ca5af-0df7-4fe7-bff7-4c66b4b99432
+  - 0f61f9b8-f5c9-4ff0-bfbb-17f67a87c496
+  rect:
+    serializedVersion: 2
+    x: 568
+    y: 347
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-2187274057885881646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 999a9147-98a6-4cab-8831-68a95d369b55
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: 'It will be a treacherous journey that would be worth for your coming of
+    age rite '
+  children:
+  - 18fe6537-2456-49a6-800c-4d5d4a3cf164
+  rect:
+    serializedVersion: 2
+    x: 565
+    y: 247
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-2059534375589312499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 884cff1b-38a6-4e3c-8747-61036f2c1798
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Here is a magical staff to aide you on your journey
+  children:
+  - 077abbcd-77e0-4b18-ae91-7f0777843cbf
+  rect:
+    serializedVersion: 2
+    x: 802
+    y: 238
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: GiveStaff
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,14 +256,24 @@ MonoBehaviour:
   m_Name: HelpTheVillageDialog
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: -6653703677388457829}
-  - {fileID: -751793675631856105}
-  - {fileID: -3223547304075314905}
-  - {fileID: -2988257067740340571}
-  - {fileID: 4314495605155135571}
+  - {fileID: -8432258692152150373}
+  - {fileID: -6658864054149079068}
+  - {fileID: 6604052649825588641}
+  - {fileID: 6726964883983768900}
+  - {fileID: -7872701072465418789}
+  - {fileID: -3770801938972206555}
+  - {fileID: 7557550763432156213}
+  - {fileID: 3475080136698354087}
+  - {fileID: -2187274057885881646}
+  - {fileID: -3492896815092214540}
+  - {fileID: -7320107081781516495}
+  - {fileID: -6974870831161781938}
+  - {fileID: -2059534375589312499}
+  - {fileID: -7938844449964349422}
+  - {fileID: 3800753508319315037}
   newNodeOffset: {x: 250, y: 0}
-  isSkipable: 1
---- !u!114 &4314495605155135571
+  isSkipable: 0
+--- !u!114 &3475080136698354087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,16 +283,114 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
-  m_Name: c6b40010-c01a-4b84-befe-c0de55c0fe08
+  m_Name: e3b99f6f-57cf-473b-a5fa-99de7cd2f526
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: The Jade Forest holds many dangers. I must hold steadfast to save the village!
-  children: []
+  text: But I guess we will need a myth to heal the village
+  children:
+  - 999a9147-98a6-4cab-8831-68a95d369b55
   rect:
     serializedVersion: 2
-    x: 371
-    y: 278
+    x: 549
+    y: 136.00002
     width: 200
     height: 100
   onEnterAction: 
+  onExitAction: 
+--- !u!114 &3800753508319315037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: b7bef8ff-0d25-4ab3-908d-e899b6e00a63
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Good luck Silas. The village is counting on you!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 783
+    y: 440.00003
+    width: 200
+    height: 100
+  onEnterAction: ChangeDialog
   onExitAction: GiveQuest
+--- !u!114 &6604052649825588641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 4f693c12-83fb-4f87-9e2e-af963e8fb981
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I heard a traveler speak of a magic spring
+  children:
+  - a0e01a30-1e1a-4337-b692-3bbefc9e08fa
+  rect:
+    serializedVersion: 2
+    x: 330.99997
+    y: 251
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &6726964883983768900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 2ef0b6ad-a1c0-42fd-8892-b0a71c20d83d
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: This plague is our top priority
+  children:
+  - 1c32cac5-1bd8-4a72-834b-05b47bf408d7
+  - 4f693c12-83fb-4f87-9e2e-af963e8fb981
+  - 24e83453-3b66-4425-aebe-eea9ab27e1b1
+  rect:
+    serializedVersion: 2
+    x: 69.000015
+    y: 179
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &7557550763432156213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: a0e01a30-1e1a-4337-b692-3bbefc9e08fa
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: The sping inside the Mountains of Magnus are but a myth...
+  children:
+  - e3b99f6f-57cf-473b-a5fa-99de7cd2f526
+  rect:
+    serializedVersion: 2
+    x: 561
+    y: 25.000008
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 

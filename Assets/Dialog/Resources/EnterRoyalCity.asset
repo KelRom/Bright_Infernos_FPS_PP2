@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebbb8eb6327ebc42ac34ff3d92b0492, type: 3}
+  m_Name: EnterRoyalCity
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 4349298758035238623}
+  newNodeOffset: {x: 250, y: 0}
+  isSkipable: 0
+--- !u!114 &4349298758035238623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: ea563028-5ee4-438e-90e1-d9824ef5c834
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: So this is what the royal city looks like. Now I have to find the castle
+    and confront the wizard king.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 200
+    height: 100
+  onEnterAction: CompleteObjective
+  onExitAction: GiveQuest

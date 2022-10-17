@@ -1,5 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7532393214657249362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 181ea529-a1cd-40d6-bfa6-de524fab5902
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Shut it you fool! This water is very special. I heard it can give you super
+    powers
+  children:
+  - ba1b8656-fdf4-4740-9489-beb92ca6466c
+  rect:
+    serializedVersion: 2
+    x: 3
+    y: 100.00001
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-4600073041721140344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: ba1b8656-fdf4-4740-9489-beb92ca6466c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: I heard it can give you immortality
+  children:
+  - 6845e27b-4e48-4245-ab12-c161f1011394
+  rect:
+    serializedVersion: 2
+    x: 10.000015
+    y: 194
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-4387040782283533690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 6845e27b-4e48-4245-ab12-c161f1011394
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Why don't we keep this for ourselves?
+  children:
+  - d4f5bd4d-3fed-42e8-85c1-a97316ef6278
+  rect:
+    serializedVersion: 2
+    x: 218
+    y: -5.9999924
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,6 +86,58 @@ MonoBehaviour:
   m_Name: PatrolDialog
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 0}
+  - {fileID: 2931180876748184870}
+  - {fileID: -7532393214657249362}
+  - {fileID: -4600073041721140344}
+  - {fileID: -4387040782283533690}
+  - {fileID: 7140824374744586289}
   newNodeOffset: {x: 250, y: 0}
   isSkipable: 0
+--- !u!114 &2931180876748184870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: 98ca19a7-0c8b-4542-82e5-f3f4ee0299ee
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: I can't believe the wizard king made us get this wierd water
+  children:
+  - 181ea529-a1cd-40d6-bfa6-de524fab5902
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &7140824374744586289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5909408e57014aa97e070278592f7, type: 3}
+  m_Name: d4f5bd4d-3fed-42e8-85c1-a97316ef6278
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Shhhhh... The wizard king would kill us all. Don't say anything like that
+    again.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 240.99997
+    y: 108.000015
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: GiveDialog

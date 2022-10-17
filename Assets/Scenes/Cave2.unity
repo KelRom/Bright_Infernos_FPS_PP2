@@ -1193,9 +1193,9 @@ MonoBehaviour:
   onTrigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 402550056}
+      - m_Target: {fileID: 402550057}
         m_TargetAssemblyTypeName: Quests.QuestCompletion, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: CompleteObjective
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
