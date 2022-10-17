@@ -1240,8 +1240,8 @@ MonoBehaviour:
   agent: {fileID: 1755960885506303255}
   rend: {fileID: 1755960885506303252}
   anim: {fileID: 1804088978711329341}
-  hpBar: {fileID: 6670697350154909690}
-  HP: 5
+  hpBar: {fileID: 8990331905752705663}
+  HP: 50
   playerFaceSpeed: 5
   engagementSpeed: 0
   knockbackStrength: 0
@@ -1258,6 +1258,10 @@ MonoBehaviour:
   maxMana: 1000
   currentMana: 0
   castingPosition: {fileID: 2963746100106992866}
+  enemyBossActivation:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   isCasting: 0
   selectedSpell: 0
 --- !u!95 &1804088978711329341
@@ -2832,9 +2836,9 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2294678974751965102, guid: 5aaa2356e07a1af4ba972bb249a5b043, type: 3}
   m_PrefabInstance: {fileID: 1543380304784534509}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6670697350154909690 stripped
+--- !u!114 &8990331905752705663 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5330049537066884119, guid: 5aaa2356e07a1af4ba972bb249a5b043, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7615344018670748050, guid: 5aaa2356e07a1af4ba972bb249a5b043, type: 3}
   m_PrefabInstance: {fileID: 1543380304784534509}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
