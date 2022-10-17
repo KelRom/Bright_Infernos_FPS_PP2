@@ -15,6 +15,7 @@ TagManager:
   - Fence
   - SaveSystem
   - WizardBossDeath
+  - WizardBoss
   layers:
   - Default
   - TransparentFX

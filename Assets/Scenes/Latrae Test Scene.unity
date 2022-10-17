@@ -1568,6 +1568,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
+      propertyPath: m_LocalAABB.m_Center.y
+      value: 0.03895533
+      objectReference: {fileID: 0}
+    - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
+      propertyPath: m_LocalAABB.m_Extent.y
+      value: 1.0639553
+      objectReference: {fileID: 0}
     - target: {fileID: 468250765, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: m_Camera
       value: 

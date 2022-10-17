@@ -1199,6 +1199,12 @@ GameObject:
   - component: {fileID: 1854991039957562225}
   - component: {fileID: 1755960885506303255}
   - component: {fileID: 1755960885506303252}
+  - component: {fileID: 1790252279}
+  - component: {fileID: 1790252280}
+  - component: {fileID: 1790252281}
+  - component: {fileID: 1790252282}
+  - component: {fileID: 1790252283}
+  - component: {fileID: 1790252284}
   m_Layer: 6
   m_Name: PolyArtWizardStandardMat
   m_TagString: Enemy
@@ -1237,10 +1243,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fce025b67eb0e04785414f631c38f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDeathAction: Killed
   agent: {fileID: 1755960885506303255}
   rend: {fileID: 1755960885506303252}
   anim: {fileID: 1804088978711329341}
-  hpBar: {fileID: 0}
+  hpBar: {fileID: 8990331905752705663}
   HP: 50
   playerFaceSpeed: 5
   engagementSpeed: 0
@@ -1249,11 +1256,11 @@ MonoBehaviour:
   manaRegenerationTime: 0
   castRate: 1
   spellInventory:
+  - {fileID: -2179408615492351568, guid: 412866376b9f2984ebb4b64dfa19c87c, type: 3}
+  - {fileID: -2179408615492351568, guid: 01de8f2da92072344a7fec336e6079b1, type: 3}
   - {fileID: -2179408615492351568, guid: 47d86b59811c0884a86f61d8e30791a7, type: 3}
-  - {fileID: 6962205573616934078, guid: 143e5c21cd2b048449e1f62ead2db73f, type: 3}
-  - {fileID: 5042765786315561668, guid: 0f34626d6e9055044906b11947382ec2, type: 3}
   drops:
-  - {fileID: 615122441199885494, guid: ba715c4b00fbc5740ae50658e746cfec, type: 3}
+  - {fileID: 8196601588515036265, guid: 8807643a71cad534b8fab94c361313f4, type: 3}
   dropRadius: 1
   maxMana: 1000
   currentMana: 0
@@ -1362,6 +1369,144 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1790252279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755960885506303253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10182615c599d841872d5153afdb490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 6fa4ff6658d911a49b4d69e211864ca7, type: 2}
+  objective: Kill the wizard king
+--- !u!114 &1790252280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755960885506303253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a839aad437b81041af090fdc1a3358d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 11400000, guid: c55a927f173d5db4283ac2f550ea397d, type: 2}
+  useButtonToStartDialog: 0
+  repeatableDialog: 0
+  startConversation: {fileID: 0}
+  conversantName: Wizard King
+  questMustBeComplete: {fileID: 11400000, guid: 6fa4ff6658d911a49b4d69e211864ca7, type: 2}
+--- !u!114 &1790252281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755960885506303253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc3aa9ed9a23344a83ca6f94ea13e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 824541ea34429e14baac61c2c82c5eb2, type: 2}
+--- !u!114 &1790252282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755960885506303253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: Killed
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1790252279}
+        m_TargetAssemblyTypeName: Quests.QuestCompletion, Assembly-CSharp
+        m_MethodName: CompleteObjective
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1790252280}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: DialogTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1790252283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755960885506303253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: GiveQuest
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1790252281}
+        m_TargetAssemblyTypeName: Quests.QuestGiver, Assembly-CSharp
+        m_MethodName: GiveQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1790252284}
+        m_TargetAssemblyTypeName: Quests.QuestGiver, Assembly-CSharp
+        m_MethodName: GiveQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1790252284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755960885506303253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc3aa9ed9a23344a83ca6f94ea13e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: dcea8aaa3fdeedf40938530e188024b0, type: 2}
 --- !u!1 &1755964718939890463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2836,3 +2981,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2294678974751965102, guid: 5aaa2356e07a1af4ba972bb249a5b043, type: 3}
   m_PrefabInstance: {fileID: 1543380304784534509}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8990331905752705663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7615344018670748050, guid: 5aaa2356e07a1af4ba972bb249a5b043, type: 3}
+  m_PrefabInstance: {fileID: 1543380304784534509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
