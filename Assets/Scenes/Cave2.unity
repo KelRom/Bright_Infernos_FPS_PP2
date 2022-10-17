@@ -1047,6 +1047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 2743216042006786843, guid: 791f69047f55abe4ea54051aa1224fc9, type: 3}
+  - {fileID: 2743216042006786843, guid: c81b1ff379a56534198bed729b4f9101, type: 3}
   maxEnemies: 3
   timer: 5
 --- !u!135 &389426468
@@ -2056,6 +2057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 2743216042006786843, guid: 791f69047f55abe4ea54051aa1224fc9, type: 3}
+  - {fileID: 2743216042006786843, guid: c81b1ff379a56534198bed729b4f9101, type: 3}
   maxEnemies: 3
   timer: 5
 --- !u!135 &989842870
@@ -2155,14 +2157,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-      propertyPath: m_LocalAABB.m_Center.y
-      value: 0.038871646
-      objectReference: {fileID: 0}
-    - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-      propertyPath: m_LocalAABB.m_Extent.y
-      value: 1.0638716
-      objectReference: {fileID: 0}
     - target: {fileID: 4073015560987656304, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: expBar
       value: 
@@ -2171,10 +2165,6 @@ PrefabInstance:
       propertyPath: expText
       value: 
       objectReference: {fileID: 213041781}
-    - target: {fileID: 4073015560987656304, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1196587700}
     - target: {fileID: 4073015560987656304, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: levelText
       value: 
@@ -2228,52 +2218,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-      propertyPath: HP
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 1862317079}
-    - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-      propertyPath: maxMana
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-      propertyPath: knockbackTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-      propertyPath: manaRegenTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-      propertyPath: knockbackForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-      propertyPath: manaRegenAmount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-      propertyPath: spellInventory.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-      propertyPath: spellInventory.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: f5ca06d2c1679874c82e7015d791c668, type: 2}
-    - target: {fileID: 9071769918684460993, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-      propertyPath: spellInventory.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7e49eff2e4e754349b856d4d9f2a0092, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
---- !u!95 &1196587700 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9071769918684460997, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
-  m_PrefabInstance: {fileID: 1196587699}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1425630594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2430,6 +2379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 2743216042006786843, guid: 791f69047f55abe4ea54051aa1224fc9, type: 3}
+  - {fileID: 2743216042006786843, guid: c81b1ff379a56534198bed729b4f9101, type: 3}
   maxEnemies: 3
   timer: 1
 --- !u!135 &1814790410
@@ -2497,6 +2447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 2743216042006786843, guid: 791f69047f55abe4ea54051aa1224fc9, type: 3}
+  - {fileID: 2743216042006786843, guid: c81b1ff379a56534198bed729b4f9101, type: 3}
   maxEnemies: 5
   timer: 5
 --- !u!135 &1958771231
@@ -3509,6 +3460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 2743216042006786843, guid: 791f69047f55abe4ea54051aa1224fc9, type: 3}
+  - {fileID: 2743216042006786843, guid: c81b1ff379a56534198bed729b4f9101, type: 3}
   maxEnemies: 5
   timer: 5
 --- !u!4 &7566337942612255629

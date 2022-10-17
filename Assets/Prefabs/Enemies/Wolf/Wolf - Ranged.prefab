@@ -1151,7 +1151,8 @@ MonoBehaviour:
   manaRegenerationTime: 0
   bleed: {fileID: 7611613171729039837}
   castRate: 0
-  spellInventory: []
+  spellInventory:
+  - {fileID: 0}
   drops:
   - {fileID: 7943168550485124487, guid: e1abc7640d1ddd4438ef67d46560d614, type: 3}
   - {fileID: 615122441199885494, guid: ba715c4b00fbc5740ae50658e746cfec, type: 3}
