@@ -4884,7 +4884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96535bae2cc67a84985be4bf9c83cda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 5
   cooldown: 5
   knockbackStength: 0
   manaCost: 10
@@ -4892,3 +4892,5 @@ MonoBehaviour:
   isPlayer: 1
   speed: 0
   destroyTime: 2
+  SpellIcon: {fileID: 21300000, guid: b2b9db522591bae438807e7fa3296162, type: 3}
+  SpellText: {fileID: 5159774115378514555, guid: 3c8b9bdeaf8e4d14c94dfc279d976eed, type: 3}

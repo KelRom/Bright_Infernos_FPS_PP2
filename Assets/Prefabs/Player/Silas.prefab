@@ -2857,8 +2857,9 @@ MonoBehaviour:
   Shield: {fileID: 2586158661474482527}
   Staff: {fileID: 8311614394993468048}
   playerControls: {fileID: 468250765}
-  HP: 100
+  HP: 40
   HPOriginal: 0
+  maxHP: 40
   playerSpeed: 12
   playerSpeedOriginal: 12
   jumpHeight: 10
@@ -2869,13 +2870,13 @@ MonoBehaviour:
   knockbackTime: 0.2
   isMeleeActive: 0
   jumpsMax: 2
-  maxMana: 100
+  maxMana: 25
   currentMana: 0
   manaRegenAmount: 5
   manaRegenTime: 2
   castingPos: {fileID: 4798845980054755227}
   gunPos: {fileID: 1113975830051470739}
-  weapon: {fileID: 0}
+  weapon: {fileID: 670477290}
   selectedSpell: 0
   swingRate: 0.1
   spellInventory:
@@ -2883,6 +2884,7 @@ MonoBehaviour:
   - {fileID: 6962205573616934078, guid: d05704b5b3bdf9f48a0698f62f454079, type: 3}
   - {fileID: -9134218223035016706, guid: 8e5ee56cc9db53549953edc19d76166f, type: 3}
   - {fileID: 5042765786315561668, guid: 537c3a7c2a19afb4bb8ff6a0dd3ae6db, type: 3}
+  - {fileID: -4302601586338887760, guid: 7fa67ea4c76c6fb47bc0d3feae85ea31, type: 3}
   aud: {fileID: 9071769918684460999}
   playerDamageSound:
   - {fileID: 8300000, guid: 6870b58155df53d4c8e991807d3deeec, type: 3}
@@ -3228,7 +3230,7 @@ MonoBehaviour:
   expText: {fileID: 0}
   expBar: {fileID: 0}
   playCon: {fileID: 9071769918684460993}
-  animator: {fileID: 0}
+  animator: {fileID: 9071769918684460997}
 --- !u!1 &8173322417104560364
 GameObject:
   m_ObjectHideFlags: 0
