@@ -16466,9 +16466,11 @@ MonoBehaviour:
   gameMusicSource: {fileID: 2013693949}
   gameMusicClips:
   - {fileID: 8300000, guid: d3bc16edc6163c6448d562df7e2f2061, type: 3}
+  - {fileID: 8300000, guid: 6d2536a830b02b846ab9add7f3a6a759, type: 3}
+  - {fileID: 8300000, guid: 6caccded4ff8b534ca88f760fea39913, type: 3}
   - {fileID: 8300000, guid: c847a8367297b3646bbb816baea420a5, type: 3}
   fadeScreen: {fileID: 87598917}
-  player: {fileID: 6878601293222680215, guid: 7054484f2c0c99f4492522553995187e, type: 3}
+  player: {fileID: 0}
   playerScript: {fileID: 0}
   playerSpawnPoint: {fileID: 0}
   HPBar: {fileID: 8828772131920429136}
@@ -20049,7 +20051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6865100569370378353, guid: 983b634a1b90d6d428fcf119dc8d1912, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7004100762849273795, guid: 983b634a1b90d6d428fcf119dc8d1912, type: 3}
       propertyPath: m_AnchorMax.y
