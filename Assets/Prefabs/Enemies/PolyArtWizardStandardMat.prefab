@@ -1250,8 +1250,8 @@ MonoBehaviour:
   castRate: 1
   spellInventory:
   - {fileID: -2179408615492351568, guid: 47d86b59811c0884a86f61d8e30791a7, type: 3}
-  - {fileID: -2179408615492351568, guid: 47d86b59811c0884a86f61d8e30791a7, type: 3}
-  - {fileID: -2179408615492351568, guid: 47d86b59811c0884a86f61d8e30791a7, type: 3}
+  - {fileID: 6962205573616934078, guid: 143e5c21cd2b048449e1f62ead2db73f, type: 3}
+  - {fileID: 5042765786315561668, guid: 0f34626d6e9055044906b11947382ec2, type: 3}
   drops:
   - {fileID: 615122441199885494, guid: ba715c4b00fbc5740ae50658e746cfec, type: 3}
   dropRadius: 1
