@@ -46406,12 +46406,13 @@ MonoBehaviour:
   rend: {fileID: 6328967557044550741}
   anim: {fileID: 6744142481729883240}
   hpBar: {fileID: 0}
-  HP: 10
+  HP: 60
   playerFaceSpeed: 6
-  speedRoam: 0
-  speedChase: 0
+  speedRoam: 3
+  speedChase: 5
+  expValue: 1
   engagementSpeed: 7.09
-  knockbackForce: 0
+  knockbackForce: 3
   knockbackTime: 0
   manaRegenerationTime: 0
   bleed: {fileID: 9016737703376782284, guid: bcaa30156393a67459309de187daabba, type: 3}
@@ -46420,10 +46421,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0af7a7ece3856a0419d677e3c163ae63, type: 2}
   drops:
   - {fileID: 615122441199885494, guid: ba715c4b00fbc5740ae50658e746cfec, type: 3}
+  - {fileID: 7943168550485124487, guid: e1abc7640d1ddd4438ef67d46560d614, type: 3}
   dropRadius: 1
-  maxMana: 0
+  maxMana: 50
   currentMana: 0
-  castingPosition: {fileID: 0}
+  castingPosition: {fileID: 1066878881}
   isCasting: 0
   selectedSpell: 0
 --- !u!195 &6744142481739700725
