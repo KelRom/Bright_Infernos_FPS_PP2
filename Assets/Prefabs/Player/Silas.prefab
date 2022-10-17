@@ -89,8 +89,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 0.00001847744, y: 0.03895533, z: 0}
-    m_Extent: {x: 0.5320009, y: 1.0639553, z: 0}
+    m_Center: {x: 0.00001847744, y: 0.038871646, z: 0}
+    m_Extent: {x: 0.5320009, y: 1.0638716, z: 0}
 --- !u!114 &255750392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2857,7 +2857,7 @@ MonoBehaviour:
   Shield: {fileID: 2586158661474482527}
   Staff: {fileID: 8311614394993468048}
   playerControls: {fileID: 468250765}
-  HP: 40
+  HP: 25
   HPOriginal: 0
   maxHP: 40
   playerSpeed: 12
@@ -2866,25 +2866,21 @@ MonoBehaviour:
   gravityValue: 25
   sprintSpeed: 25
   turnSmoothTime: 0.1
-  knockbackForce: 5
-  knockbackTime: 0.2
+  knockbackForce: 0
+  knockbackTime: 0
   isMeleeActive: 0
   jumpsMax: 2
   maxMana: 25
   currentMana: 0
   manaRegenAmount: 5
-  manaRegenTime: 2
+  manaRegenTime: 5
   castingPos: {fileID: 4798845980054755227}
   gunPos: {fileID: 1113975830051470739}
   weapon: {fileID: 670477290}
   selectedSpell: 0
   swingRate: 0.1
   spellInventory:
-  - {fileID: -2681353625732458098, guid: 7f172657fd3e5b74ba3437aa2c339fc4, type: 3}
   - {fileID: 6962205573616934078, guid: d05704b5b3bdf9f48a0698f62f454079, type: 3}
-  - {fileID: -9134218223035016706, guid: 8e5ee56cc9db53549953edc19d76166f, type: 3}
-  - {fileID: 5042765786315561668, guid: 537c3a7c2a19afb4bb8ff6a0dd3ae6db, type: 3}
-  - {fileID: -4302601586338887760, guid: 7fa67ea4c76c6fb47bc0d3feae85ea31, type: 3}
   aud: {fileID: 9071769918684460999}
   playerDamageSound:
   - {fileID: 8300000, guid: 6870b58155df53d4c8e991807d3deeec, type: 3}
@@ -2912,7 +2908,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 361aa8cbb7e6fb04ba410bc00d491538, type: 3}
   playerFootstepsVol: 0.09
   healthPickup: {fileID: 8300000, guid: aaf41e5443ff944419289bf347437bc0, type: 3}
-  healthPickupVol: 0
+  healthPickupVol: 0.5
+  itemPickup: {fileID: 8300000, guid: 9672ccd349db6634ead3d28a1dc19ee8, type: 3}
+  itemPickupVol: 0.5
   animator: {fileID: 9071769918684460997}
 --- !u!95 &9071769918684460997
 Animator:

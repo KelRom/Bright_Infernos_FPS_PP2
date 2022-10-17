@@ -60742,7 +60742,7 @@ MonoBehaviour:
   aggroRange: 4
   attackRange: 4
   attackRate: 2
-  attackDamage: 1
+  attackDamage: 5
   enemyDrop:
   - {fileID: 7943168550485124487, guid: e1abc7640d1ddd4438ef67d46560d614, type: 3}
   - {fileID: 615122441199885494, guid: ba715c4b00fbc5740ae50658e746cfec, type: 3}
@@ -60986,6 +60986,7 @@ MonoBehaviour:
   repeatableDialog: 0
   startConversation: {fileID: 0}
   conversantName: Assassin
+  questMustBeComplete: {fileID: 0}
 --- !u!114 &1077330551
 MonoBehaviour:
   m_ObjectHideFlags: 0
