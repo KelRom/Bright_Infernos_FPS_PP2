@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1324656666402736992, guid: 5d037ccd1659bc8448c6deb0663b666e, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1324656666402736992, guid: 5d037ccd1659bc8448c6deb0663b666e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -950,7 +950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &317291646
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1060,6 +1060,7 @@ MonoBehaviour:
   circularPatrolling: 0
   timeAtPoint: 5
   roamRadius: 0
+  hasSeen: 0
   speedChase: 0
   speedPatrol: 0
   speedRoam: 0
@@ -1637,7 +1638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5777828805560082312, guid: 6aec1559780122348bb6b07f0843cb5c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5777828805560082310, guid: 6aec1559780122348bb6b07f0843cb5c, type: 3}
@@ -1840,7 +1841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &474162467
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1965,6 +1966,7 @@ MonoBehaviour:
   circularPatrolling: 1
   timeAtPoint: 3
   roamRadius: 0
+  hasSeen: 0
   speedChase: 0
   speedPatrol: 10
   speedRoam: 0
@@ -2348,7 +2350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &574806551
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2458,6 +2460,7 @@ MonoBehaviour:
   circularPatrolling: 0
   timeAtPoint: 2
   roamRadius: 0
+  hasSeen: 0
   speedChase: 0
   speedPatrol: 5
   speedRoam: 0
@@ -2483,6 +2486,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
+      propertyPath: m_LocalAABB.m_Center.y
+      value: 0.03895533
+      objectReference: {fileID: 0}
+    - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
+      propertyPath: m_LocalAABB.m_Extent.y
+      value: 1.0639553
+      objectReference: {fileID: 0}
     - target: {fileID: 468250765, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3683,7 +3694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &999417695
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3793,6 +3804,7 @@ MonoBehaviour:
   circularPatrolling: 0
   timeAtPoint: 5
   roamRadius: 50
+  hasSeen: 0
   speedChase: 0
   speedPatrol: 0
   speedRoam: 3
@@ -7796,7 +7808,7 @@ Transform:
   - {fileID: 1119273323}
   - {fileID: 124648657}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1996857550
 GameObject:

@@ -14420,6 +14420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 998992019701748297}
+  - component: {fileID: 5644000519972518393}
   - component: {fileID: 901077741984784033}
   - component: {fileID: 901077741984784032}
   - component: {fileID: 901077741984784061}
@@ -14451,6 +14452,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5644000519972518393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997193815411275155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfcf514445d953249a5fbe9875e4b348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 901077741984784032}
+  patrolPoints: []
+  patrol: 0
+  roam: 0
+  circularPatrolling: 0
+  timeAtPoint: 0
+  roamRadius: 0
+  hasSeen: 0
+  speedChase: 0
+  speedPatrol: 0
+  speedRoam: 0
 --- !u!114 &901077741984784033
 MonoBehaviour:
   m_ObjectHideFlags: 0
