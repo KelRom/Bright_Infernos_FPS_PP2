@@ -2866,7 +2866,7 @@ MonoBehaviour:
   gravityValue: 25
   sprintSpeed: 25
   turnSmoothTime: 0.1
-  knockbackForce: 5
+  knockbackForce: 3
   knockbackTime: 0
   isMeleeActive: 0
   jumpsMax: 2
@@ -2880,7 +2880,7 @@ MonoBehaviour:
   selectedSpell: 0
   swingRate: 0.1
   spellInventory:
-  - {fileID: 11400000, guid: f5ca06d2c1679874c82e7015d791c668, type: 2}
+  - {fileID: -2681353625732458098, guid: 7f172657fd3e5b74ba3437aa2c339fc4, type: 3}
   aud: {fileID: 9071769918684460999}
   playerDamageSound:
   - {fileID: 8300000, guid: 6870b58155df53d4c8e991807d3deeec, type: 3}
