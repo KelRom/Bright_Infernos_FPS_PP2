@@ -4834,10 +4834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96535bae2cc67a84985be4bf9c83cda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 5
   cooldown: 1
   knockbackStength: 0
-  manaCost: 10
+  manaCost: 5
   rb: {fileID: 0}
   isPlayer: 1
   speed: 10
