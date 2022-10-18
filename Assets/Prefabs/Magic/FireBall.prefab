@@ -4841,6 +4841,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   isPlayer: 1
   speed: 10
-  destroyTime: 10
+  destroyTime: 5
   SpellIcon: {fileID: 21300000, guid: fdcbe49826a6e2d4893ffa0292546af5, type: 3}
   SpellText: {fileID: 5159774115378514555, guid: de20499de10b41d4094d921b626b9a65, type: 3}

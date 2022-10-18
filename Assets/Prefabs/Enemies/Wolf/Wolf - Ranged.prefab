@@ -1113,17 +1113,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcf514445d953249a5fbe9875e4b348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
+  agent: {fileID: 2743216041997153215}
   patrolPoints: []
   patrol: 0
-  roam: 0
+  roam: 1
   circularPatrolling: 0
-  timeAtPoint: 0
-  roamRadius: 0
+  timeAtPoint: 3
+  roamRadius: 20
   hasSeen: 0
-  speedChase: 0
-  speedPatrol: 0
-  speedRoam: 0
+  speedChase: 5
+  speedPatrol: 3
+  speedRoam: 3
 --- !u!114 &4773394873585569654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,7 +1152,7 @@ MonoBehaviour:
   bleed: {fileID: 7611613171729039837}
   castRate: 0
   spellInventory:
-  - {fileID: 0}
+  - {fileID: 7770158276295830540, guid: 1d3b1aada9742aa4ca1b44e1e89ee32c, type: 3}
   drops:
   - {fileID: 7943168550485124487, guid: e1abc7640d1ddd4438ef67d46560d614, type: 3}
   - {fileID: 615122441199885494, guid: ba715c4b00fbc5740ae50658e746cfec, type: 3}

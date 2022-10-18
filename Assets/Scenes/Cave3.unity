@@ -1040,15 +1040,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7987639485113805156, guid: 377883a2e0b86374c94e08bb7f56cc6a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7987639485113805156, guid: 377883a2e0b86374c94e08bb7f56cc6a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7987639485113805156, guid: 377883a2e0b86374c94e08bb7f56cc6a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7987639485113805156, guid: 377883a2e0b86374c94e08bb7f56cc6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1253,7 +1253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 997193815411275155, guid: 4952eac25c3eeb44687cbb8788150867, type: 3}
+  - {fileID: 997193815411275155, guid: bd829b91eee28b448a159b4c02fbc74c, type: 3}
+  - {fileID: 5694231483671703933, guid: 835d8f380b898324cbf92483f61c399b, type: 3}
   maxEnemies: 3
   timer: 5
 --- !u!135 &389426468
@@ -2246,7 +2247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &989842869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2260,7 +2261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 997193815411275155, guid: 4952eac25c3eeb44687cbb8788150867, type: 3}
+  - {fileID: 997193815411275155, guid: bd829b91eee28b448a159b4c02fbc74c, type: 3}
+  - {fileID: 5694231483671703933, guid: 835d8f380b898324cbf92483f61c399b, type: 3}
   maxEnemies: 3
   timer: 5
 --- !u!135 &989842870
@@ -2362,11 +2364,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: m_LocalAABB.m_Center.y
-      value: 0.03895533
+      value: 0.038871646
       objectReference: {fileID: 0}
     - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: m_LocalAABB.m_Extent.y
-      value: 1.0639553
+      value: 1.0638716
       objectReference: {fileID: 0}
     - target: {fileID: 4073015560987656304, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: expBar
@@ -3108,7 +3110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 997193815411275155, guid: 4952eac25c3eeb44687cbb8788150867, type: 3}
+  - {fileID: 997193815411275155, guid: bd829b91eee28b448a159b4c02fbc74c, type: 3}
+  - {fileID: 5694231483671703933, guid: 835d8f380b898324cbf92483f61c399b, type: 3}
   maxEnemies: 3
   timer: 5
 --- !u!135 &1814790410
@@ -3175,7 +3178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 997193815411275155, guid: 4952eac25c3eeb44687cbb8788150867, type: 3}
+  - {fileID: 5694231483671703933, guid: 835d8f380b898324cbf92483f61c399b, type: 3}
+  - {fileID: 997193815411275155, guid: bd829b91eee28b448a159b4c02fbc74c, type: 3}
   maxEnemies: 5
   timer: 5
 --- !u!135 &1958771231
@@ -3410,6 +3414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneIndex: 1
+  onEnterTrigger: 
 --- !u!1 &3073269240748496047
 GameObject:
   m_ObjectHideFlags: 0
@@ -4030,7 +4035,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 997193815411275155, guid: 4952eac25c3eeb44687cbb8788150867, type: 3}
+  - {fileID: 997193815411275155, guid: bd829b91eee28b448a159b4c02fbc74c, type: 3}
+  - {fileID: 5694231483671703933, guid: 835d8f380b898324cbf92483f61c399b, type: 3}
   maxEnemies: 5
   timer: 5
 --- !u!4 &7566337942612255629
