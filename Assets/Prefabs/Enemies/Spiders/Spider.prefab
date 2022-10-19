@@ -173,11 +173,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4163429338047670135}
   - component: {fileID: 2195321789764990814}
+  - component: {fileID: 1551743613}
   - component: {fileID: 4163429338047511186}
   - component: {fileID: 4163429338040207603}
   - component: {fileID: 391736831}
   - component: {fileID: 7993530311945081678}
-  - component: {fileID: 1551743613}
+  - component: {fileID: -3455019731077429770}
   m_Layer: 6
   m_Name: Spider
   m_TagString: Enemy
@@ -227,12 +228,12 @@ MonoBehaviour:
   speedChase: 5
   playerFaceSpeed: 3
   roamRadius: 10
-  viewAngle: 45
+  viewAngle: 121
   headPosition: {fileID: 4163429338047511199}
   bleed: {fileID: 1343805033530846085}
   expValue: 1
-  aggroRange: 4
-  attackRange: 4
+  aggroRange: 100
+  attackRange: 100
   attackRate: 1
   attackDamage: 2
   enemyDrop:
@@ -248,6 +249,29 @@ MonoBehaviour:
   enemyAttackSound:
   - {fileID: 8300000, guid: 3986d1979953e6844898e9c971139be0, type: 3}
   enemyAttackSoundVol: 0.1
+--- !u!114 &1551743613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163429338047511191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfcf514445d953249a5fbe9875e4b348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 4163429338047511186}
+  patrolPoints: []
+  patrol: 0
+  roam: 1
+  circularPatrolling: 0
+  timeAtPoint: 3
+  roamRadius: 19
+  hasSeen: 0
+  speedChase: 5
+  speedPatrol: 3
+  speedRoam: 3
 --- !u!195 &4163429338047511186
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -298,7 +322,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4163429338047511191}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 7.84, y: 9.3, z: 8.7}
@@ -399,29 +423,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1551743613
-MonoBehaviour:
+--- !u!65 &-3455019731077429770
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4163429338047511191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfcf514445d953249a5fbe9875e4b348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 4163429338047511186}
-  patrolPoints: []
-  patrol: 0
-  roam: 1
-  circularPatrolling: 0
-  timeAtPoint: 3
-  roamRadius: 19
-  hasSeen: 0
-  speedChase: 5
-  speedPatrol: 3
-  speedRoam: 3
+  serializedVersion: 2
+  m_Size: {x: 4.54, y: 2.73, z: 4.25}
+  m_Center: {x: 0, y: 0.77, z: 0}
 --- !u!1 &4163429338047511193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,7 +2250,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 12.77
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2021787619311783829
 Rigidbody:
