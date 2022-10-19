@@ -229,8 +229,6 @@ MonoBehaviour:
   roamRadius: 10
   viewAngle: 45
   headPosition: {fileID: 4163429338047511199}
-  knockbackForce: 3
-  knockbackTime: 0
   bleed: {fileID: 1343805033530846085}
   expValue: 1
   aggroRange: 4
@@ -303,7 +301,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.84, y: 17.72, z: 9.7}
+  m_Size: {x: 7.84, y: 9.3, z: 8.7}
   m_Center: {x: 0, y: 1.49, z: 0.67}
 --- !u!82 &7993530311945081678
 AudioSource:
