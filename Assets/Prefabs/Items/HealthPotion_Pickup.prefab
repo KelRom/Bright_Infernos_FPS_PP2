@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7943168550485124487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 207.4478, y: 0.05538111, z: 137.43947}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724286921f21c954c88281797dc30b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 50
+  healAmount: 15
   useButtonToPickUp: 0
 --- !u!33 &7943168550482077669
 MeshFilter:
@@ -111,5 +111,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
