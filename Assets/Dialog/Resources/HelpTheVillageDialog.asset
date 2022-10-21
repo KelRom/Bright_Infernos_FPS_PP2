@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Name: a0e01a30-1e1a-4337-b692-3bbefc9e08fa
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: The sping inside the Mountains of Magnus are but a myth...
+  text: The spring inside the Mountains of Magnus are but a myth...
   children:
   - e3b99f6f-57cf-473b-a5fa-99de7cd2f526
   rect:
