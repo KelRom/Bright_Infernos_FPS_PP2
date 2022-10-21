@@ -2617,6 +2617,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901077741984784033, guid: 4952eac25c3eeb44687cbb8788150867, type: 3}
+      propertyPath: HP
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 997193815411275155, guid: 4952eac25c3eeb44687cbb8788150867, type: 3}
       propertyPath: m_Name
       value: Bandit - Boss
