@@ -937,7 +937,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 2743216042006786843, guid: c81b1ff379a56534198bed729b4f9101, type: 3}
   maxEnemies: 3
-  timer: 5
+  timer: 1
 --- !u!135 &389426468
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -949,7 +949,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 75
+  m_Radius: 150
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &389426469
 Transform:
@@ -1813,7 +1813,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 150
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &989842871
 Transform:
@@ -1823,7 +1823,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989842868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 84.6, y: 0.36, z: 329.9}
+  m_LocalPosition: {x: 102.4, y: 0.36, z: 329.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1978,11 +1978,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: m_LocalAABB.m_Center.y
-      value: 0.03895533
+      value: 0.038871646
       objectReference: {fileID: 0}
     - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: m_LocalAABB.m_Extent.y
-      value: 1.0639553
+      value: 1.0638716
       objectReference: {fileID: 0}
     - target: {fileID: 4073015560987656304, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: expBar
@@ -2224,7 +2224,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 150
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1814790411
 Transform:
@@ -2234,7 +2234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814790408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 308, y: 0.16, z: 62}
+  m_LocalPosition: {x: 308, y: 0.16, z: 77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2279,7 +2279,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 2743216042006786843, guid: c81b1ff379a56534198bed729b4f9101, type: 3}
   maxEnemies: 5
-  timer: 5
+  timer: 1
 --- !u!135 &1958771231
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2291,7 +2291,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 150
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1958771232
 Transform:
@@ -2301,7 +2301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958771229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 352, y: 0.12371826, z: 234}
+  m_LocalPosition: {x: 335, y: 0.218, z: 234}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3241,7 +3241,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 2743216042006786843, guid: c81b1ff379a56534198bed729b4f9101, type: 3}
   maxEnemies: 5
-  timer: 5
+  timer: 1
 --- !u!4 &7566337942612255629
 Transform:
   m_ObjectHideFlags: 0
@@ -3250,7 +3250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7566337942612255627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 475, y: 0.12371826, z: 101}
+  m_LocalPosition: {x: 345, y: 0.101, z: 121}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

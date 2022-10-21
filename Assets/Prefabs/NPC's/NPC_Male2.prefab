@@ -6924,7 +6924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 6666925980888139698}
   anim: {fileID: 7130622662785936151}
-  roamRadius: 30
+  roamRadius: 50
 --- !u!95 &7130622662785936151
 Animator:
   serializedVersion: 4
@@ -6961,7 +6961,7 @@ NavMeshAgent:
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
+  m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
@@ -6991,7 +6991,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7179560098500038845

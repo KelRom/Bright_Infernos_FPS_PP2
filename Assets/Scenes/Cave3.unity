@@ -997,7 +997,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 997193815411275155, guid: bd829b91eee28b448a159b4c02fbc74c, type: 3}
   maxEnemies: 3
-  timer: 5
+  timer: 1
 --- !u!135 &389426468
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1009,7 +1009,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 150
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &389426469
 Transform:
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 997193815411275155, guid: bd829b91eee28b448a159b4c02fbc74c, type: 3}
   maxEnemies: 3
-  timer: 5
+  timer: 1
 --- !u!135 &989842870
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1948,7 +1948,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 100
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &989842871
 Transform:
@@ -2118,11 +2118,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: m_LocalAABB.m_Center.y
-      value: 0.03895533
+      value: 0.038871646
       objectReference: {fileID: 0}
     - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: m_LocalAABB.m_Extent.y
-      value: 1.0639553
+      value: 1.0638716
       objectReference: {fileID: 0}
     - target: {fileID: 4073015560987656304, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: expBar
@@ -2765,7 +2765,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 997193815411275155, guid: bd829b91eee28b448a159b4c02fbc74c, type: 3}
   maxEnemies: 3
-  timer: 5
+  timer: 1
 --- !u!135 &1814790410
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2777,7 +2777,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 150
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1814790411
 Transform:
@@ -2832,7 +2832,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 997193815411275155, guid: bd829b91eee28b448a159b4c02fbc74c, type: 3}
   maxEnemies: 5
-  timer: 5
+  timer: 1
 --- !u!135 &1958771231
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2844,7 +2844,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 150
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1958771232
 Transform:
@@ -3645,7 +3645,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 150
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7566337942612255627
 GameObject:
@@ -3680,7 +3680,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 997193815411275155, guid: bd829b91eee28b448a159b4c02fbc74c, type: 3}
   maxEnemies: 5
-  timer: 5
+  timer: 1
 --- !u!4 &7566337942612255629
 Transform:
   m_ObjectHideFlags: 0
