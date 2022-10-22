@@ -1339,7 +1339,7 @@ MonoBehaviour:
   speedChase: 5
   playerFaceSpeed: 3
   roamRadius: 10
-  viewAngle: 180
+  viewAngle: 80
   headPosition: {fileID: 2743216042006781617}
   bleed: {fileID: 7611613171729039837}
   expValue: 5
