@@ -81,7 +81,8 @@ GameObject:
   - component: {fileID: 1101829214}
   - component: {fileID: 1101829215}
   - component: {fileID: 1101829216}
-  - component: {fileID: 1101829217}
+  - component: {fileID: 8649279012639893691}
+  - component: {fileID: 814847245808834010}
   m_Layer: 11
   m_Name: CityCheckpoint - Castle
   m_TagString: Untagged
@@ -97,7 +98,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4443413351556935536}
   m_LocalRotation: {x: -0, y: -0.24025103, z: -0, w: 0.9707108}
-  m_LocalPosition: {x: -1629.35, y: 158, z: 109.4}
+  m_LocalPosition: {x: -1652.1, y: 158, z: 75.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -216,6 +217,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1101829216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,8 +246,8 @@ MonoBehaviour:
   repeatableDialog: 0
   startConversation: {fileID: 0}
   conversantName: Wizard King
-  questMustBeComplete: {fileID: 0}
---- !u!114 &1101829217
+  questMustBeComplete: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
+--- !u!114 &8649279012639893691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,11 +256,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 4443413351556935536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c10182615c599d841872d5153afdb490, type: 3}
+  m_Script: {fileID: 11500000, guid: fcc3aa9ed9a23344a83ca6f94ea13e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quest: {fileID: 11400000, guid: 824541ea34429e14baac61c2c82c5eb2, type: 2}
-  objective: 
+  quest: {fileID: 11400000, guid: 6fa4ff6658d911a49b4d69e211864ca7, type: 2}
+--- !u!114 &814847245808834010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443413351556935536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: GiveQuest
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8649279012639893691}
+        m_TargetAssemblyTypeName: Quests.QuestGiver, Assembly-CSharp
+        m_MethodName: GiveQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4443413352332394712
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +458,7 @@ MonoBehaviour:
   repeatableDialog: 0
   startConversation: {fileID: 0}
   conversantName: Silas
-  questMustBeComplete: {fileID: 0}
+  questMustBeComplete: {fileID: 11400000, guid: 8f4789c7deed02c408748147c568aa2b, type: 2}
 --- !u!114 &2141242220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,15 +676,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Size.x
-      value: 5
+      value: 15.551519
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Size.y
-      value: 5
+      value: 4.9999995
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Size.z
-      value: 5
+      value: 13.822367
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: m_Center.x
+      value: 13.834801
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: m_Center.y
+      value: 65.00007
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: m_Center.z
+      value: 22.911076
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_IsTrigger
@@ -743,6 +795,18 @@ MonoBehaviour:
   onTrigger:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 915687615}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: changeRepeatable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 915687618}
         m_TargetAssemblyTypeName: Quests.QuestGiver, Assembly-CSharp
         m_MethodName: GiveQuest
@@ -755,13 +819,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1540336035}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: SetFreeze
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Quests.Quest, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1877446837}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: SetFreeze
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Quests.Quest, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 915687615}
         m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
-        m_MethodName: changeRepeatable
-        m_Mode: 6
+        m_MethodName: SetFreeze
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Quests.Quest, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1139,15 +1227,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Size.x
-      value: 5
+      value: 15.076376
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Size.y
-      value: 5
+      value: 5.7960005
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Size.z
-      value: 5
+      value: 16.839865
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: m_Center.x
+      value: 10.50946
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: m_Center.y
+      value: 65.39803
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: m_Center.z
+      value: 24.419952
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_IsTrigger
@@ -1212,6 +1312,18 @@ MonoBehaviour:
   onTrigger:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1540336035}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: changeRepeatable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1540336036}
         m_TargetAssemblyTypeName: Quests.QuestGiver, Assembly-CSharp
         m_MethodName: GiveQuest
@@ -1224,13 +1336,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1877446837}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: SetFreeze
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Quests.Quest, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 915687615}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: SetFreeze
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Quests.Quest, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1540336035}
         m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
-        m_MethodName: changeRepeatable
-        m_Mode: 6
+        m_MethodName: SetFreeze
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Quests.Quest, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1266,18 +1402,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1540336035}
         m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
-        m_MethodName: changeRepeatable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1540336035}
-        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
         m_MethodName: setConversantName
         m_Mode: 5
         m_Arguments:
@@ -1286,7 +1410,19 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Silas
-          m_BoolArgument: 0
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1540336035}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: changeRepeatable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Silas
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &8710001452438118937 stripped
 MonoBehaviour:
@@ -1456,23 +1592,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Size.x
-      value: 7.284709
+      value: 19.64712
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Size.y
-      value: 5
+      value: 5.0000005
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Size.z
-      value: 7.9968863
+      value: 15.936992
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Center.x
-      value: 13.330424
+      value: 7.14925
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
+      propertyPath: m_Center.y
+      value: 65.000305
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_Center.z
-      value: 17.001577
+      value: 20.97173
       objectReference: {fileID: 0}
     - target: {fileID: 6229959399774909603, guid: 104cb948deb170a4e96fd57643f9fcd3, type: 3}
       propertyPath: m_IsTrigger
@@ -1571,6 +1711,18 @@ MonoBehaviour:
   onTrigger:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1877446837}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: changeRepeatable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1877446840}
         m_TargetAssemblyTypeName: Quests.QuestGiver, Assembly-CSharp
         m_MethodName: GiveQuest
@@ -1583,13 +1735,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1540336035}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: SetFreeze
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Quests.Quest, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1877446837}
         m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
-        m_MethodName: changeRepeatable
-        m_Mode: 6
+        m_MethodName: SetFreeze
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Quests.Quest, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 915687615}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: SetFreeze
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 7110615cfad97be45b007c91965ed29d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Quests.Quest, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
