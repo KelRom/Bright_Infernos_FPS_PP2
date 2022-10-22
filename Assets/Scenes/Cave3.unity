@@ -695,6 +695,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7419403838450263520, guid: bed8fa64647334547a91a393729d0226, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7419403838450263522, guid: bed8fa64647334547a91a393729d0226, type: 3}
       propertyPath: m_Name
       value: UI
@@ -2118,11 +2122,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: m_LocalAABB.m_Center.y
-      value: 0.038871646
+      value: 0.03895533
       objectReference: {fileID: 0}
     - target: {fileID: 255750393, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: m_LocalAABB.m_Extent.y
-      value: 1.0638716
+      value: 1.0639553
       objectReference: {fileID: 0}
     - target: {fileID: 4073015560987656304, guid: b2bcb0aeae6c7014196f106f7064a1ae, type: 3}
       propertyPath: expBar
