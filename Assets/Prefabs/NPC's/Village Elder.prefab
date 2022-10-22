@@ -867,6 +867,9 @@ GameObject:
   - component: {fileID: 77453579}
   - component: {fileID: 77453589}
   - component: {fileID: 77453590}
+  - component: {fileID: 4389725877849719064}
+  - component: {fileID: 8536063774172034345}
+  - component: {fileID: 2924486180009480932}
   m_Layer: 11
   m_Name: Village Elder
   m_TagString: NPC
@@ -906,7 +909,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3415218705985024180}
   anim: {fileID: 1231146271723232273}
+  timeAtSpot: 0
   roamRadius: 0
+  speedRoam: 0
+  speedPatrol: 0
+  timeAtPoint: 0
 --- !u!95 &1231146271723232273
 Animator:
   serializedVersion: 4
@@ -1094,6 +1101,76 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 77453589}
+        m_TargetAssemblyTypeName: Quests.QuestCompletion, Assembly-CSharp
+        m_MethodName: CompleteObjective
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4389725877849719064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171512227480352437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: ChangeDialog
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5826518144346431504}
+        m_TargetAssemblyTypeName: Dialog.AIConversant, Assembly-CSharp
+        m_MethodName: ChangeDialog
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 95ec3f877e1ee4c4b934c19a0f7d7180, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Dialog.Dialog, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8536063774172034345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171512227480352437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10182615c599d841872d5153afdb490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: bced7e081e7485e4d9f24484e3dd03a3, type: 2}
+  objective: I must speak with the village elder
+--- !u!114 &2924486180009480932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171512227480352437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2487fa89219041b356e9db732e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: CompleteObjective
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8536063774172034345}
         m_TargetAssemblyTypeName: Quests.QuestCompletion, Assembly-CSharp
         m_MethodName: CompleteObjective
         m_Mode: 1
