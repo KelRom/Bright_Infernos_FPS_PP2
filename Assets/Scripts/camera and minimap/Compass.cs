@@ -1,15 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Compass : MonoBehaviour
-{
-    // Update is called once per frame
-    Vector3 rotation;
-
-    void Update()
-    {
-        rotation.z = gameManager.instance.player.transform.eulerAngles.y;
-        transform.localEulerAngles = rotation;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a0891520bb2e85c611394e89d60f9f32b9e2580e2caebde90eba29095f7015b1
+size 274
