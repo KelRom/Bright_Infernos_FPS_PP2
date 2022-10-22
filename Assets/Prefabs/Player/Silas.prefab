@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 255750390}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8822516280001872543}
@@ -1417,8 +1417,8 @@ GameObject:
   m_Name: Body05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &8125209956374361734
 Transform:
@@ -2881,6 +2881,7 @@ MonoBehaviour:
   swingRate: 0.1
   spellInventory:
   - {fileID: -2681353625732458098, guid: 7f172657fd3e5b74ba3437aa2c339fc4, type: 3}
+  - {fileID: -4302601586338887760, guid: 7fa67ea4c76c6fb47bc0d3feae85ea31, type: 3}
   aud: {fileID: 9071769918684460999}
   playerDamageSound:
   - {fileID: 8300000, guid: 6870b58155df53d4c8e991807d3deeec, type: 3}
@@ -2945,7 +2946,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.83
   m_Radius: 0.5
-  m_SlopeLimit: 75
+  m_SlopeLimit: 60
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
